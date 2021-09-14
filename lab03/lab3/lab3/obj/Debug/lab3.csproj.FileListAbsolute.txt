@@ -1,0 +1,11 @@
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\bin\Debug\lab3.exe.config
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\bin\Debug\lab3.exe
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\bin\Debug\lab3.pdb
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\obj\Debug\lab3.csproj.AssemblyReference.cache
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\obj\Debug\lab3.Form1.resources
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\obj\Debug\lab3.Properties.Resources.resources
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\obj\Debug\lab3.csproj.GenerateResource.cache
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\obj\Debug\lab3.csproj.CoreCompileInputs.cache
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\obj\Debug\lab3.exe
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\obj\Debug\lab3.pdb
+E:\three year\from C#\1911170_NguyenHuuThanhNam_lab03\lab3\lab3\obj\Debug\lab3.tuyChon.resources
