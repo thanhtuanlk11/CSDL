@@ -1,0 +1,80 @@
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.exe
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.deps.json
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.runtimeconfig.json
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.runtimeconfig.dev.json
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.dll
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.pdb
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.AssemblyReference.cache
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.AddFeedForm.resources
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.MainForm.resources
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.Properties.Resources.resources
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.GenerateResource.cache
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.AssemblyInfoInputs.cache
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.AssemblyInfo.cs
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.CoreCompileInputs.cache
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.dll
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.pdb
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.genruntimeconfig.cache
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Data\data.txt
+D:\Study\Lập trình cơ sở dữ liệu\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.Components.NewsControl.resources
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Data\data.txt
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.exe
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.deps.json
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.runtimeconfig.json
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.runtimeconfig.dev.json
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.dll
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.pdb
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.AssemblyReference.cache
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.AddFeedForm.resources
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.Components.NewsControl.resources
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.MainForm.resources
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.Properties.Resources.resources
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.GenerateResource.cache
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.AssemblyInfoInputs.cache
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.AssemblyInfo.cs
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.CoreCompileInputs.cache
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.dll
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.pdb
+C:\Users\Sun\OneDrive\Desktop\Demo 1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.genruntimeconfig.cache
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Data\data.txt
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.exe
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.deps.json
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.runtimeconfig.json
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.runtimeconfig.dev.json
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.dll
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.pdb
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.AssemblyReference.cache
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.AddFeedForm.resources
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.Components.NewsControl.resources
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.MainForm.resources
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.Properties.Resources.resources
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.GenerateResource.cache
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.GeneratedMSBuildEditorConfig.editorconfig
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.AssemblyInfoInputs.cache
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.AssemblyInfo.cs
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.CoreCompileInputs.cache
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.dll
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.pdb
+E:\three year\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.genruntimeconfig.cache
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Data\data.txt
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.exe
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.deps.json
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.runtimeconfig.json
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.runtimeconfig.dev.json
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.dll
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\bin\Debug\netcoreapp3.1\Demo 1-9-2021.pdb
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.AssemblyReference.cache
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.AddFeedForm.resources
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.Components.NewsControl.resources
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.MainForm.resources
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo_1_9_2021.Properties.Resources.resources
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.GenerateResource.cache
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.GeneratedMSBuildEditorConfig.editorconfig
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.AssemblyInfoInputs.cache
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.AssemblyInfo.cs
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.csproj.CoreCompileInputs.cache
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.dll
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.pdb
+E:\three year\from C#\Demo1-9-2021\Demo 1-9-2021\Demo 1-9-2021\obj\Debug\netcoreapp3.1\Demo 1-9-2021.genruntimeconfig.cache
