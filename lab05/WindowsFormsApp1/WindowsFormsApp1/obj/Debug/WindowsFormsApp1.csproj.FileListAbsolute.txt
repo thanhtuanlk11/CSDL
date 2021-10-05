@@ -8,3 +8,4 @@ E:\three year\from C#\CSDL\lab05\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Win
 E:\three year\from C#\CSDL\lab05\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 E:\three year\from C#\CSDL\lab05\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 E:\three year\from C#\CSDL\lab05\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+E:\three year\from C#\CSDL\lab05\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.tuychon.resources

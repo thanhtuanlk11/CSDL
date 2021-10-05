@@ -48,7 +48,7 @@ namespace lab3
                 qlsv.DanhSach.Sort((x, y) => x.HoTen.CompareTo(y.HoTen));
                 Close();
             }
-            if (rdDay.Checked == true)
+            if (rdLop.Checked == true)
             {
                 qlsv.DanhSach.Sort((x, y) => x.NgaySinh.CompareTo(y.NgaySinh));
                 Close();
@@ -63,7 +63,7 @@ namespace lab3
                 sv = qlsv.DanhSach.Find(s => s.MaSo == txtInput.Text);
             else if (rdName.Checked)
                 sv = qlsv.DanhSach.Find(s => s.HoTen == txtInput.Text);
-            else if (rdDay.Checked)
+            else if (rdLop.Checked)
             {
                 try
                 {
@@ -98,6 +98,11 @@ namespace lab3
             item.SubItems.Add(sv.Hinh);
             listView.Items.Clear();
             listView.Items.Add(item);
+        }
+
+        private void rdLop_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

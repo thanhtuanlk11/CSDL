@@ -1,7 +1,7 @@
 ﻿
-namespace lab3
+namespace WindowsFormsApp1
 {
-    partial class tuyChon
+    partial class tuychon
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace lab3
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdLop = new System.Windows.Forms.RadioButton();
             this.rdName = new System.Windows.Forms.RadioButton();
@@ -38,56 +38,52 @@ namespace lab3
             this.pnSearch = new System.Windows.Forms.Panel();
             this.btnSreach = new System.Windows.Forms.Button();
             this.txtInput = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSort = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.pnSearch.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // label1
             // 
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Location = new System.Drawing.Point(79, 35);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(503, 100);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tìm Theo ";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.rdLop);
             this.panel1.Controls.Add(this.rdName);
             this.panel1.Controls.Add(this.rdID);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 18);
+            this.panel1.Location = new System.Drawing.Point(24, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(497, 79);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // rdLop
             // 
             this.rdLop.AutoSize = true;
             this.rdLop.Location = new System.Drawing.Point(338, 26);
             this.rdLop.Name = "rdLop";
-            this.rdLop.Size = new System.Drawing.Size(53, 21);
+            this.rdLop.Size = new System.Drawing.Size(48, 21);
             this.rdLop.TabIndex = 2;
             this.rdLop.TabStop = true;
-            this.rdLop.Text = "Lớp";
+            this.rdLop.Text = "lớp";
             this.rdLop.UseVisualStyleBackColor = true;
-            this.rdLop.CheckedChanged += new System.EventHandler(this.rdLop_CheckedChanged);
             // 
             // rdName
             // 
             this.rdName.AutoSize = true;
             this.rdName.Location = new System.Drawing.Point(182, 26);
             this.rdName.Name = "rdName";
-            this.rdName.Size = new System.Drawing.Size(58, 21);
+            this.rdName.Size = new System.Drawing.Size(71, 21);
             this.rdName.TabIndex = 1;
             this.rdName.TabStop = true;
-            this.rdName.Text = "Tên ";
+            this.rdName.Text = "Họ tên";
             this.rdName.UseVisualStyleBackColor = true;
             // 
             // rdID
@@ -104,17 +100,17 @@ namespace lab3
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pnSearch);
-            this.groupBox2.Location = new System.Drawing.Point(79, 178);
+            this.groupBox2.Location = new System.Drawing.Point(24, 165);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(503, 100);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // pnSearch
             // 
             this.pnSearch.Controls.Add(this.btnSreach);
             this.pnSearch.Controls.Add(this.txtInput);
-            this.pnSearch.Controls.Add(this.label1);
+            this.pnSearch.Controls.Add(this.label2);
             this.pnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnSearch.Location = new System.Drawing.Point(3, 18);
             this.pnSearch.Name = "pnSearch";
@@ -138,60 +134,50 @@ namespace lab3
             this.txtInput.Size = new System.Drawing.Size(247, 22);
             this.txtInput.TabIndex = 1;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nhập thông tin";
-            // 
-            // btnSort
-            // 
-            this.btnSort.Location = new System.Drawing.Point(146, 314);
-            this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(75, 45);
-            this.btnSort.TabIndex = 3;
-            this.btnSort.Text = "Sắp xếp";
-            this.btnSort.UseVisualStyleBackColor = true;
-            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Nhập thông tin";
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(340, 314);
+            this.btnExit.Location = new System.Drawing.Point(177, 290);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 45);
-            this.btnExit.TabIndex = 4;
+            this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // tuyChon
+            // tuychon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(594, 347);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnSort);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "tuyChon";
-            this.Text = "tuyChon";
-            this.Load += new System.EventHandler(this.tuyChon_Load);
-            this.groupBox1.ResumeLayout(false);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Name = "tuychon";
+            this.Text = "frmTim";
+            this.Load += new System.EventHandler(this.tuychon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.pnSearch.ResumeLayout(false);
             this.pnSearch.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton rdLop;
         private System.Windows.Forms.RadioButton rdName;
@@ -200,8 +186,7 @@ namespace lab3
         private System.Windows.Forms.Panel pnSearch;
         private System.Windows.Forms.Button btnSreach;
         private System.Windows.Forms.TextBox txtInput;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSort;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnExit;
     }
 }

@@ -7,27 +7,58 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    public class QuanlySinhVien
+    public delegate int SoSanh(object sv1, object sv2);
+    public class QuanLySinhVien
     {
-        public List<SinhVien> DanhSach;
-        public List<SinhVien> list { get; internal set; }
-
-        public QuanlySinhVien()
+        public List<SinhVien> danhSach;
+        public QuanLySinhVien()
         {
-            DanhSach = new List<SinhVien>();
+            danhSach = new List<SinhVien>();
         }
         public void Them(SinhVien sv)
         {
-            this.DanhSach.Add(sv);
+            this.danhSach.Add(sv);
         }
         public SinhVien this[int index]
         {
-            get { return DanhSach[index]; }
-            set { DanhSach[index] = value; }
+            get { return danhSach[index]; }
+            set { danhSach[index] = value; }
+        }
+        public void Xoa(object obj, SoSanh ss)
+        {
+            int i = danhSach.Count - 1;
+            for (; i >= 0; i--)
+                if (ss(obj, this[i]) == 0)
+                    this.danhSach.RemoveAt(i);
+        }
+        public bool Sua(SinhVien svsua, object obj, SoSanh ss)
+        {
+            int i, count;
+            bool kq = false;
+            count = this.danhSach.Count - 1;
+            for (i = 0; i < count; i++)
+                if (ss(obj, this[i]) == 0)
+                {
+                    this[i] = svsua;
+                    kq = true;
+                    break;
+                }
+            return kq;
+        }
+        public SinhVien Tim(object obj, SoSanh ss)
+        {
+            SinhVien svresult = null;
+            foreach (SinhVien sv in danhSach)
+                if (ss(obj, sv) == 0)
+                {
+                    svresult = sv;
+                    break;
+                }
+            return svresult;
         }
         public void DocTuFile()
         {
-            string filename = "SV.txt",t;
+            string filename = "SV.txt", t;
             string[] s;
             SinhVien sv;
             StreamReader sr = new StreamReader(
@@ -47,6 +78,8 @@ namespace WindowsFormsApp1
                 this.Them(sv);
 
             }
+
         }
     }
 }
+
