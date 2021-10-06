@@ -1,0 +1,21 @@
+﻿@Khoa Công Nghệ Thông Tin 
+#CTK44B^1
+#CTK41^1
+#CTK44A^1
+#CTK40^1
+#CTK42^1
+@Khoa Ngoại Ngữ
+#AVK43B^1
+#AVK43A^1
+#AVK42A^1
+#AVK42B^1
+#AVK43C^1
+#AVK41C^1
+#AVK43D^1
+#AVK42D^1
+#AVK41D^1
+#AVK43E^1
+#AVK43F^1
+#AVK44C^1
+@Khoa Toán - Tin học
+#TNK44^1
