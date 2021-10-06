@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.IO
                 {
                     using( var reader = new StreamReader(stream))
                     {
-                        while(reader.EndOfStream)
+                        while(!reader.EndOfStream)
                         {
                             line = reader.ReadLine();
                             if(line == null) 
