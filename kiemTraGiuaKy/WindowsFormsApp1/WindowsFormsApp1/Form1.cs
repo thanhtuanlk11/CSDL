@@ -91,11 +91,17 @@ namespace WindowsFormsApp1
             }
             this.LoadListView();
         }
-
+        private void LoadSV(List<SinhVien> dsSV)
+        {
+            this.LVSinhVien.Items.Clear();
+            qlsv.danhSach.ForEach(sv => ThemSV(sv));
+        }
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmThemSV frmThem = new frmThemSV();
+            frmThemSV frmThem = new frmThemSV(qlsv,LVSinhVien);
             frmThem.ShowDialog();
+            LoadSV(frmThem.ListSV);
+            
         }
     }
 }

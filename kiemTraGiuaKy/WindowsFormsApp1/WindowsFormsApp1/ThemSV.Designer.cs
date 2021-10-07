@@ -253,6 +253,7 @@ namespace WindowsFormsApp1
             this.btnLưu.TabIndex = 57;
             this.btnLưu.Text = "Lưu";
             this.btnLưu.UseVisualStyleBackColor = true;
+            this.btnLưu.Click += new System.EventHandler(this.btnLưu_Click_1);
             // 
             // frmThemSV
             // 
