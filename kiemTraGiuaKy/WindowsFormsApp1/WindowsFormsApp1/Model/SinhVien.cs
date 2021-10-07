@@ -16,12 +16,15 @@ namespace WindowsFormsApp1.Model
 
         public string SoDienThoai { get; set; }
         public string Lop { get; set; }
-        public List<SinhVien> dssv { get; set; }
+        public string Khoa { get; set; }
+        public string DiaChi { get; set; }
+        public List<string> DSSinhVien;
+
         public SinhVien()
         {
-            dssv = new List<SinhVien>();
+            
         }
-        public SinhVien(string mssv, string hoVaTenLot,string ten,bool gt,DateTime ngaySinh,string soDienThoai,string lop)
+        public SinhVien(string mssv, string hoVaTenLot,string ten,bool gt,DateTime ngaySinh,string soDienThoai,string dc,string lop,string khoa)
         {
             this.MSSV = mssv;
             this.HoVaTenLot = hoVaTenLot;
@@ -29,7 +32,9 @@ namespace WindowsFormsApp1.Model
             this.GioiTinh = gt;
             this.NgaySinh = ngaySinh;
             this.SoDienThoai = soDienThoai;
+            this.DiaChi = dc;
             this.Lop = lop;
+            this.Khoa = khoa;
         }
     }
 }

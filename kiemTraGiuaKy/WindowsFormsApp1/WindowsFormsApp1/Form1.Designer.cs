@@ -29,8 +29,9 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lvItem = new System.Windows.Forms.ListView();
+            this.LVSinhVien = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,13 +50,17 @@ namespace WindowsFormsApp1
             this.inToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.tvwKhoa = new System.Windows.Forms.TreeView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lvItem);
+            this.groupBox1.Controls.Add(this.LVSinhVien);
             this.groupBox1.Controls.Add(this.txtTim);
             this.groupBox1.Controls.Add(this.rdSDT);
             this.groupBox1.Controls.Add(this.rdHoTen);
@@ -68,10 +73,10 @@ namespace WindowsFormsApp1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
-            // lvItem
+            // LVSinhVien
             // 
-            this.lvItem.CheckBoxes = true;
-            this.lvItem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LVSinhVien.CheckBoxes = true;
+            this.LVSinhVien.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -79,19 +84,21 @@ namespace WindowsFormsApp1
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
-            this.lvItem.FullRowSelect = true;
-            this.lvItem.GridLines = true;
-            this.lvItem.HideSelection = false;
-            this.lvItem.Location = new System.Drawing.Point(3, 75);
-            this.lvItem.Name = "lvItem";
-            this.lvItem.Size = new System.Drawing.Size(816, 503);
-            this.lvItem.TabIndex = 5;
-            this.lvItem.UseCompatibleStateImageBehavior = false;
-            this.lvItem.View = System.Windows.Forms.View.Details;
+            this.LVSinhVien.ContextMenuStrip = this.contextMenuStrip1;
+            this.LVSinhVien.FullRowSelect = true;
+            this.LVSinhVien.GridLines = true;
+            this.LVSinhVien.HideSelection = false;
+            this.LVSinhVien.Location = new System.Drawing.Point(3, 75);
+            this.LVSinhVien.Name = "LVSinhVien";
+            this.LVSinhVien.Size = new System.Drawing.Size(816, 503);
+            this.LVSinhVien.TabIndex = 5;
+            this.LVSinhVien.UseCompatibleStateImageBehavior = false;
+            this.LVSinhVien.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "MSSV";
+            this.columnHeader1.Width = 80;
             // 
             // columnHeader2
             // 
@@ -219,6 +226,29 @@ namespace WindowsFormsApp1
             this.tvwKhoa.Size = new System.Drawing.Size(404, 494);
             this.tvwKhoa.TabIndex = 3;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xóaToolStripMenuItem,
+            this.xóaToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 80);
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.xóaToolStripMenuItem.Text = "Thêm";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
+            // 
+            // xóaToolStripMenuItem1
+            // 
+            this.xóaToolStripMenuItem1.Name = "xóaToolStripMenuItem1";
+            this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.xóaToolStripMenuItem1.Text = "Xóa";
+            this.xóaToolStripMenuItem1.Click += new System.EventHandler(this.xóaToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -235,6 +265,7 @@ namespace WindowsFormsApp1
             this.groupBox1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,7 +283,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.RadioButton rdHoTen;
         private System.Windows.Forms.RadioButton rdMaSo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView lvItem;
+        private System.Windows.Forms.ListView LVSinhVien;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -262,6 +293,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.TreeView tvwKhoa;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem1;
     }
 }
 
