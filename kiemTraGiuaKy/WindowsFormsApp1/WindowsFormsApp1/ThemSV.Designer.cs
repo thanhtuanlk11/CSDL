@@ -45,10 +45,10 @@ namespace WindowsFormsApp1
             this.label5 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboLop = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboKhoa = new System.Windows.Forms.ComboBox();
             this.btnLưu = new System.Windows.Forms.Button();
+            this.cboLop = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -191,8 +191,41 @@ namespace WindowsFormsApp1
             this.label6.TabIndex = 53;
             this.label6.Text = "Lớp :";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(461, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "Khoa :";
+            // 
+            // cboKhoa
+            // 
+            this.cboKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboKhoa.FormattingEnabled = true;
+            this.cboKhoa.Items.AddRange(new object[] {
+            "Khoa Công nghệ thông tin",
+            "Khoa Ngoại ngữ",
+            "Khoa Toán - Tin học"});
+            this.cboKhoa.Location = new System.Drawing.Point(522, 170);
+            this.cboKhoa.Name = "cboKhoa";
+            this.cboKhoa.Size = new System.Drawing.Size(266, 24);
+            this.cboKhoa.TabIndex = 56;
+            // 
+            // btnLưu
+            // 
+            this.btnLưu.Location = new System.Drawing.Point(617, 281);
+            this.btnLưu.Name = "btnLưu";
+            this.btnLưu.Size = new System.Drawing.Size(75, 29);
+            this.btnLưu.TabIndex = 57;
+            this.btnLưu.Text = "Lưu";
+            this.btnLưu.UseVisualStyleBackColor = true;
+            this.btnLưu.Click += new System.EventHandler(this.btnLưu_Click_1);
+            // 
             // cboLop
             // 
+            this.cboLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLop.FormattingEnabled = true;
             this.cboLop.Items.AddRange(new object[] {
             "CTK44B",
@@ -219,37 +252,7 @@ namespace WindowsFormsApp1
             this.cboLop.Name = "cboLop";
             this.cboLop.Size = new System.Drawing.Size(266, 24);
             this.cboLop.TabIndex = 54;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(461, 177);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 55;
-            this.label4.Text = "Khoa :";
-            // 
-            // cboKhoa
-            // 
-            this.cboKhoa.FormattingEnabled = true;
-            this.cboKhoa.Items.AddRange(new object[] {
-            "Khoa Công nghệ thông tin",
-            "Khoa Ngoại ngữ",
-            "Khoa Toán - Tin học"});
-            this.cboKhoa.Location = new System.Drawing.Point(522, 170);
-            this.cboKhoa.Name = "cboKhoa";
-            this.cboKhoa.Size = new System.Drawing.Size(266, 24);
-            this.cboKhoa.TabIndex = 56;
-            // 
-            // btnLưu
-            // 
-            this.btnLưu.Location = new System.Drawing.Point(617, 281);
-            this.btnLưu.Name = "btnLưu";
-            this.btnLưu.Size = new System.Drawing.Size(75, 29);
-            this.btnLưu.TabIndex = 57;
-            this.btnLưu.Text = "Lưu";
-            this.btnLưu.UseVisualStyleBackColor = true;
-            this.btnLưu.Click += new System.EventHandler(this.btnLưu_Click_1);
+            this.cboLop.SelectedIndexChanged += new System.EventHandler(this.cboLop_SelectedIndexChanged);
             // 
             // frmThemSV
             // 
@@ -302,9 +305,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboLop;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboKhoa;
         private System.Windows.Forms.Button btnLưu;
+        private System.Windows.Forms.ComboBox cboLop;
     }
 }

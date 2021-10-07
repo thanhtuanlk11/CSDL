@@ -74,6 +74,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Thêm sinh viên thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
+
+        private void cboLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         //private void LoadListView()
         ////{
         ////    this.listView.Items.Clear();
