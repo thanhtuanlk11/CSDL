@@ -39,6 +39,7 @@ namespace WindowsFormsApp1
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtTim = new System.Windows.Forms.TextBox();
             this.rdSDT = new System.Windows.Forms.RadioButton();
             this.rdHoTen = new System.Windows.Forms.RadioButton();
@@ -50,12 +51,14 @@ namespace WindowsFormsApp1
             this.inToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.tvwKhoa = new System.Windows.Forms.TreeView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -68,7 +71,7 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(441, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(819, 584);
+            this.groupBox1.Size = new System.Drawing.Size(1036, 584);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
@@ -83,14 +86,15 @@ namespace WindowsFormsApp1
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader8});
             this.LVSinhVien.ContextMenuStrip = this.contextMenuStrip1;
             this.LVSinhVien.FullRowSelect = true;
             this.LVSinhVien.GridLines = true;
             this.LVSinhVien.HideSelection = false;
             this.LVSinhVien.Location = new System.Drawing.Point(3, 75);
             this.LVSinhVien.Name = "LVSinhVien";
-            this.LVSinhVien.Size = new System.Drawing.Size(816, 503);
+            this.LVSinhVien.Size = new System.Drawing.Size(1029, 503);
             this.LVSinhVien.TabIndex = 5;
             this.LVSinhVien.UseCompatibleStateImageBehavior = false;
             this.LVSinhVien.View = System.Windows.Forms.View.Details;
@@ -129,12 +133,22 @@ namespace WindowsFormsApp1
             this.columnHeader7.Text = "Lớp";
             this.columnHeader7.Width = 80;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xóaToolStripMenuItem,
+            this.xóaToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(120, 56);
+            // 
             // txtTim
             // 
             this.txtTim.Location = new System.Drawing.Point(165, 41);
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(346, 22);
             this.txtTim.TabIndex = 3;
+            this.txtTim.Text = "!Nhập thông tin cần tìm";
             // 
             // rdSDT
             // 
@@ -173,9 +187,9 @@ namespace WindowsFormsApp1
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(59, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "tìm theo";
+            this.label1.Text = "Tìm theo :";
             // 
             // menuStrip2
             // 
@@ -186,7 +200,7 @@ namespace WindowsFormsApp1
             this.inToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1290, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1470, 28);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -198,6 +212,9 @@ namespace WindowsFormsApp1
             // 
             // lưuToolStripMenuItem
             // 
+            this.lưuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.excelToolStripMenuItem,
+            this.jsonToolStripMenuItem});
             this.lưuToolStripMenuItem.Name = "lưuToolStripMenuItem";
             this.lưuToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.lưuToolStripMenuItem.Text = "Lưu";
@@ -226,34 +243,44 @@ namespace WindowsFormsApp1
             this.tvwKhoa.Size = new System.Drawing.Size(404, 494);
             this.tvwKhoa.TabIndex = 3;
             // 
-            // contextMenuStrip1
+            // columnHeader8
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xóaToolStripMenuItem,
-            this.xóaToolStripMenuItem1});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 80);
+            this.columnHeader8.Text = "Khoa";
+            this.columnHeader8.Width = 150;
             // 
             // xóaToolStripMenuItem
             // 
+            this.xóaToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.add;
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
             this.xóaToolStripMenuItem.Text = "Thêm";
             this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
             // xóaToolStripMenuItem1
             // 
+            this.xóaToolStripMenuItem1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_delete_64;
             this.xóaToolStripMenuItem1.Name = "xóaToolStripMenuItem1";
-            this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(119, 26);
             this.xóaToolStripMenuItem1.Text = "Xóa";
             this.xóaToolStripMenuItem1.Click += new System.EventHandler(this.xóaToolStripMenuItem1_Click);
+            // 
+            // excelToolStripMenuItem
+            // 
+            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.excelToolStripMenuItem.Text = "Excel";
+            // 
+            // jsonToolStripMenuItem
+            // 
+            this.jsonToolStripMenuItem.Name = "jsonToolStripMenuItem";
+            this.jsonToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.jsonToolStripMenuItem.Text = "Json";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1290, 600);
+            this.ClientSize = new System.Drawing.Size(1470, 600);
             this.Controls.Add(this.tvwKhoa);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
@@ -263,9 +290,9 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,6 +323,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem1;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jsonToolStripMenuItem;
     }
 }
 

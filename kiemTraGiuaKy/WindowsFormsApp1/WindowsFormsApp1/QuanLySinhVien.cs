@@ -93,9 +93,9 @@ namespace WindowsFormsApp1
                 sv.MSSV = s[0];
                 sv.HoVaTenLot = s[1];
                 sv.Ten = s[2];
-                sv.GioiTinh = false;
-                if (s[2] == "1")
-                    sv.GioiTinh = true;
+                sv.GioiTinh = true;
+                if (s[2] == "0")
+                    sv.GioiTinh = false;
                 sv.NgaySinh = new DateTime();
                 sv.SoDienThoai = "";
                 sv.Lop = s[3];

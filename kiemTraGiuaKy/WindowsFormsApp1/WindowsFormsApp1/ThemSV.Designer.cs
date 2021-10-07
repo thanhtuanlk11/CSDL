@@ -233,13 +233,9 @@ namespace WindowsFormsApp1
             // 
             this.cboKhoa.FormattingEnabled = true;
             this.cboKhoa.Items.AddRange(new object[] {
-            "CTK31",
-            "CTK32",
-            "CTK33",
-            "CTK34",
-            "CTK32CD",
-            "CTK33CD",
-            "CTK34CD"});
+            "Khoa Công nghệ thông tin",
+            "Khoa Ngoại ngữ",
+            "Khoa Toán - Tin học"});
             this.cboKhoa.Location = new System.Drawing.Point(522, 170);
             this.cboKhoa.Name = "cboKhoa";
             this.cboKhoa.Size = new System.Drawing.Size(266, 24);
