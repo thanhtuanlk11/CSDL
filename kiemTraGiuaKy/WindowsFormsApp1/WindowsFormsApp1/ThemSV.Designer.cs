@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
             this.mtxtMaSo.Mask = "00000000";
             this.mtxtMaSo.Name = "mtxtMaSo";
             this.mtxtMaSo.Size = new System.Drawing.Size(176, 22);
-            this.mtxtMaSo.TabIndex = 30;
+            this.mtxtMaSo.TabIndex = 0;
             // 
             // label3
             // 
@@ -82,7 +82,7 @@ namespace WindowsFormsApp1
             this.txtHoTen.Location = new System.Drawing.Point(115, 67);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(176, 22);
-            this.txtHoTen.TabIndex = 32;
+            this.txtHoTen.TabIndex = 4;
             // 
             // label2
             // 
@@ -100,7 +100,7 @@ namespace WindowsFormsApp1
             this.dtpNgaySinh.Location = new System.Drawing.Point(115, 116);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(176, 22);
-            this.dtpNgaySinh.TabIndex = 34;
+            this.dtpNgaySinh.TabIndex = 6;
             // 
             // label7
             // 
@@ -117,7 +117,7 @@ namespace WindowsFormsApp1
             this.mkbSDT.Mask = "000.000.0000";
             this.mkbSDT.Name = "mkbSDT";
             this.mkbSDT.Size = new System.Drawing.Size(266, 22);
-            this.mkbSDT.TabIndex = 45;
+            this.mkbSDT.TabIndex = 8;
             // 
             // label9
             // 
@@ -133,7 +133,7 @@ namespace WindowsFormsApp1
             this.txtDiaChi.Location = new System.Drawing.Point(115, 229);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(671, 22);
-            this.txtDiaChi.TabIndex = 47;
+            this.txtDiaChi.TabIndex = 10;
             // 
             // label8
             // 
@@ -151,7 +151,7 @@ namespace WindowsFormsApp1
             this.rdNam.Location = new System.Drawing.Point(547, 25);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(58, 21);
-            this.rdNam.TabIndex = 49;
+            this.rdNam.TabIndex = 1;
             this.rdNam.TabStop = true;
             this.rdNam.Text = "Nam";
             this.rdNam.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@ namespace WindowsFormsApp1
             this.rdNu.Location = new System.Drawing.Point(630, 25);
             this.rdNu.Name = "rdNu";
             this.rdNu.Size = new System.Drawing.Size(47, 21);
-            this.rdNu.TabIndex = 50;
+            this.rdNu.TabIndex = 2;
             this.rdNu.Text = "Nữ";
             this.rdNu.UseVisualStyleBackColor = true;
             // 
@@ -180,7 +180,7 @@ namespace WindowsFormsApp1
             this.txtTen.Location = new System.Drawing.Point(520, 62);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(266, 22);
-            this.txtTen.TabIndex = 52;
+            this.txtTen.TabIndex = 5;
             // 
             // label6
             // 
@@ -211,14 +211,14 @@ namespace WindowsFormsApp1
             this.cboKhoa.Location = new System.Drawing.Point(522, 170);
             this.cboKhoa.Name = "cboKhoa";
             this.cboKhoa.Size = new System.Drawing.Size(266, 24);
-            this.cboKhoa.TabIndex = 56;
+            this.cboKhoa.TabIndex = 9;
             // 
             // btnLưu
             // 
             this.btnLưu.Location = new System.Drawing.Point(617, 281);
             this.btnLưu.Name = "btnLưu";
             this.btnLưu.Size = new System.Drawing.Size(75, 29);
-            this.btnLưu.TabIndex = 57;
+            this.btnLưu.TabIndex = 11;
             this.btnLưu.Text = "Lưu";
             this.btnLưu.UseVisualStyleBackColor = true;
             this.btnLưu.Click += new System.EventHandler(this.btnLưu_Click_1);
@@ -251,7 +251,7 @@ namespace WindowsFormsApp1
             this.cboLop.Location = new System.Drawing.Point(520, 109);
             this.cboLop.Name = "cboLop";
             this.cboLop.Size = new System.Drawing.Size(266, 24);
-            this.cboLop.TabIndex = 54;
+            this.cboLop.TabIndex = 7;
             this.cboLop.SelectedIndexChanged += new System.EventHandler(this.cboLop_SelectedIndexChanged);
             // 
             // frmThemSV

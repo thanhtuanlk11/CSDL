@@ -84,13 +84,21 @@ namespace WindowsFormsApp1
             int count, i;
             ListViewItem lvitem;
             count = this.LVSinhVien.Items.Count - 1;
-            for (i = count; i >= 0; i--)
+            DialogResult dlg= MessageBox.Show("Bạn có chắc xóa sinh viên này?", "Xóa sinh viên", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dlg == DialogResult.OK)
             {
-                lvitem = this.LVSinhVien.Items[i];
-                if (lvitem.Checked)
-                    qlsv.Xoa(lvitem.SubItems[0].Text, SoSanhTheoMa);
+                for (i = count; i >= 0; i--)
+                {
+                    lvitem = this.LVSinhVien.Items[i];
+                    if (lvitem.Checked)
+                        qlsv.Xoa(lvitem.SubItems[0].Text, SoSanhTheoMa);
+                }
+                this.LoadListView();
             }
-            this.LoadListView();
+            else
+            {
+                return;
+            }
         }
         private void LoadSV(List<SinhVien> dsSV)
         {

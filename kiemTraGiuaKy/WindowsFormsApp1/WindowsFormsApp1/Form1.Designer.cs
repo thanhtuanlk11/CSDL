@@ -168,7 +168,7 @@ namespace WindowsFormsApp1
             this.txtTim.Location = new System.Drawing.Point(165, 41);
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(346, 22);
-            this.txtTim.TabIndex = 3;
+            this.txtTim.TabIndex = 2;
             this.txtTim.Text = "!Nhập thông tin cần tìm";
             // 
             // rdSDT
@@ -177,7 +177,7 @@ namespace WindowsFormsApp1
             this.rdSDT.Location = new System.Drawing.Point(329, 14);
             this.rdSDT.Name = "rdSDT";
             this.rdSDT.Size = new System.Drawing.Size(110, 21);
-            this.rdSDT.TabIndex = 3;
+            this.rdSDT.TabIndex = 4;
             this.rdSDT.Text = "số điện thoại";
             this.rdSDT.UseVisualStyleBackColor = true;
             // 
@@ -187,7 +187,7 @@ namespace WindowsFormsApp1
             this.rdHoTen.Location = new System.Drawing.Point(226, 14);
             this.rdHoTen.Name = "rdHoTen";
             this.rdHoTen.Size = new System.Drawing.Size(76, 21);
-            this.rdHoTen.TabIndex = 2;
+            this.rdHoTen.TabIndex = 3;
             this.rdHoTen.Text = "Họ Tên";
             this.rdHoTen.UseVisualStyleBackColor = true;
             // 
@@ -198,7 +198,7 @@ namespace WindowsFormsApp1
             this.rdMaSo.Location = new System.Drawing.Point(132, 14);
             this.rdMaSo.Name = "rdMaSo";
             this.rdMaSo.Size = new System.Drawing.Size(67, 21);
-            this.rdMaSo.TabIndex = 1;
+            this.rdMaSo.TabIndex = 2;
             this.rdMaSo.TabStop = true;
             this.rdMaSo.Text = "MSSV";
             this.rdMaSo.UseVisualStyleBackColor = true;
@@ -209,7 +209,7 @@ namespace WindowsFormsApp1
             this.label1.Location = new System.Drawing.Point(59, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 17);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Tìm theo :";
             // 
             // menuStrip2
@@ -221,7 +221,7 @@ namespace WindowsFormsApp1
             this.inToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1470, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1470, 30);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
@@ -229,7 +229,7 @@ namespace WindowsFormsApp1
             // nhậpToolStripMenuItem
             // 
             this.nhậpToolStripMenuItem.Name = "nhậpToolStripMenuItem";
-            this.nhậpToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.nhậpToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.nhậpToolStripMenuItem.Text = "Nhập";
             // 
             // lưuToolStripMenuItem
@@ -238,26 +238,26 @@ namespace WindowsFormsApp1
             this.excelToolStripMenuItem,
             this.jsonToolStripMenuItem});
             this.lưuToolStripMenuItem.Name = "lưuToolStripMenuItem";
-            this.lưuToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.lưuToolStripMenuItem.Size = new System.Drawing.Size(47, 26);
             this.lưuToolStripMenuItem.Text = "Lưu";
             // 
             // excelToolStripMenuItem
             // 
             this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
-            this.excelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
             this.excelToolStripMenuItem.Text = "Excel";
             this.excelToolStripMenuItem.Click += new System.EventHandler(this.excelToolStripMenuItem_Click);
             // 
             // jsonToolStripMenuItem
             // 
             this.jsonToolStripMenuItem.Name = "jsonToolStripMenuItem";
-            this.jsonToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.jsonToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
             this.jsonToolStripMenuItem.Text = "Json";
             // 
             // inToolStripMenuItem
             // 
             this.inToolStripMenuItem.Name = "inToolStripMenuItem";
-            this.inToolStripMenuItem.Size = new System.Drawing.Size(35, 24);
+            this.inToolStripMenuItem.Size = new System.Drawing.Size(35, 26);
             this.inToolStripMenuItem.Text = "In";
             // 
             // label2
@@ -266,7 +266,7 @@ namespace WindowsFormsApp1
             this.label2.Location = new System.Drawing.Point(12, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(268, 17);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 3;
             this.label2.Text = "Chọn lớp để hiển thị danh sách Sinh Viên";
             // 
             // tvwKhoa
@@ -276,7 +276,7 @@ namespace WindowsFormsApp1
             this.tvwKhoa.Location = new System.Drawing.Point(15, 58);
             this.tvwKhoa.Name = "tvwKhoa";
             this.tvwKhoa.Size = new System.Drawing.Size(404, 494);
-            this.tvwKhoa.TabIndex = 3;
+            this.tvwKhoa.TabIndex = 2;
             // 
             // Form1
             // 
@@ -288,7 +288,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip2);
             this.Name = "Form1";
-            this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
