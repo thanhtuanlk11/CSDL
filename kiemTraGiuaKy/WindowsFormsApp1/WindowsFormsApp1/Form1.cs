@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,6 +103,39 @@ namespace WindowsFormsApp1
             frmThem.ShowDialog();
             LoadSV(frmThem.ListSV);
             
+        }
+
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LuuFile();
+            Application.Exit();
+        }
+        private async void LuuFile()
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "*|.xlsx", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    using (TextWriter tw = new StreamWriter(new FileStream(sfd.FileName, FileMode.Create), Encoding.UTF8))
+                    {
+                        foreach (ListViewItem item in LVSinhVien.Items)
+                        {
+                            await tw.WriteLineAsync(item.SubItems[0].Text + "\t"
+                                + item.SubItems[1].Text + "\t"
+                                + item.SubItems[2].Text + "\t"
+                                + item.SubItems[3].Text + "\t"
+                                + item.SubItems[4].Text + "\t"
+                                + item.SubItems[5].Text + "\t"
+                                + item.SubItems[6].Text + "\t");
+                        }
+                    }
+                }
+            }
+        }
+
+        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

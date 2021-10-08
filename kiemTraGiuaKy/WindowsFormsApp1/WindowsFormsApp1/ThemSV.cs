@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmThemSV:Form
     {
+        
         public List<SinhVien> ListSV;
         QuanLySinhVien qlsv;
         ListView listView;
@@ -27,7 +28,6 @@ namespace WindowsFormsApp1
       
         private void frmThemSV_Load(object sender, EventArgs e)
         {
-
         }
         private SinhVien GetSinhVien()
         {
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
                 if (rdNam.Checked)
                 {
                     gt = true;
-                }          
+                }
                 lvitem.SubItems.Add(sv.HoVaTenLot);
                 lvitem.SubItems.Add(sv.Ten);
                 lvitem.SubItems.Add(sv.NgaySinh.ToShortDateString());
@@ -70,8 +70,8 @@ namespace WindowsFormsApp1
                 lvitem.SubItems.Add(sv.DiaChi);
                 listView.Items.Clear();
                 listView.Items.Add(lvitem);
-         
                 MessageBox.Show("Thêm sinh viên thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                
             }
         }
 
@@ -79,13 +79,6 @@ namespace WindowsFormsApp1
         {
 
         }
-        //private void LoadListView()
-        ////{
-        ////    this.listView.Items.Clear();
-        ////    foreach (SinhVien sv in qlsv.danhSach)
-        ////    {
-        ////        listView.Items.Add(sv);
-        ////    }
-        ////}
+       
     }
 }
