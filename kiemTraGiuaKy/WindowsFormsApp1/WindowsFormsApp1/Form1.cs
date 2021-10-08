@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
             int count, i;
             ListViewItem lvitem;
             count = this.LVSinhVien.Items.Count - 1;
-            DialogResult dlg= MessageBox.Show("Bạn có chắc xóa sinh viên này?", "Xóa sinh viên", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult dlg= MessageBox.Show("Bạn có chắc xóa sinh viên được chọn?", "Xóa sinh viên", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (dlg == DialogResult.OK)
             {
                 for (i = count; i >= 0; i--)

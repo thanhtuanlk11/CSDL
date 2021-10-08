@@ -1,0 +1,110 @@
+﻿[
+	{
+		"Id": 1,
+		"Name": "Gỏi thập cẩm",
+		"Unit": "Dĩa",
+		"UnitPrice": 45000,
+		"Description": "3- 4 người ăn",
+		"ImageLink": "C:\\Users\\Nguyen Van Phuc\\Pictures\\Food\\1.jpg",
+		"CategoryId": 5
+	},
+	{
+		"Id": 2,
+		"Name": "Gỏi gà",
+		"Unit": "Dĩa",
+		"UnitPrice": 45000,
+		"Description": "3- 4 người ăn",
+		"ImageLink": "C:\\Users\\Nguyen Van Phuc\\Pictures\\Food\\2.jpg",
+		"CategoryId": 5
+	},
+	{
+		"Id": 3,
+		"Name": "Gỏi Thái Lan",
+		"Unit": "Dĩa",
+		"UnitPrice": 45000,
+		"Description": "",
+		"ImageLink": "",
+		"CategoryId": 5
+	},
+	{
+		"Id": 4,
+		"Name": "Tôm nướng muối ớt",
+		"Unit": "Kg",
+		"UnitPrice": 300000,
+		"Description": "4 - 5 người ăn",
+		"ImageLink": "C:\\Users\\Nguyen Van Phuc\\Pictures\\Food\\3.jpg",
+		"CategoryId": 1
+	},
+	{
+		"Id": 5,
+		"Name": "Mực nướng muối ớt",
+		"Unit": "Kg",
+		"UnitPrice": 355000,
+		"Description": "",
+		"ImageLink": "C:\\Users\\Nguyen Van Phuc\\Pictures\\Food\\5.jpg",
+		"CategoryId": 1
+	},
+	{
+		"Id": 6,
+		"Name": "Sò lông nướng mỡ hành",
+		"Unit": "Dĩa",
+		"UnitPrice": 120000,
+		"Description": "",
+		"ImageLink": "",
+		"CategoryId": 1
+	},
+	{
+		"Id": 7,
+		"Name": "Lẩu hải sản",
+		"Unit": "Cái",
+		"UnitPrice": 250000,
+		"Description": "",
+		"ImageLink": "",
+		"CategoryId": 2
+	},
+	{
+		"Id": 8,
+		"Name": "Lẩu thái",
+		"Unit": "Cái",
+		"UnitPrice": 250000,
+		"Description": "",
+		"ImageLink": "",
+		"CategoryId": 2
+	},
+	{
+		"Id": 9,
+		"Name": "Rau muống xào tỏi",
+		"Unit": "Dĩa",
+		"UnitPrice": 40000,
+		"Description": "",
+		"ImageLink": "",
+		"CategoryId": 3
+	},
+	{
+		"Id": 10,
+		"Name": "Gà hấp hành",
+		"Unit": "Dĩa",
+		"UnitPrice": 200000,
+		"Description": "",
+		"ImageLink": "",
+		"CategoryId": 4
+	},
+	{
+		"Id": 11,
+		"Name": "test",
+		"Unit": "test",
+		"UnitPrice": 111000,
+		"Description": "test, test",
+		"ImageLink": "C:\\Users\\Nguyen Van Phuc\\Pictures\\Food\\7.jpg",
+		"CategoryId": 1
+	},
+	{
+		"Id": 12,
+		"Name": "Món đặc biệt",
+		"Unit": "Dĩa",
+		"UnitPrice": 111000,
+		"Description": "Test json",
+		"ImageLink": "C:\\Users\\Nguyen Van Phuc\\Pictures\\Food\\7.jpg",
+		"CategoryId": 7
+	}
+]

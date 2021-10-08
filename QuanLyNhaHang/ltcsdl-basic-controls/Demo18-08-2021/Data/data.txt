@@ -1,0 +1,11 @@
+﻿1^Gỏi thập cẩm^Dĩa^45000^^^5
+2^Gỏi gà^Dĩa^45000^^^5
+3^Gỏi Thái Lan^Dĩa^45000^^^5
+4^Tôm nướng muối ớt^Kg^300000^^C:\Users\Nguyen Van Phuc\Pictures\Food\3.jpg^1
+5^Mực nướng muối ớt^Kg^355000^^^1
+6^Sò lông nướng mỡ hành^Dĩa^120000^^^1
+7^Lẩu hải sản^Cái^250000^^C:\Users\Nguyen Van Phuc\Pictures\Food\7.jpg^2
+8^Lẩu thái^Cái^250000^^^2
+9^Rau muống xào tỏi^Dĩa^40000^^^3
+10^Gà hấp hành^Dĩa^200000^^^4
+11^Gà chiên nước mắm^Dĩa^200000^4 người ăn^^4
