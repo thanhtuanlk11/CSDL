@@ -41,8 +41,6 @@ namespace WindowsFormsApp1
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.rdSDT = new System.Windows.Forms.RadioButton();
             this.rdHoTen = new System.Windows.Forms.RadioButton();
@@ -56,6 +54,10 @@ namespace WindowsFormsApp1
             this.inToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.tvwKhoa = new System.Windows.Forms.TreeView();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.realodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -63,6 +65,7 @@ namespace WindowsFormsApp1
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnTim);
             this.groupBox1.Controls.Add(this.LVSinhVien);
             this.groupBox1.Controls.Add(this.txtTim);
             this.groupBox1.Controls.Add(this.rdSDT);
@@ -72,7 +75,7 @@ namespace WindowsFormsApp1
             this.groupBox1.Location = new System.Drawing.Point(441, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1036, 584);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
@@ -143,33 +146,18 @@ namespace WindowsFormsApp1
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xóaToolStripMenuItem,
-            this.xóaToolStripMenuItem1});
+            this.xóaToolStripMenuItem1,
+            this.realodToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(120, 56);
-            // 
-            // xóaToolStripMenuItem
-            // 
-            this.xóaToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.add;
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
-            this.xóaToolStripMenuItem.Text = "Thêm";
-            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
-            // 
-            // xóaToolStripMenuItem1
-            // 
-            this.xóaToolStripMenuItem1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_delete_64;
-            this.xóaToolStripMenuItem1.Name = "xóaToolStripMenuItem1";
-            this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(119, 26);
-            this.xóaToolStripMenuItem1.Text = "Xóa";
-            this.xóaToolStripMenuItem1.Click += new System.EventHandler(this.xóaToolStripMenuItem1_Click);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 82);
             // 
             // txtTim
             // 
             this.txtTim.Location = new System.Drawing.Point(165, 41);
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(346, 22);
-            this.txtTim.TabIndex = 2;
-            this.txtTim.Text = "!Nhập thông tin cần tìm";
+            this.txtTim.TabIndex = 3;
+            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
             // 
             // rdSDT
             // 
@@ -198,7 +186,7 @@ namespace WindowsFormsApp1
             this.rdMaSo.Location = new System.Drawing.Point(132, 14);
             this.rdMaSo.Name = "rdMaSo";
             this.rdMaSo.Size = new System.Drawing.Size(67, 21);
-            this.rdMaSo.TabIndex = 2;
+            this.rdMaSo.TabIndex = 0;
             this.rdMaSo.TabStop = true;
             this.rdMaSo.Text = "MSSV";
             this.rdMaSo.UseVisualStyleBackColor = true;
@@ -209,7 +197,7 @@ namespace WindowsFormsApp1
             this.label1.Location = new System.Drawing.Point(59, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 17);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Tìm theo :";
             // 
             // menuStrip2
@@ -278,6 +266,40 @@ namespace WindowsFormsApp1
             this.tvwKhoa.Size = new System.Drawing.Size(404, 494);
             this.tvwKhoa.TabIndex = 2;
             // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(537, 39);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 23);
+            this.btnTim.TabIndex = 6;
+            this.btnTim.Text = "Tim";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.add;
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.xóaToolStripMenuItem.Text = "Thêm";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
+            // 
+            // xóaToolStripMenuItem1
+            // 
+            this.xóaToolStripMenuItem1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_delete_64;
+            this.xóaToolStripMenuItem1.Name = "xóaToolStripMenuItem1";
+            this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(126, 26);
+            this.xóaToolStripMenuItem1.Text = "Xóa";
+            this.xóaToolStripMenuItem1.Click += new System.EventHandler(this.xóaToolStripMenuItem1_Click);
+            // 
+            // realodToolStripMenuItem
+            // 
+            this.realodToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.restart;
+            this.realodToolStripMenuItem.Name = "realodToolStripMenuItem";
+            this.realodToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.realodToolStripMenuItem.Text = "Tải lại ";
+            this.realodToolStripMenuItem.Click += new System.EventHandler(this.realodToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -311,7 +333,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.RadioButton rdHoTen;
         private System.Windows.Forms.RadioButton rdMaSo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView LVSinhVien;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -327,6 +348,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ToolStripMenuItem jsonToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
+        public System.Windows.Forms.ListView LVSinhVien;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.ToolStripMenuItem realodToolStripMenuItem;
     }
 }
 

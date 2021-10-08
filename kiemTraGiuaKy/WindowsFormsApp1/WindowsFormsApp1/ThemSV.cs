@@ -22,8 +22,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.qlsv = qlsv;
-            this.listView = listView;
-            
+            this.listView = listView;           
         }
       
         private void frmThemSV_Load(object sender, EventArgs e)
@@ -55,14 +54,16 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Mã sinh viên đã tồn tại!", "Lỗi thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
+                
                 ListViewItem lvitem = new ListViewItem(sv.MSSV);
-                bool gt = false;
+                string gt = "Nữ";
                 if (rdNam.Checked)
                 {
-                    gt = true;
-                }
+                    gt= "Nam";
+                }       
                 lvitem.SubItems.Add(sv.HoVaTenLot);
                 lvitem.SubItems.Add(sv.Ten);
+                lvitem.SubItems.Add(gt);
                 lvitem.SubItems.Add(sv.NgaySinh.ToShortDateString());
                 lvitem.SubItems.Add(sv.Lop);
                 lvitem.SubItems.Add(sv.Khoa);
@@ -70,8 +71,8 @@ namespace WindowsFormsApp1
                 lvitem.SubItems.Add(sv.DiaChi);
                 listView.Items.Clear();
                 listView.Items.Add(lvitem);
-                MessageBox.Show("Thêm sinh viên thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                
+                MessageBox.Show("Thêm sinh viên thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);      
+            
             }
         }
 

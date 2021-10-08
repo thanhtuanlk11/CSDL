@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
     {
         List<SinhVien> sinhVienList;
         public readonly QuanLySinhVien qlsv;
-
+        private const string PlaceHolderText = "Nhập thông tin sinh viên cần tìm !!!!!";
         public Form1(QuanLySinhVien quanLySinhVien)
         {
              qlsv = quanLySinhVien;
@@ -144,6 +144,52 @@ namespace WindowsFormsApp1
         private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+     
+        private void FindSV(int sinvienID,string keywork)
+        {
+            
+
+        }
+        private void txtTim_TextChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            SinhVien sv = null;
+
+            if (rdMaSo.Checked)
+                sv = qlsv.danhSach.Find(s => s.MSSV == txtTim.Text);
+            else if (rdHoTen.Checked)
+                sv = qlsv.danhSach.Find(s => (s.HoVaTenLot +" "+s.Ten) == txtTim.Text);
+            else if (rdSDT.Checked)
+                sv = qlsv.danhSach.Find(s => s.SoDienThoai == txtTim.Text);          
+            
+            if (sv is null)
+            {
+                MessageBox.Show("Không tìm thấy, vui lòng kiểm tra lại!", "Lỗi nhập thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ListViewItem lvitem = new ListViewItem(sv.MSSV);
+            lvitem.SubItems.Add(sv.HoVaTenLot);
+            lvitem.SubItems.Add(sv.Ten);
+            lvitem.SubItems.Add("nam");
+            lvitem.SubItems.Add(sv.NgaySinh.ToShortDateString());
+            lvitem.SubItems.Add(sv.SoDienThoai);
+            lvitem.SubItems.Add(sv.Lop);
+            lvitem.SubItems.Add(sv.Khoa);
+            this.LVSinhVien.Items.Add(lvitem);
+            LVSinhVien.Items.Clear();
+            LVSinhVien.Items.Add(lvitem);
+           
+        }
+
+        private void realodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadListView();
         }
     }
 }

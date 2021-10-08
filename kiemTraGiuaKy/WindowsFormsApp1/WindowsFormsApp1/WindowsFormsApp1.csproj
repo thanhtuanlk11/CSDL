@@ -99,6 +99,7 @@
     <Content Include="Data\data.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\restart.png" />
     <None Include="Resources\icons8-delete-64.png" />
     <None Include="Resources\add.png" />
   </ItemGroup>

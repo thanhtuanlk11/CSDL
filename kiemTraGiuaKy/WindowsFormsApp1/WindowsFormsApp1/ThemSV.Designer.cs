@@ -30,7 +30,6 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.mtxtMaSo = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@ namespace WindowsFormsApp1
             this.cboKhoa = new System.Windows.Forms.ComboBox();
             this.btnLưu = new System.Windows.Forms.Button();
             this.cboLop = new System.Windows.Forms.ComboBox();
+            this.mtxtMaSo = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -59,14 +59,6 @@ namespace WindowsFormsApp1
             this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 19;
             this.label1.Text = "MSSV:";
-            // 
-            // mtxtMaSo
-            // 
-            this.mtxtMaSo.Location = new System.Drawing.Point(115, 22);
-            this.mtxtMaSo.Mask = "00000000";
-            this.mtxtMaSo.Name = "mtxtMaSo";
-            this.mtxtMaSo.Size = new System.Drawing.Size(176, 22);
-            this.mtxtMaSo.TabIndex = 0;
             // 
             // label3
             // 
@@ -254,6 +246,14 @@ namespace WindowsFormsApp1
             this.cboLop.TabIndex = 7;
             this.cboLop.SelectedIndexChanged += new System.EventHandler(this.cboLop_SelectedIndexChanged);
             // 
+            // mtxtMaSo
+            // 
+            this.mtxtMaSo.Location = new System.Drawing.Point(117, 22);
+            this.mtxtMaSo.Mask = "00000000";
+            this.mtxtMaSo.Name = "mtxtMaSo";
+            this.mtxtMaSo.Size = new System.Drawing.Size(176, 22);
+            this.mtxtMaSo.TabIndex = 0;
+            // 
             // frmThemSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -290,7 +290,6 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox mtxtMaSo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label2;
@@ -309,5 +308,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox cboKhoa;
         private System.Windows.Forms.Button btnLưu;
         private System.Windows.Forms.ComboBox cboLop;
+        private System.Windows.Forms.MaskedTextBox mtxtMaSo;
     }
 }
