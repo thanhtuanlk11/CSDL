@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
             this.mtxtSoCMND.Text = sv.SoCMND;
             this.mkbSDT.Text = sv.SDT;
             this.txtDiaChi.Text = sv.DiaChi;
- 
+            
         }
         //Thêm sv vào ListView
         private void ThemSV(SinhVien sv)

@@ -13,8 +13,10 @@ namespace WindowsFormsApp1
 {
     public partial class frmThemSV:Form
     {
+    
         
-        public List<SinhVien> ListSV;
+       public List<SinhVien> ListSV;
+ 
         QuanLySinhVien qlsv;
         ListView listView;
 
@@ -71,6 +73,7 @@ namespace WindowsFormsApp1
                 lvitem.SubItems.Add(sv.DiaChi);
                 listView.Items.Clear();
                 listView.Items.Add(lvitem);
+                
                 MessageBox.Show("Thêm sinh viên thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);      
             
             }

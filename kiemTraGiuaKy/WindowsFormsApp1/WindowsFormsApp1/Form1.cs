@@ -14,7 +14,9 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+       
         List<SinhVien> sinhVienList;
+        private ListView listView;
         public readonly QuanLySinhVien qlsv;
         private const string PlaceHolderText = "Nhập thông tin sinh viên cần tìm !!!!!";
         public Form1(QuanLySinhVien quanLySinhVien)
@@ -58,6 +60,18 @@ namespace WindowsFormsApp1
             }
             
         }
+        private SinhVien GetSinhVienLV(ListViewItem lvitem)
+        {
+            SinhVien sv = new SinhVien();
+            sv.MSSV = lvitem.SubItems[0].Text;
+            sv.HoVaTenLot = lvitem.SubItems[1].Text;
+            sv.Ten = lvitem.SubItems[2].Text;
+            sv.NgaySinh = DateTime.Parse(lvitem.SubItems[3].Text);
+            sv.SoDienThoai = lvitem.SubItems[4].Text;
+            sv.Lop = lvitem.SubItems[5].Text;
+            sv.Khoa = lvitem.SubItems[6].Text;
+            return sv;
+        }
         private void ShowTreeOnTreeView(List<Khoa> khoas)
         {
             tvwKhoa.Nodes.Clear();
@@ -78,6 +92,7 @@ namespace WindowsFormsApp1
             SinhVien sv = obj2 as SinhVien;
             return sv.MSSV.CompareTo(obj1);
         }
+       
 
         private void xóaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -140,6 +155,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
+        
 
         private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -190,6 +206,35 @@ namespace WindowsFormsApp1
         private void realodToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadListView();
+        }
+        private void ThietLapThongTin(SinhVien sv)
+        {
+            frmThemSV frm = new frmThemSV(qlsv, LVSinhVien);
+            frm.mtxtMaSo.Text = sv.MSSV;
+            frm.txtHoTen.Text = sv.HoVaTenLot;
+            frm.txtTen.Text = sv.Ten;
+            frm.mkbSDT.Text = sv.SoDienThoai;
+            frm.txtDiaChi.Text = sv.DiaChi;
+            frm.cboLop.Text = sv.Lop;
+            frm.cboKhoa.Text = sv.Khoa;  
+        }
+
+        private void LVSinhVien_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            frmThemSV frm = new frmThemSV(qlsv, LVSinhVien);
+            int count = this.LVSinhVien.CheckedItems.Count;
+            if (count > 0)
+            {
+                ListViewItem lvitem = this.LVSinhVien.CheckedItems[0];
+                SinhVien sv = GetSinhVienLV(lvitem);
+                ThietLapThongTin(sv);       
+                frm.ShowDialog();
+            }
+        }
+
+        private void LVSinhVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

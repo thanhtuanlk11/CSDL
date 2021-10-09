@@ -291,23 +291,23 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox mkbSDT;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton rdNam;
         private System.Windows.Forms.RadioButton rdNu;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboKhoa;
         private System.Windows.Forms.Button btnLưu;
-        private System.Windows.Forms.ComboBox cboLop;
-        private System.Windows.Forms.MaskedTextBox mtxtMaSo;
+        public System.Windows.Forms.TextBox txtHoTen;
+        public System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        public System.Windows.Forms.MaskedTextBox mkbSDT;
+        public System.Windows.Forms.TextBox txtDiaChi;
+        public System.Windows.Forms.TextBox txtTen;
+        public System.Windows.Forms.ComboBox cboKhoa;
+        public System.Windows.Forms.ComboBox cboLop;
+        public System.Windows.Forms.MaskedTextBox mtxtMaSo;
     }
 }

@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnTim = new System.Windows.Forms.Button();
             this.LVSinhVien = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,6 +42,9 @@ namespace WindowsFormsApp1
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.realodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.rdSDT = new System.Windows.Forms.RadioButton();
             this.rdHoTen = new System.Windows.Forms.RadioButton();
@@ -54,10 +58,6 @@ namespace WindowsFormsApp1
             this.inToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.tvwKhoa = new System.Windows.Forms.TreeView();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.realodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -78,6 +78,16 @@ namespace WindowsFormsApp1
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(537, 39);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 23);
+            this.btnTim.TabIndex = 6;
+            this.btnTim.Text = "Tim";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // LVSinhVien
             // 
@@ -101,6 +111,8 @@ namespace WindowsFormsApp1
             this.LVSinhVien.TabIndex = 5;
             this.LVSinhVien.UseCompatibleStateImageBehavior = false;
             this.LVSinhVien.View = System.Windows.Forms.View.Details;
+            this.LVSinhVien.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.LVSinhVien_ItemChecked);
+            this.LVSinhVien.SelectedIndexChanged += new System.EventHandler(this.LVSinhVien_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -150,6 +162,30 @@ namespace WindowsFormsApp1
             this.realodToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(127, 82);
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.add;
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.xóaToolStripMenuItem.Text = "Thêm";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
+            // 
+            // xóaToolStripMenuItem1
+            // 
+            this.xóaToolStripMenuItem1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_delete_64;
+            this.xóaToolStripMenuItem1.Name = "xóaToolStripMenuItem1";
+            this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(126, 26);
+            this.xóaToolStripMenuItem1.Text = "Xóa";
+            this.xóaToolStripMenuItem1.Click += new System.EventHandler(this.xóaToolStripMenuItem1_Click);
+            // 
+            // realodToolStripMenuItem
+            // 
+            this.realodToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.restart;
+            this.realodToolStripMenuItem.Name = "realodToolStripMenuItem";
+            this.realodToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.realodToolStripMenuItem.Text = "Tải lại ";
+            this.realodToolStripMenuItem.Click += new System.EventHandler(this.realodToolStripMenuItem_Click);
             // 
             // txtTim
             // 
@@ -217,7 +253,7 @@ namespace WindowsFormsApp1
             // nhậpToolStripMenuItem
             // 
             this.nhậpToolStripMenuItem.Name = "nhậpToolStripMenuItem";
-            this.nhậpToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.nhậpToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.nhậpToolStripMenuItem.Text = "Nhập";
             // 
             // lưuToolStripMenuItem
@@ -226,7 +262,7 @@ namespace WindowsFormsApp1
             this.excelToolStripMenuItem,
             this.jsonToolStripMenuItem});
             this.lưuToolStripMenuItem.Name = "lưuToolStripMenuItem";
-            this.lưuToolStripMenuItem.Size = new System.Drawing.Size(47, 26);
+            this.lưuToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.lưuToolStripMenuItem.Text = "Lưu";
             // 
             // excelToolStripMenuItem
@@ -245,7 +281,7 @@ namespace WindowsFormsApp1
             // inToolStripMenuItem
             // 
             this.inToolStripMenuItem.Name = "inToolStripMenuItem";
-            this.inToolStripMenuItem.Size = new System.Drawing.Size(35, 26);
+            this.inToolStripMenuItem.Size = new System.Drawing.Size(35, 24);
             this.inToolStripMenuItem.Text = "In";
             // 
             // label2
@@ -265,40 +301,6 @@ namespace WindowsFormsApp1
             this.tvwKhoa.Name = "tvwKhoa";
             this.tvwKhoa.Size = new System.Drawing.Size(402, 509);
             this.tvwKhoa.TabIndex = 2;
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(537, 39);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 23);
-            this.btnTim.TabIndex = 6;
-            this.btnTim.Text = "Tim";
-            this.btnTim.UseVisualStyleBackColor = true;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // xóaToolStripMenuItem
-            // 
-            this.xóaToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.add;
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
-            this.xóaToolStripMenuItem.Text = "Thêm";
-            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
-            // 
-            // xóaToolStripMenuItem1
-            // 
-            this.xóaToolStripMenuItem1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_delete_64;
-            this.xóaToolStripMenuItem1.Name = "xóaToolStripMenuItem1";
-            this.xóaToolStripMenuItem1.Size = new System.Drawing.Size(126, 26);
-            this.xóaToolStripMenuItem1.Text = "Xóa";
-            this.xóaToolStripMenuItem1.Click += new System.EventHandler(this.xóaToolStripMenuItem1_Click);
-            // 
-            // realodToolStripMenuItem
-            // 
-            this.realodToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.restart;
-            this.realodToolStripMenuItem.Name = "realodToolStripMenuItem";
-            this.realodToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
-            this.realodToolStripMenuItem.Text = "Tải lại ";
-            this.realodToolStripMenuItem.Click += new System.EventHandler(this.realodToolStripMenuItem_Click);
             // 
             // Form1
             // 

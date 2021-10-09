@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
     public partial class tuychon : Form
     {
         public List<SinhVien> listSV;
-
+      
         QuanLySinhVien qlsv;
         ListView listView;
         public tuychon(QuanLySinhVien qlsv, ListView listView)
