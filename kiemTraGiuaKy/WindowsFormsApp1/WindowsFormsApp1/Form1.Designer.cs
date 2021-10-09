@@ -110,7 +110,7 @@ namespace WindowsFormsApp1
             // columnHeader2
             // 
             this.columnHeader2.Text = "Họ tên Lót";
-            this.columnHeader2.Width = 100;
+            this.columnHeader2.Width = 120;
             // 
             // columnHeader3
             // 
@@ -209,7 +209,7 @@ namespace WindowsFormsApp1
             this.inToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1470, 30);
+            this.menuStrip2.Size = new System.Drawing.Size(1470, 28);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
@@ -263,7 +263,7 @@ namespace WindowsFormsApp1
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tvwKhoa.Location = new System.Drawing.Point(15, 58);
             this.tvwKhoa.Name = "tvwKhoa";
-            this.tvwKhoa.Size = new System.Drawing.Size(404, 494);
+            this.tvwKhoa.Size = new System.Drawing.Size(402, 509);
             this.tvwKhoa.TabIndex = 2;
             // 
             // btnTim
