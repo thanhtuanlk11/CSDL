@@ -238,5 +238,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void tvwKhoa_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }

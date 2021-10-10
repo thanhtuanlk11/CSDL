@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
         {
             _newsSinhVien.Save(_khoas);
         }
-       
+       //mệt
 
   
       

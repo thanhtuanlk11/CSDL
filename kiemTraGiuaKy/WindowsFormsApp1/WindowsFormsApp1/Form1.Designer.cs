@@ -301,6 +301,7 @@ namespace WindowsFormsApp1
             this.tvwKhoa.Name = "tvwKhoa";
             this.tvwKhoa.Size = new System.Drawing.Size(402, 509);
             this.tvwKhoa.TabIndex = 2;
+            this.tvwKhoa.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwKhoa_AfterSelect);
             // 
             // Form1
             // 
