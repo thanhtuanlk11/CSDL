@@ -225,10 +225,12 @@ namespace WindowsFormsApp1
             int count = this.LVSinhVien.CheckedItems.Count;
             if (count > 0)
             {
+                frmThemSV frmThem = new frmThemSV(qlsv, LVSinhVien);
+                frmThem.Show();
                 ListViewItem lvitem = this.LVSinhVien.CheckedItems[0];
                 SinhVien sv = GetSinhVienLV(lvitem);
                 ThietLapThongTin(sv);       
-            
+                
             }
         }
 
