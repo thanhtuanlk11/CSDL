@@ -66,10 +66,10 @@ namespace WindowsFormsApp1
             sv.MSSV = lvitem.SubItems[0].Text;
             sv.HoVaTenLot = lvitem.SubItems[1].Text;
             sv.Ten = lvitem.SubItems[2].Text;
-            sv.NgaySinh = DateTime.Parse(lvitem.SubItems[3].Text);
-            sv.SoDienThoai = lvitem.SubItems[4].Text;
-            sv.Lop = lvitem.SubItems[5].Text;
-            sv.Khoa = lvitem.SubItems[6].Text;
+            
+            sv.SoDienThoai = lvitem.SubItems[3].Text;
+            sv.Lop = lvitem.SubItems[4].Text;
+            sv.Khoa = lvitem.SubItems[5].Text;
             return sv;
         }
         private void ShowTreeOnTreeView(List<Khoa> khoas)
@@ -123,7 +123,7 @@ namespace WindowsFormsApp1
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmThemSV frmThem = new frmThemSV(qlsv,LVSinhVien);
-            frmThem.ShowDialog();
+            frmThem.Show();
             LoadSV(frmThem.ListSV);
             
         }
@@ -228,7 +228,7 @@ namespace WindowsFormsApp1
                 ListViewItem lvitem = this.LVSinhVien.CheckedItems[0];
                 SinhVien sv = GetSinhVienLV(lvitem);
                 ThietLapThongTin(sv);       
-                frm.ShowDialog();
+            
             }
         }
 
