@@ -14,7 +14,8 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-       
+        
+
         List<SinhVien> sinhVienList;
         private ListView listView;
         public readonly QuanLySinhVien qlsv;
@@ -118,14 +119,15 @@ namespace WindowsFormsApp1
         private void LoadSV(List<SinhVien> dsSV)
         {
             this.LVSinhVien.Items.Clear();
+      
             qlsv.danhSach.ForEach(sv => ThemSV(sv));
+            
         }
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmThemSV frmThem = new frmThemSV(qlsv,LVSinhVien);
             frmThem.Show();
-            LoadSV(frmThem.ListSV);
-            
+            LoadSV(frmThem.ListSV);  
         }
 
         private void excelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,13 +226,11 @@ namespace WindowsFormsApp1
             frmThemSV frm = new frmThemSV(qlsv, LVSinhVien);
             int count = this.LVSinhVien.CheckedItems.Count;
             if (count > 0)
-            {
-                frmThemSV frmThem = new frmThemSV(qlsv, LVSinhVien);
-                frmThem.Show();
+            {                 
                 ListViewItem lvitem = this.LVSinhVien.CheckedItems[0];
                 SinhVien sv = GetSinhVienLV(lvitem);
-                ThietLapThongTin(sv);       
-                
+                ThietLapThongTin(sv);
+                frm.Show();
             }
         }
 

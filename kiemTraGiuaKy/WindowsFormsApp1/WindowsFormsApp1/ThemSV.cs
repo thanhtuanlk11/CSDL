@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Model;
+using WindowsFormsApp1.IO;
 
 namespace WindowsFormsApp1
 {
@@ -45,8 +46,10 @@ namespace WindowsFormsApp1
             sv.DiaChi = this.txtDiaChi.Text;
             return sv;
         }
+       
         private void btnLưu_Click_1(object sender, EventArgs e)
         {
+            
             SinhVien sv = GetSinhVien();
             SinhVien kq = qlsv.Tim(sv.MSSV, delegate (object obj1, object obj2)
             {
@@ -71,6 +74,7 @@ namespace WindowsFormsApp1
                 lvitem.SubItems.Add(sv.Khoa);
                 lvitem.SubItems.Add(sv.SoDienThoai);
                 lvitem.SubItems.Add(sv.DiaChi);
+                this.listView.Items.Add(lvitem);
                 listView.Items.Clear();
                 listView.Items.Add(lvitem);
                 
