@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -78,8 +79,10 @@ namespace WindowsFormsApp1
                 }
             return svresult;
         }
+ 
         public void DocTuFile()
         {
+
             string filename = "SinhVien.txt", t;
             string[] s;
 
@@ -102,6 +105,16 @@ namespace WindowsFormsApp1
                 sv.Khoa = s[4];
                 this.Them(sv);
             }
+        }
+        public static List<SinhVien> DocDanhSach(string tuKhoa = "", string filePath = "E:\\sinhvien.json")
+        {
+            List<SinhVien> ds = new List<SinhVien>();
+            StreamReader reader = new StreamReader(new FileStream(filePath, FileMode.Open));
+            string json = reader.ReadLine();
+            ds = JsonConvert.DeserializeObject<List<SinhVien>>(json);
+            reader.Close();
+            return ds;
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Office.Interop.Excel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        static string filePath = "E:\\SinhVien,.json";
+        static string filePath = "E:\\sinhVien.json";
 
         List<SinhVien> sinhVienList;
         private ListView listView;
@@ -27,13 +28,12 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
         }
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
             ShowTreeOnTreeView(qlsv.GetNew());
             sinhVienList = new List<SinhVien>();
             qlsv.DocTuFile();
+            
             LoadListView();
         }
         //Thêm sv vào ListView
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
             }
             
         }
-        private SinhVien GetSinhVienLV(ListViewItem lvitem)
+        public SinhVien GetSinhVienLV(ListViewItem lvitem)
         {
             SinhVien sv = new SinhVien();
             sv.MSSV = lvitem.SubItems[0].Text;
@@ -89,7 +89,7 @@ namespace WindowsFormsApp1
             }
             tvwKhoa.ExpandAll();
         }
-        private int SoSanhTheoMa(object obj1, object obj2)
+        public int SoSanhTheoMa(object obj1, object obj2)
         {
             SinhVien sv = obj2 as SinhVien;
             return sv.MSSV.CompareTo(obj1);
@@ -117,7 +117,7 @@ namespace WindowsFormsApp1
                 return;
             }
         }
-        private void LoadSV(List<SinhVien> dsSV)
+        public void LoadSV(List<SinhVien> dsSV)
         {
             this.LVSinhVien.Items.Clear();
       
@@ -134,84 +134,56 @@ namespace WindowsFormsApp1
         private void excelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LuuFile();
-            Application.Exit();
+           
         }
         private async void LuuFile()
         {
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "*|.xlsx", ValidateNames = true })
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "SinhVien (.xlsx)|*.xlsx",InitialDirectory="D:\\", ValidateNames = true })
             {
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Lưu thành công","thông báo");
-                    using (TextWriter tw = new StreamWriter(new FileStream(sfd.FileName, FileMode.Create), Encoding.UTF8))
+                    Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                    Workbook wb = app.Workbooks.Add(XlSheetType.xlWorksheet);
+                    Worksheet ws = (Worksheet)app.ActiveSheet;
+                    app.Visible = false;
+                    int i = 1, j = 1;
+
+                    foreach ( ListViewItem item in LVSinhVien.Items)
                     {
-                        foreach (ListViewItem item in LVSinhVien.Items)
+                        ws.Cells[1, 1] = "Mã số Sinh Viên";
+                        ws.Cells[1, 2] = " Họ và tên lót";
+                        ws.Cells[1, 3] = "Tên";
+                        ws.Cells[1, 4] = " Giới tính";
+                        ws.Cells[1, 5] = " Ngày sinh";
+                        ws.Cells[1, 6] = " Số điện thoại";
+                        ws.Cells[1, 7] = " Lớp";
+                        ws.Cells[1, 8] = " Khoa";
+                        ws.Cells[i, j] = item.Text.ToString();
+                        foreach (ListViewItem.ListViewSubItem item1 in item.SubItems)
                         {
-                            await tw.WriteLineAsync(item.SubItems[0].Text + "\t"
-                                + item.SubItems[1].Text + "\t"
-                                + item.SubItems[2].Text + "\t"
-                                + item.SubItems[3].Text + "\t"
-                                + item.SubItems[4].Text + "\t"
-                                + item.SubItems[5].Text + "\t"
-                                + item.SubItems[6].Text + "\t");
+                            ws.Cells[i, j] = item1.Text.ToString();
+                            j++;
                         }
+                        j = 1;
+                        i++;
                     }
-                 
+                    wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing);
+                    MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK);
                 }
             }
         }
-        public static void luuDanhSach(List<SinhVien> sv)
+        
+        public static void luuDanhSach(List<SinhVien> ds)
         {
             StreamWriter writer = new StreamWriter(filePath);
-            string json = JsonConvert.SerializeObject(sv);
+            string json = JsonConvert.SerializeObject(ds);
             writer.WriteLine(json);
             writer.Close();
-        }
-
-        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
 
         }
-     
-        private void FindSV(int sinvienID,string keywork)
+        private void jsonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-
-        }
-        private void txtTim_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-            SinhVien sv = null;
-
-            if (rdMaSo.Checked)
-                sv = qlsv.danhSach.Find(s => s.MSSV == txtTim.Text);
-            else if (rdHoTen.Checked)
-                sv = qlsv.danhSach.Find(s => (s.HoVaTenLot +" "+s.Ten) == txtTim.Text);
-            else if (rdSDT.Checked)
-                sv = qlsv.danhSach.Find(s => s.SoDienThoai == txtTim.Text);          
-            
-            if (sv is null)
-            {
-                MessageBox.Show("Không tìm thấy, vui lòng kiểm tra lại!", "Lỗi nhập thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            ListViewItem lvitem = new ListViewItem(sv.MSSV);
-            lvitem.SubItems.Add(sv.HoVaTenLot);
-            lvitem.SubItems.Add(sv.Ten);
-            lvitem.SubItems.Add("nam");
-            lvitem.SubItems.Add(sv.NgaySinh.ToShortDateString());
-            lvitem.SubItems.Add(sv.SoDienThoai);
-            lvitem.SubItems.Add(sv.Lop);
-            lvitem.SubItems.Add(sv.Khoa);
-            this.LVSinhVien.Items.Add(lvitem);
-            LVSinhVien.Items.Clear();
-            LVSinhVien.Items.Add(lvitem);
-           
+            luuDanhSach(sinhVienList);
         }
 
         private void realodToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,20 +203,56 @@ namespace WindowsFormsApp1
                 frm.mtxtMaSo.Text = sv.MSSV;
                 frm.txtHoTen.Text = sv.HoVaTenLot;
                 frm.txtTen.Text = sv.Ten;
-                frm.mkbSDT.Text = sv.SoDienThoai;
-                frm.txtDiaChi.Text = sv.DiaChi;
-                frm.cboLop.Text = sv.Lop;
                 frm.cboKhoa.Text = sv.Khoa;
+                frm.cboLop.Text = sv.Lop;
+                frm.txtDiaChi.Text = sv.DiaChi;
                 frm.Show();
             }
         }
 
-        private void LVSinhVien_SelectedIndexChanged(object sender, EventArgs e)
+        private void tvwKhoa_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
         }
 
-        private void tvwKhoa_AfterSelect(object sender, TreeViewEventArgs e)
+        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void txtTim_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SinhVien sv = null;
+
+                if (rdMaSo.Checked)
+                    sv = qlsv.danhSach.Find(s => s.MSSV == txtTim.Text);
+                else if (rdHoTen.Checked)
+                    sv = qlsv.danhSach.Find(s => (s.HoVaTenLot + " " + s.Ten) == txtTim.Text);
+                else if (rdSDT.Checked)
+                    sv = qlsv.danhSach.Find(s => s.SoDienThoai == txtTim.Text);
+
+                if (sv is null)
+                {
+                    MessageBox.Show("Không tìm thấy, vui lòng kiểm tra lại!", "Lỗi nhập thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                ListViewItem lvitem = new ListViewItem(sv.MSSV);
+                lvitem.SubItems.Add(sv.HoVaTenLot);
+                lvitem.SubItems.Add(sv.Ten);
+                lvitem.SubItems.Add("nam");
+                lvitem.SubItems.Add(sv.NgaySinh.ToShortDateString());
+                lvitem.SubItems.Add(sv.SoDienThoai);
+                lvitem.SubItems.Add(sv.Lop);
+                lvitem.SubItems.Add(sv.Khoa);
+                this.LVSinhVien.Items.Add(lvitem);
+                LVSinhVien.Items.Clear();
+                LVSinhVien.Items.Add(lvitem);
+            }
+        }
+
+        private void LVSinhVien_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

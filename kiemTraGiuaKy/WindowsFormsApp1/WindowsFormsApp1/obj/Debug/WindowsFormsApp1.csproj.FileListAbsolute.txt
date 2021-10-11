@@ -10,3 +10,6 @@ E:\three year\from C#\CSDL\kiemTraGiuaKy\WindowsFormsApp1\WindowsFormsApp1\obj\D
 E:\three year\from C#\CSDL\kiemTraGiuaKy\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 E:\three year\from C#\CSDL\kiemTraGiuaKy\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Data\data.txt
 E:\three year\from C#\CSDL\kiemTraGiuaKy\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmThemSV.resources
+E:\three year\from C#\CSDL\kiemTraGiuaKy\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+E:\three year\from C#\CSDL\kiemTraGiuaKy\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+E:\three year\from C#\CSDL\kiemTraGiuaKy\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete

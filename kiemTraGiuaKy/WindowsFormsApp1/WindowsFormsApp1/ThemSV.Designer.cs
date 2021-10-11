@@ -194,7 +194,6 @@ namespace WindowsFormsApp1
             // 
             // cboKhoa
             // 
-            this.cboKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKhoa.FormattingEnabled = true;
             this.cboKhoa.Items.AddRange(new object[] {
             "Khoa Công nghệ thông tin",
@@ -204,6 +203,7 @@ namespace WindowsFormsApp1
             this.cboKhoa.Name = "cboKhoa";
             this.cboKhoa.Size = new System.Drawing.Size(266, 24);
             this.cboKhoa.TabIndex = 9;
+            this.cboKhoa.Text = "Khoa Công Nghệ Thông Tin";
             // 
             // btnLưu
             // 
@@ -217,7 +217,6 @@ namespace WindowsFormsApp1
             // 
             // cboLop
             // 
-            this.cboLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLop.FormattingEnabled = true;
             this.cboLop.Items.AddRange(new object[] {
             "CTK44B",
@@ -244,12 +243,13 @@ namespace WindowsFormsApp1
             this.cboLop.Name = "cboLop";
             this.cboLop.Size = new System.Drawing.Size(266, 24);
             this.cboLop.TabIndex = 7;
+            this.cboLop.Text = "CTK43";
             this.cboLop.SelectedIndexChanged += new System.EventHandler(this.cboLop_SelectedIndexChanged);
             // 
             // mtxtMaSo
             // 
             this.mtxtMaSo.Location = new System.Drawing.Point(117, 22);
-            this.mtxtMaSo.Mask = "00000000";
+            this.mtxtMaSo.Mask = "0000000";
             this.mtxtMaSo.Name = "mtxtMaSo";
             this.mtxtMaSo.Size = new System.Drawing.Size(176, 22);
             this.mtxtMaSo.TabIndex = 0;
@@ -295,8 +295,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton rdNam;
-        private System.Windows.Forms.RadioButton rdNu;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -309,5 +307,7 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.ComboBox cboLop;
         public System.Windows.Forms.MaskedTextBox mtxtMaSo;
         public System.Windows.Forms.Button btnLưu;
+        public System.Windows.Forms.RadioButton rdNam;
+        public System.Windows.Forms.RadioButton rdNu;
     }
 }

@@ -56,7 +56,17 @@ namespace WindowsFormsApp1
                 return (obj2 as SinhVien).MSSV.CompareTo(obj1.ToString());
             });
             if (kq != null)
-                MessageBox.Show("Mã sinh viên đã tồn tại!", "Lỗi thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                Form1 frm = new Form1(qlsv);
+                MessageBox.Show("Mã sinh viên đã tồn tại! đã cập nhật thông tin", "Lỗi thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                bool kqsua;
+                kqsua = qlsv.Sua(sv, sv.MSSV, frm.SoSanhTheoMa);
+                if (kqsua)
+                {
+                    frm.LoadListView();
+                }
+                    
+            }            
             else
             {
                 
@@ -70,17 +80,15 @@ namespace WindowsFormsApp1
                 lvitem.SubItems.Add(sv.Ten);
                 lvitem.SubItems.Add(gt);
                 lvitem.SubItems.Add(sv.NgaySinh.ToShortDateString());
-                lvitem.SubItems.Add(sv.Lop);
-                lvitem.SubItems.Add(sv.Khoa);
                 lvitem.SubItems.Add(sv.SoDienThoai);
+                lvitem.SubItems.Add(sv.Lop);
+                lvitem.SubItems.Add(sv.Khoa);                
                 lvitem.SubItems.Add(sv.DiaChi);
                 this.listView.Items.Add(lvitem);
-                listView.Items.Clear();
-                listView.Items.Add(lvitem);
+                            
+                MessageBox.Show("Thêm sinh viên thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 
-                MessageBox.Show("Thêm sinh viên thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);      
-                
-            
+
             }
         }
 

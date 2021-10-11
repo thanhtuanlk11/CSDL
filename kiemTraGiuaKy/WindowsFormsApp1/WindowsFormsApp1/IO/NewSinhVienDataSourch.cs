@@ -68,7 +68,7 @@ namespace WindowsFormsApp1.IO
                         writer.WriteLine("@{0}", khoa.Name);
                         foreach (var lop in khoa.Lops)
                         {
-                            writer.WriteLine("#{0}^{1}", lop.Name, lop.SinhVienss);
+                            writer.WriteLine("#{0}", lop.Name);
                         }
                     }
                 }
@@ -89,7 +89,7 @@ namespace WindowsFormsApp1.IO
             return new Lop()
             {
                 Name = parts[0].Trim(),
-                SinhVienss = parts[1].Trim()
+               
             };
         }
         

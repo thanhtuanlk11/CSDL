@@ -31,7 +31,6 @@ namespace WindowsFormsApp1
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTim = new System.Windows.Forms.Button();
             this.LVSinhVien = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,7 +64,6 @@ namespace WindowsFormsApp1
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnTim);
             this.groupBox1.Controls.Add(this.LVSinhVien);
             this.groupBox1.Controls.Add(this.txtTim);
             this.groupBox1.Controls.Add(this.rdSDT);
@@ -78,16 +76,6 @@ namespace WindowsFormsApp1
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(537, 39);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 23);
-            this.btnTim.TabIndex = 6;
-            this.btnTim.Text = "Tim";
-            this.btnTim.UseVisualStyleBackColor = true;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // LVSinhVien
             // 
@@ -193,7 +181,7 @@ namespace WindowsFormsApp1
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(346, 22);
             this.txtTim.TabIndex = 3;
-            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
+            this.txtTim.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTim_KeyDown);
             // 
             // rdSDT
             // 
@@ -245,7 +233,7 @@ namespace WindowsFormsApp1
             this.inToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1470, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1470, 30);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
@@ -277,6 +265,7 @@ namespace WindowsFormsApp1
             this.jsonToolStripMenuItem.Name = "jsonToolStripMenuItem";
             this.jsonToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
             this.jsonToolStripMenuItem.Text = "Json";
+            this.jsonToolStripMenuItem.Click += new System.EventHandler(this.jsonToolStripMenuItem_Click);
             // 
             // inToolStripMenuItem
             // 
@@ -352,7 +341,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem jsonToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
         public System.Windows.Forms.ListView LVSinhVien;
-        private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.ToolStripMenuItem realodToolStripMenuItem;
     }
 }
