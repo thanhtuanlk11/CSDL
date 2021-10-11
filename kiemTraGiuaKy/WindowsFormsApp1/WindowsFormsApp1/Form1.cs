@@ -224,7 +224,7 @@ namespace WindowsFormsApp1
                 frm.txtTen.Text = sv.Ten;
                 frm.mkbSDT.Text = sv.SoDienThoai;
                 frm.txtDiaChi.Text = sv.DiaChi;
-                frm.cboLop.SelectedText = sv.Lop;
+                frm.cboLop.Text = sv.Lop;
                 frm.cboKhoa.Text = sv.Khoa;
                 frm.Show();
             }
