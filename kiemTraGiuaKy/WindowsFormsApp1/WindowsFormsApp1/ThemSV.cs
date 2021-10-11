@@ -79,6 +79,7 @@ namespace WindowsFormsApp1
                 listView.Items.Add(lvitem);
                 
                 MessageBox.Show("Thêm sinh viên thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);      
+                
             
             }
         }

@@ -300,7 +300,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnLưu;
         public System.Windows.Forms.TextBox txtHoTen;
         public System.Windows.Forms.DateTimePicker dtpNgaySinh;
         public System.Windows.Forms.MaskedTextBox mkbSDT;
@@ -309,5 +308,6 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.ComboBox cboKhoa;
         public System.Windows.Forms.ComboBox cboLop;
         public System.Windows.Forms.MaskedTextBox mtxtMaSo;
+        public System.Windows.Forms.Button btnLưu;
     }
 }

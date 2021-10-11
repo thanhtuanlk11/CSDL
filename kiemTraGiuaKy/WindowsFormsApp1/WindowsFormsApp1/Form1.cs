@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        
+       
 
         List<SinhVien> sinhVienList;
         private ListView listView;
@@ -209,27 +209,23 @@ namespace WindowsFormsApp1
         {
             LoadListView();
         }
-        private void ThietLapThongTin(SinhVien sv)
-        {
-            frmThemSV frm = new frmThemSV(qlsv, LVSinhVien);
-            frm.mtxtMaSo.Text = sv.MSSV;
-            frm.txtHoTen.Text = sv.HoVaTenLot;
-            frm.txtTen.Text = sv.Ten;
-            frm.mkbSDT.Text = sv.SoDienThoai;
-            frm.txtDiaChi.Text = sv.DiaChi;
-            frm.cboLop.Text = sv.Lop;
-            frm.cboKhoa.Text = sv.Khoa;  
-        }
+        
 
         private void LVSinhVien_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            frmThemSV frm = new frmThemSV(qlsv, LVSinhVien);
+            frmThemSV frm = new frmThemSV(qlsv, listView);
             int count = this.LVSinhVien.CheckedItems.Count;
             if (count > 0)
             {                 
                 ListViewItem lvitem = this.LVSinhVien.CheckedItems[0];
                 SinhVien sv = GetSinhVienLV(lvitem);
-                ThietLapThongTin(sv);
+                frm.mtxtMaSo.Text = sv.MSSV;
+                frm.txtHoTen.Text = sv.HoVaTenLot;
+                frm.txtTen.Text = sv.Ten;
+                frm.mkbSDT.Text = sv.SoDienThoai;
+                frm.txtDiaChi.Text = sv.DiaChi;
+                frm.cboLop.SelectedText = sv.Lop;
+                frm.cboKhoa.Text = sv.Khoa;
                 frm.Show();
             }
         }
