@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-       
+        static string filePath = "E:\\SinhVien,.json";
 
         List<SinhVien> sinhVienList;
         private ListView listView;
@@ -159,7 +160,13 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        
+        public static void luuDanhSach(List<SinhVien> sv)
+        {
+            StreamWriter writer = new StreamWriter(filePath);
+            string json = JsonConvert.SerializeObject(sv);
+            writer.WriteLine(json);
+            writer.Close();
+        }
 
         private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
