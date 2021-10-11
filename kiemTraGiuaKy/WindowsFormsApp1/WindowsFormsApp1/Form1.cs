@@ -141,6 +141,7 @@ namespace WindowsFormsApp1
             {
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
+                    MessageBox.Show("Lưu thành công","thông báo");
                     using (TextWriter tw = new StreamWriter(new FileStream(sfd.FileName, FileMode.Create), Encoding.UTF8))
                     {
                         foreach (ListViewItem item in LVSinhVien.Items)
@@ -154,6 +155,7 @@ namespace WindowsFormsApp1
                                 + item.SubItems[6].Text + "\t");
                         }
                     }
+                 
                 }
             }
         }
