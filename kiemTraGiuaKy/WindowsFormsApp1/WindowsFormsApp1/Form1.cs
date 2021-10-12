@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             ShowTreeOnTreeView(qlsv.GetNew());
             sinhVienList = new List<SinhVien>();
             qlsv.DocTuFile();
-            
+            SetUpSearchInputText();
             LoadListView();
         }
         //Thêm sv vào ListView
@@ -241,6 +241,22 @@ namespace WindowsFormsApp1
                 LVSinhVien.Items.Clear();
                 LVSinhVien.Items.Add(lvitem);
             }
+        }
+        private void SetUpSearchInputText()
+        {
+            txtTim.Text = PlaceHolderText;
+            txtTim.GotFocus += RemovePlaceHolderText;
+            txtTim.LostFocus += ShowPlaceHolderText;
+        }
+        private void ShowPlaceHolderText(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTim.Text))
+                txtTim.Text = PlaceHolderText;
+        }
+        private void RemovePlaceHolderText(object sender,EventArgs e)
+        {
+            if (txtTim.Text == PlaceHolderText)
+                txtTim.Text = "";
         }
     }
 }
