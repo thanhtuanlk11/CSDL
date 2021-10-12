@@ -28,9 +28,7 @@ namespace WindowsFormsApp1
             this.listView = listView;           
         }
       
-        private void frmThemSV_Load(object sender, EventArgs e)
-        {
-        }
+
         private SinhVien GetSinhVien()
         {
             SinhVien sv = new SinhVien();
@@ -90,11 +88,6 @@ namespace WindowsFormsApp1
                 
 
             }
-        }
-
-        private void cboLop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
        
     }

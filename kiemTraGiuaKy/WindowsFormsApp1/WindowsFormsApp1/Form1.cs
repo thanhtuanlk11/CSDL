@@ -210,15 +210,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void tvwKhoa_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
         private void txtTim_KeyDown(object sender, KeyEventArgs e)
         {
@@ -250,11 +241,6 @@ namespace WindowsFormsApp1
                 LVSinhVien.Items.Clear();
                 LVSinhVien.Items.Add(lvitem);
             }
-        }
-
-        private void LVSinhVien_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

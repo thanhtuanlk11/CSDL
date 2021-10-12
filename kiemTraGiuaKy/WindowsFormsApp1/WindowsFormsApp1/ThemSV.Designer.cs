@@ -244,7 +244,7 @@ namespace WindowsFormsApp1
             this.cboLop.Size = new System.Drawing.Size(266, 24);
             this.cboLop.TabIndex = 7;
             this.cboLop.Text = "CTK43";
-            this.cboLop.SelectedIndexChanged += new System.EventHandler(this.cboLop_SelectedIndexChanged);
+         
             // 
             // mtxtMaSo
             // 
@@ -281,7 +281,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Name = "frmThemSV";
             this.Text = "StudentInfo";
-            this.Load += new System.EventHandler(this.frmThemSV_Load);
+          
             this.ResumeLayout(false);
             this.PerformLayout();
 

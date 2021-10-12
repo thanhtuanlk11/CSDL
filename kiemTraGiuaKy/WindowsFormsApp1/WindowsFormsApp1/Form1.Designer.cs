@@ -100,7 +100,7 @@ namespace WindowsFormsApp1
             this.LVSinhVien.UseCompatibleStateImageBehavior = false;
             this.LVSinhVien.View = System.Windows.Forms.View.Details;
             this.LVSinhVien.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.LVSinhVien_ItemChecked);
-            this.LVSinhVien.SelectedIndexChanged += new System.EventHandler(this.LVSinhVien_SelectedIndexChanged);
+            
             // 
             // columnHeader1
             // 
@@ -236,7 +236,7 @@ namespace WindowsFormsApp1
             this.menuStrip2.Size = new System.Drawing.Size(1470, 30);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
-            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
+            
             // 
             // nhậpToolStripMenuItem
             // 
@@ -290,7 +290,7 @@ namespace WindowsFormsApp1
             this.tvwKhoa.Name = "tvwKhoa";
             this.tvwKhoa.Size = new System.Drawing.Size(402, 509);
             this.tvwKhoa.TabIndex = 2;
-            this.tvwKhoa.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwKhoa_AfterSelect);
+    
             // 
             // Form1
             // 
