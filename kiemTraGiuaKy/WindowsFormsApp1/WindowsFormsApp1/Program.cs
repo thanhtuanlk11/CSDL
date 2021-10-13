@@ -15,12 +15,9 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
-            INewSinhVien sinhvien = new NewSinhVienDataSourch();
-            var manager = new QuanLySinhVien(sinhvien);
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(manager));
+            Application.Run(new Form1());
         }
     }
 }

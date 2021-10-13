@@ -15,5 +15,14 @@ namespace WindowsFormsApp1.Model
         {
             sinhViens = new List<SinhVien>();
         }
+        public void ThemSinhVien(SinhVien nSinhvien)
+        {
+            sinhViens.Add(nSinhvien);
+        }
+
+        public void XoaSinhVien(string SinhViens)
+        {
+            sinhViens.RemoveAll(p => p.MSSV == SinhViens);
+        }
     }
 }

@@ -14,81 +14,131 @@ namespace WindowsFormsApp1
 {
     public partial class frmThemSV:Form
     {
-    
-        
-       public List<SinhVien> ListSV;
- 
-        QuanLySinhVien qlsv;
-        ListView listView;
+        private readonly NewSinhVienDataSourch _NewSinhVienDataSourch;
+        private bool _upDate;
+        public SinhVien sv;
+        public bool hasChange { get; set; }
 
-        public frmThemSV(QuanLySinhVien qlsv, ListView listView)
+
+
+        public frmThemSV(NewSinhVienDataSourch importExport, bool upDate = false)
         {
+            _NewSinhVienDataSourch = importExport;
+            _upDate = upDate;
             InitializeComponent();
-            this.qlsv = qlsv;
-            this.listView = listView;           
-        }
-      
 
+        }
+        public void comboboxLop(string tenLop)
+        {
+            cboLop.Text = tenLop;
+        }
+        public void comboboxKhoa(string tenKhoa)
+        {
+            cboKhoa.Text = tenKhoa;
+        }
         private SinhVien GetSinhVien()
         {
             SinhVien sv = new SinhVien();
-            bool gt = true;
-            List<string> cn = new List<string>();
-            sv.MSSV = this.mtxtMaSo.Text;
-            sv.HoVaTenLot = this.txtHoTen.Text;
-            sv.Ten = this.txtTen.Text;
-            sv.NgaySinh = this.dtpNgaySinh.Value;
-            sv.Lop = this.cboLop.Text;
-            sv.SoDienThoai = this.mkbSDT.Text;
-            sv.Khoa = this.cboKhoa.Text;
-            sv.DiaChi = this.txtDiaChi.Text;
+            sv.MSSV = mtxtMaSo.Text;
+            sv.HoVaTenLot = txtHoTen.Text;
+            sv.Ten = txtTen.Text;
+            sv.NgaySinh = dtpNgaySinh.Value;
+            sv.SoDienThoai = mkbSDT.Text;
+            sv.DiaChi = txtDiaChi.Text;
+            sv.GioiTinh = "Nam";
+            if (rdNu.Checked)
+            {
+                sv.GioiTinh = "Nữ";
+            }
+            sv.Lop = cboLop.Text;
+            sv.Khoa = cboKhoa.Text;
             return sv;
         }
        
         private void btnLưu_Click_1(object sender, EventArgs e)
         {
-            
             SinhVien sv = GetSinhVien();
-            SinhVien kq = qlsv.Tim(sv.MSSV, delegate (object obj1, object obj2)
+            if (string.IsNullOrWhiteSpace(sv.MSSV) || string.IsNullOrWhiteSpace(sv.HoVaTenLot) || string.IsNullOrWhiteSpace(sv.Ten))
             {
-                return (obj2 as SinhVien).MSSV.CompareTo(obj1.ToString());
-            });
-            if (kq != null)
+                MessageBox.Show("Cần nhập đầy đủ thông tin Sinh vien!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
+            var listDe = _NewSinhVienDataSourch.GetDepartments();
+            var khoa = listDe.Find(p => p.Name == sv.Khoa);
+            Lop lops = khoa.Lops.FirstOrDefault(p => p.Name == sv.Lop);
+            if (lops != null)
             {
-                Form1 frm = new Form1(qlsv);
-                MessageBox.Show("Mã sinh viên đã tồn tại! đã cập nhật thông tin", "Lỗi thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                bool kqsua;
-                kqsua = qlsv.Sua(sv, sv.MSSV, frm.SoSanhTheoMa);
-                if (kqsua)
+                SinhVien s = lops.sinhViens.FirstOrDefault(p => p.MSSV == sv.MSSV);
+                if (s == null)
                 {
-                    frm.LoadListView();
+                    lops.ThemSinhVien(sv);        
                 }
-                    
-            }            
+                else
+                {
+                    s.CapNhatSV(sv.MSSV, sv.HoVaTenLot, sv.Ten, sv.Lop, sv.NgaySinh, sv.GioiTinh, sv.GioiTinh, sv.SoDienThoai, sv.DiaChi);
+                }
+                hasChange = true;
+                Close();
+            }
+
+
+        }
+        private void UpdateInfo()
+        {
+            mtxtMaSo.Text = sv.MSSV;
+            mtxtMaSo.Enabled = false;
+            txtHoTen.Text = sv.HoVaTenLot;
+            txtTen.Text = sv.Ten;
+            if (sv.GioiTinh == "Nam")
+            {
+                rdNam.Checked = true;
+            }
             else
             {
-                
-                ListViewItem lvitem = new ListViewItem(sv.MSSV);
-                string gt = "Nữ";
-                if (rdNam.Checked)
-                {
-                    gt= "Nam";
-                }       
-                lvitem.SubItems.Add(sv.HoVaTenLot);
-                lvitem.SubItems.Add(sv.Ten);
-                lvitem.SubItems.Add(gt);
-                lvitem.SubItems.Add(sv.NgaySinh.ToShortDateString());
-                lvitem.SubItems.Add(sv.SoDienThoai);
-                lvitem.SubItems.Add(sv.Lop);
-                lvitem.SubItems.Add(sv.Khoa);                
-                lvitem.SubItems.Add(sv.DiaChi);
-                this.listView.Items.Add(lvitem);
-                            
-                MessageBox.Show("Thêm sinh viên thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                
-
+                rdNu.Checked = true;
             }
+
+            if (sv.NgaySinh == new DateTime(0001, 1, 1))
+            {
+                dtpNgaySinh.Value = DateTime.Now;
+            }
+            else
+            {
+                dtpNgaySinh.Value = sv.NgaySinh;
+            }
+
+            cboKhoa.Text = sv.Khoa;
+            cboLop.Text = sv.Lop;
+            mkbSDT.Text = sv.SoDienThoai;
+            txtDiaChi.Text = sv.DiaChi;
         }
-       
+
+        private void frmThemSV_Load(object sender, EventArgs e)
+        {
+            var departments = _NewSinhVienDataSourch.GetDepartments();
+           
+
+
+            rdNam.Checked = true;
+
+            if (_upDate)
+            {
+                UpdateInfo();
+            }
+
+
+            foreach (var de in departments)
+            {
+                cboKhoa.Items.Add(de.Name);
+
+                foreach (var cls in de.Lops)
+                {
+                    cboLop.Items.Add(cls.Name);
+                }
+            }
+
+        }
     }
 }

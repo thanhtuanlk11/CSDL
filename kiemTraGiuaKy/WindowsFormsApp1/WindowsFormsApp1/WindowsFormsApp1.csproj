@@ -59,14 +59,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IO\INewSinhVien.cs" />
     <Compile Include="IO\NewSinhVienDataSourch.cs" />
     <Compile Include="Model\Khoa.cs" />
     <Compile Include="Model\Lop.cs" />
     <Compile Include="Model\SinhVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLySinhVien.cs" />
     <Compile Include="ThemSV.cs">
       <SubType>Form</SubType>
     </Compile>

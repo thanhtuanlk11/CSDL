@@ -35,6 +35,10 @@ namespace WindowsFormsApp1
             sv.SoCMND = this.mtxtSoCMND.Text;
             sv.SDT = this.mkbSDT.Text;
             sv.DiaChi = this.txtDiaChi.Text;
+            for (int i = 0; i < this.clbMonHoc.Items.Count; i++)
+                if (clbMonHoc.GetItemChecked(i))
+                    cn.Add(clbMonHoc.Items[i].ToString());
+            sv.MonHoc = cn;
             return sv;
         }
         //Láy thông tin từ listView lên để hiển thị khi click 
