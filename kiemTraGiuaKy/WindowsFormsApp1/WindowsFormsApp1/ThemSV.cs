@@ -15,16 +15,16 @@ namespace WindowsFormsApp1
     public partial class frmThemSV:Form
     {
         private readonly NewSinhVienDataSourch _NewSinhVienDataSourch;
-        private bool _upDate;
+        private bool _capNhat;
         public SinhVien sv;
-        public bool hasChange { get; set; }
+        public bool thayDoi { get; set; }
 
 
 
-        public frmThemSV(NewSinhVienDataSourch importExport, bool upDate = false)
+        public frmThemSV(NewSinhVienDataSourch importExport, bool capNhat = false)
         {
             _NewSinhVienDataSourch = importExport;
-            _upDate = upDate;
+            _capNhat = capNhat;
             InitializeComponent();
 
         }
@@ -65,9 +65,9 @@ namespace WindowsFormsApp1
             }
 
 
-            var listDe = _NewSinhVienDataSourch.GetDepartments();
-            var khoa = listDe.Find(p => p.Name == sv.Khoa);
-            Lop lops = khoa.Lops.FirstOrDefault(p => p.Name == sv.Lop);
+            var list = _NewSinhVienDataSourch.GetKhoa();
+            var khoa = list.Find(p => p.Ten == sv.Khoa);
+            Lop lops = khoa.Lops.FirstOrDefault(p => p.Ten == sv.Lop);
             if (lops != null)
             {
                 SinhVien s = lops.sinhViens.FirstOrDefault(p => p.MSSV == sv.MSSV);
@@ -77,15 +77,15 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    s.CapNhatSV(sv.MSSV, sv.HoVaTenLot, sv.Ten, sv.Lop, sv.NgaySinh, sv.GioiTinh, sv.GioiTinh, sv.SoDienThoai, sv.DiaChi);
+                    s.CapNhatSV(sv.MSSV, sv.HoVaTenLot, sv.Ten, sv.GioiTinh, sv.NgaySinh, sv.SoDienThoai, sv.Lop, sv.Khoa, sv.DiaChi);
                 }
-                hasChange = true;
+                thayDoi = true;
                 Close();
             }
 
 
         }
-        private void UpdateInfo()
+        private void CapNhatSV()
         {
             mtxtMaSo.Text = sv.MSSV;
             mtxtMaSo.Enabled = false;
@@ -108,34 +108,30 @@ namespace WindowsFormsApp1
             {
                 dtpNgaySinh.Value = sv.NgaySinh;
             }
-
-            cboKhoa.Text = sv.Khoa;
-            cboLop.Text = sv.Lop;
             mkbSDT.Text = sv.SoDienThoai;
             txtDiaChi.Text = sv.DiaChi;
+            cboLop.Text = sv.Lop;
+            cboKhoa.Text = sv.Khoa; 
         }
 
         private void frmThemSV_Load(object sender, EventArgs e)
         {
-            var departments = _NewSinhVienDataSourch.GetDepartments();
-           
+            var khoa = _NewSinhVienDataSourch.GetKhoa();
+              rdNam.Checked = true;
 
-
-            rdNam.Checked = true;
-
-            if (_upDate)
+            if (_capNhat)
             {
-                UpdateInfo();
+                CapNhatSV();
             }
 
 
-            foreach (var de in departments)
+            foreach (var k in khoa)
             {
-                cboKhoa.Items.Add(de.Name);
+                cboKhoa.Items.Add(k.Ten);
 
-                foreach (var cls in de.Lops)
+                foreach (var l in k.Lops)
                 {
-                    cboLop.Items.Add(cls.Name);
+                    cboLop.Items.Add(l.Ten);
                 }
             }
 

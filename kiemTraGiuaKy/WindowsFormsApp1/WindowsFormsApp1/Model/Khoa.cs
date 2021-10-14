@@ -8,7 +8,7 @@ namespace WindowsFormsApp1.Model
 {
     public class Khoa
     {
-        public string Name { get; set; }
+        public string Ten { get; set; }
         public List<Lop> Lops { get; set; }
         public Khoa()
         {

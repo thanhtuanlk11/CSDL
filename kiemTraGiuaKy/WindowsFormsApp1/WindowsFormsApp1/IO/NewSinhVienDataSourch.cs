@@ -55,16 +55,16 @@ namespace WindowsFormsApp1.IO
         }
 
 
-        private List<Khoa> ListDepartments(List<SinhVien> ds)
+        private List<Khoa> ListKhoa(List<SinhVien> ds)
         {
             List<Khoa> dsDep = new List<Khoa>();
 
             foreach (var sv in ds)
             {
                 Khoa k = new Khoa();
-                k.Name = sv.Khoa;
+                k.Ten = sv.Khoa;
 
-                var kq = dsDep.FindAll(p => p.Name == k.Name);
+                var kq = dsDep.FindAll(p => p.Ten == k.Ten);
                 if (kq.Count == 0)
                 {
                     dsDep.Add(k);
@@ -72,11 +72,11 @@ namespace WindowsFormsApp1.IO
 
                 foreach (var khoa in dsDep)
                 {
-                    if (khoa.Name == sv.Khoa)
+                    if (khoa.Ten == sv.Khoa)
                     {
                         Lop a = new Lop();
-                        a.Name = sv.Lop;
-                        var kt = khoa.Lops.FindAll(p => p.Name == sv.Lop);
+                        a.Ten = sv.Lop;
+                        var kt = khoa.Lops.FindAll(p => p.Ten == sv.Lop);
                         if (kt.Count == 0)
                         {
                             khoa.Lops.Add(a);
@@ -86,7 +86,7 @@ namespace WindowsFormsApp1.IO
 
                     foreach (var lop in khoa.Lops)
                     {
-                        if (lop.Name == sv.Lop)
+                        if (lop.Ten == sv.Lop)
                         {
                             lop.sinhViens.Add(sv);
                             break;
@@ -98,7 +98,7 @@ namespace WindowsFormsApp1.IO
             // sắp xếp danh sách
             foreach (var khoa in dsDep)
             {
-                khoa.Lops.Sort((x1, x2) => x1.Name.CompareTo(x2.Name));
+                khoa.Lops.Sort((x1, x2) => x1.Ten.CompareTo(x2.Ten));
             }
             return dsDep;
 
@@ -106,23 +106,23 @@ namespace WindowsFormsApp1.IO
 
 
         }
-        public List<Khoa> GetDepartments()
+        public List<Khoa> GetKhoa()
         {
             if (_khoa == null)
             {
-                _khoa = ListDepartments(GetNews());
+                _khoa = ListKhoa(GetNews());
             }
             return _khoa;
         }
 
-        public List<SinhVien> GetStudents(string departmentName, string className)
+        public List<SinhVien> GetSinhVien(string tenKhoa, string tenLop)
         {
 
 
-            var department = _khoa.Find(x => x.Name == departmentName);
+            var department = _khoa.Find(x => x.Ten == tenKhoa);
             if (department == null) return new List<SinhVien>();
 
-            var clss = department.Lops.Find(x => x.Name == className);
+            var clss = department.Lops.Find(x => x.Ten == tenLop);
             if (clss == null) return new List<SinhVien>();
             else
             {

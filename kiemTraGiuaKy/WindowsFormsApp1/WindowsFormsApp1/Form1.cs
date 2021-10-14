@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            ShowTreeOnTreeView(_NewSinhVienDataSourch.GetDepartments());
+            ShowTreeOnTreeView(_NewSinhVienDataSourch.GetKhoa());
             SetUpSearchInputText();
          
         }
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
         {
             if (e.Node.Level == 1)
             {
-                var sinhViens = _NewSinhVienDataSourch.GetStudents(e.Node.Parent.Text, e.Node.Text);
+                var sinhViens = _NewSinhVienDataSourch.GetSinhVien(e.Node.Parent.Text, e.Node.Text);
                 LoadListView(sinhViens);
             }
         }
@@ -87,10 +87,10 @@ namespace WindowsFormsApp1
             tvwKhoa.Nodes.Clear();
             foreach (var khoa in khoas)
             {
-                var khoanode = tvwKhoa.Nodes.Add(khoa.Name);
+                var khoanode = tvwKhoa.Nodes.Add(khoa.Ten);
                 foreach (var cls in khoa.Lops)
                 {
-                    khoanode.Nodes.Add(cls.Name);
+                    khoanode.Nodes.Add(cls.Ten);
                 }
 
             }
@@ -105,14 +105,14 @@ namespace WindowsFormsApp1
             DialogResult dlg= MessageBox.Show("Bạn có chắc xóa sinh viên được chọn?", "Xóa sinh viên", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (dlg == DialogResult.OK)
             {
-                string department = tvwKhoa.SelectedNode.Parent.Text;
-                string clss = tvwKhoa.SelectedNode.Text;
+                string k = tvwKhoa.SelectedNode.Parent.Text;
+                string l = tvwKhoa.SelectedNode.Text;
 
 
 
-                var listDe = _NewSinhVienDataSourch.GetDepartments();
-                Khoa khoa = listDe.Find(p => p.Name == department);
-                var lop = khoa.Lops.Find(p => p.Name == clss);
+                var listDe = _NewSinhVienDataSourch.GetKhoa();
+                Khoa khoa = listDe.Find(p => p.Ten == k);
+                var lop = khoa.Lops.Find(p => p.Ten == l);
 
 
                 var listItemsCheck = LVSinhVien.CheckedItems;
@@ -124,7 +124,7 @@ namespace WindowsFormsApp1
 
                 }
 
-                List<SinhVien> sinhViens = _NewSinhVienDataSourch.GetStudents(department, clss);
+                List<SinhVien> sinhViens = _NewSinhVienDataSourch.GetSinhVien(k, l);
                 LoadListView(sinhViens);
 
             }
@@ -148,7 +148,7 @@ namespace WindowsFormsApp1
 
             var khoa = tvwKhoa.SelectedNode.Parent.Text;
             var lop = tvwKhoa.SelectedNode.Text;
-            List<SinhVien> ds = _NewSinhVienDataSourch.GetStudents(khoa, lop);
+            List<SinhVien> ds = _NewSinhVienDataSourch.GetSinhVien(khoa, lop);
             using (SaveFileDialog saveFile = new SaveFileDialog())
             {
                 saveFile.Filter = "Excel |*.xlsx";
@@ -230,7 +230,7 @@ namespace WindowsFormsApp1
         private List<SinhVien> returnSinhVien()
         {
 
-            var lay = _NewSinhVienDataSourch.GetDepartments();
+            var lay = _NewSinhVienDataSourch.GetKhoa();
             List<SinhVien> sinhViens = new List<SinhVien>();
 
             foreach (var k in lay)
@@ -324,9 +324,9 @@ namespace WindowsFormsApp1
             dialog.comboboxLop(clss);
             dialog.ShowDialog(this);
 
-            if (dialog.hasChange)
+            if (dialog.HasChildren)
             {
-                ds = _NewSinhVienDataSourch.GetStudents(department, clss);
+                ds = _NewSinhVienDataSourch.GetSinhVien(department, clss);
                 LoadListView(ds);
 
             }
@@ -345,7 +345,7 @@ namespace WindowsFormsApp1
         {
             var department = tvwKhoa.SelectedNode.Parent.Text;
             var clss = tvwKhoa.SelectedNode.Text;
-            List<SinhVien> ds = _NewSinhVienDataSourch.GetStudents(department, clss);
+            List<SinhVien> ds = _NewSinhVienDataSourch.GetSinhVien(department, clss);
             using (SaveFileDialog saveFile = new SaveFileDialog())
             {
                 saveFile.Filter = "Json File(json) |*.json";
@@ -387,12 +387,12 @@ namespace WindowsFormsApp1
                 }
             }
             dialog.ShowDialog();
-            if (dialog.hasChange)
+            if (dialog.HasChildren)
             {
                 string khoas = tvwKhoa.SelectedNode.Parent.Text;
                 string lops = tvwKhoa.SelectedNode.Text;
                 List<SinhVien> sv;
-                sv = _NewSinhVienDataSourch.GetStudents(khoas, lops);
+                sv = _NewSinhVienDataSourch.GetSinhVien(khoas, lops);
                 LoadListView(sv);
             }
         }
