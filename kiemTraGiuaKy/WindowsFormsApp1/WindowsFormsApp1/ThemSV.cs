@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         private readonly NewSinhVienDataSourch _NewSinhVienDataSourch;
         private bool _capNhat;
         public SinhVien sv;
-        public bool thayDoi { get; set; }
+
 
 
 
@@ -79,11 +79,9 @@ namespace WindowsFormsApp1
                 {
                     s.CapNhatSV(sv.MSSV, sv.HoVaTenLot, sv.Ten, sv.GioiTinh, sv.NgaySinh, sv.SoDienThoai, sv.Lop, sv.Khoa, sv.DiaChi);
                 }
-                thayDoi = true;
+           
                 Close();
             }
-
-
         }
         private void CapNhatSV()
         {
@@ -117,7 +115,7 @@ namespace WindowsFormsApp1
         private void frmThemSV_Load(object sender, EventArgs e)
         {
             var khoa = _NewSinhVienDataSourch.GetKhoa();
-              rdNam.Checked = true;
+            rdNam.Checked = true;
 
             if (_capNhat)
             {

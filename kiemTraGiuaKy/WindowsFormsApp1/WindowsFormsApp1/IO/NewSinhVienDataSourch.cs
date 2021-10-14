@@ -37,7 +37,6 @@ namespace WindowsFormsApp1.IO
                             a.NgaySinh = new DateTime(0001, 1, 1);
                             a.SoDienThoai = "";
                             a.DiaChi = "";
-
                             var kt = ds.FindAll(p => p.MSSV == a.MSSV);
                             if (kt.Count == 0)
                             {
@@ -95,16 +94,11 @@ namespace WindowsFormsApp1.IO
                     }
                 }
             }
-            // sắp xếp danh sách
             foreach (var khoa in dsDep)
             {
                 khoa.Lops.Sort((x1, x2) => x1.Ten.CompareTo(x2.Ten));
             }
             return dsDep;
-
-
-
-
         }
         public List<Khoa> GetKhoa()
         {
@@ -117,20 +111,14 @@ namespace WindowsFormsApp1.IO
 
         public List<SinhVien> GetSinhVien(string tenKhoa, string tenLop)
         {
-
-
-            var department = _khoa.Find(x => x.Ten == tenKhoa);
-            if (department == null) return new List<SinhVien>();
-
-            var clss = department.Lops.Find(x => x.Ten == tenLop);
+            var khoa = _khoa.Find(x => x.Ten == tenKhoa);
+            if (khoa == null) return new List<SinhVien>();
+            var clss = khoa.Lops.Find(x => x.Ten == tenLop);
             if (clss == null) return new List<SinhVien>();
             else
             {
                 return clss.sinhViens;
             }
-
         }
-
-
     }
 }

@@ -184,8 +184,6 @@ namespace WindowsFormsApp1
                         ws.Cells[i + 2, 7] = ds[i].DiaChi;
                         ws.Cells[i + 2, 8] = ds[i].Lop;
                         ws.Cells[i + 2, 9] = ds[i].Khoa;
-
-
                     }
 
                     wb.SaveAs(saveFile.FileName, XlFileFormat.xlWorkbookDefault,
@@ -251,16 +249,16 @@ namespace WindowsFormsApp1
             if (e.KeyChar == 13)
             {
 
-                List<SinhVien> students = returnSinhVien();
+                List<SinhVien> sinhViens = returnSinhVien();
 
-                List<SinhVien> dsSearch = new List<SinhVien>();
+                List<SinhVien> dssv = new List<SinhVien>();
 
                 if (rdHoTen.Checked)
                 {
                     var hoTen = txtTim.Text.Trim().ToLower();
 
                     List<SinhVien> kq = new List<SinhVien>();
-                    foreach (var sv in students)
+                    foreach (var sv in sinhViens)
                     {
                         if (sv.HoVaTenLot.ToLower() + " " + sv.Ten.ToLower() == hoTen)
                         {
@@ -287,46 +285,46 @@ namespace WindowsFormsApp1
                             kq.Add(sv);
                         }
                     }
-                    dsSearch = kq;
+                    dssv = kq;
 
                 }
                 if (rdMaSo.Checked)
                 {
                     var maSo = txtTim.Text;
-                    var list1 = students.FindAll(p => p.MSSV == maSo);
-                    dsSearch = list1;
+                    var list1 = sinhViens.FindAll(p => p.MSSV == maSo);
+                    dssv = list1;
                 }
                 if (rdSDT.Checked)
                 {
                     var sdt = txtTim.Text;
-                    var list2 = students.FindAll(p => p.SoDienThoai == sdt);
-                    dsSearch = list2;
+                    var list2 = sinhViens.FindAll(p => p.SoDienThoai == sdt);
+                    dssv = list2;
                 }
 
-                if (dsSearch.Count == 0)
+                if (dssv.Count == 0)
                 {
                     MessageBox.Show("Không tìm thấy kết quả!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                LoadListView(dsSearch);
+                LoadListView(dssv);
             }
         }
 
         private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string department = tvwKhoa.SelectedNode.Parent.Text;
-            string clss = tvwKhoa.SelectedNode.Text;
+            string khoa = tvwKhoa.SelectedNode.Parent.Text;
+            string lop = tvwKhoa.SelectedNode.Text;
             List<SinhVien> ds;
             var dialog = new frmThemSV(_NewSinhVienDataSourch);
 
-            dialog.comboboxKhoa(department);
-            dialog.comboboxLop(clss);
+            dialog.comboboxKhoa(khoa);
+            dialog.comboboxLop(lop);
             dialog.ShowDialog(this);
 
             if (dialog.HasChildren)
             {
-                ds = _NewSinhVienDataSourch.GetSinhVien(department, clss);
+                ds = _NewSinhVienDataSourch.GetSinhVien(khoa, lop);
                 LoadListView(ds);
 
             }
@@ -343,15 +341,15 @@ namespace WindowsFormsApp1
 
         private void jsonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var department = tvwKhoa.SelectedNode.Parent.Text;
-            var clss = tvwKhoa.SelectedNode.Text;
-            List<SinhVien> ds = _NewSinhVienDataSourch.GetSinhVien(department, clss);
+            var khoa = tvwKhoa.SelectedNode.Parent.Text;
+            var lop = tvwKhoa.SelectedNode.Text;
+            List<SinhVien> ds = _NewSinhVienDataSourch.GetSinhVien(khoa, lop);
             using (SaveFileDialog saveFile = new SaveFileDialog())
             {
                 saveFile.Filter = "Json File(json) |*.json";
                 saveFile.InitialDirectory = @"D:\";
                 saveFile.Title = "Chọn mục lưu";
-                saveFile.FileName = clss + ".json";
+                saveFile.FileName = lop + ".json";
 
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
