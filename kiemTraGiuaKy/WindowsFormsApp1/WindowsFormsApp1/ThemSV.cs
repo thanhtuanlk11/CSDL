@@ -18,9 +18,6 @@ namespace WindowsFormsApp1
         private bool _capNhat;
         public SinhVien sv;
 
-
-
-
         public frmThemSV(NewSinhVienDataSourch importExport, bool capNhat = false)
         {
             _NewSinhVienDataSourch = importExport;
@@ -121,7 +118,6 @@ namespace WindowsFormsApp1
             {
                 CapNhatSV();
             }
-
 
             foreach (var k in khoa)
             {
