@@ -211,7 +211,7 @@ namespace WindowsFormsApp1
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DialogResult dlr = MessageBox.Show("Lưu thay đổi nha", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult dlr = MessageBox.Show("Lưu thay đổi nhé", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dlr == DialogResult.OK)
             {
                 LuuFile();
