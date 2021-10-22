@@ -67,5 +67,11 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //Tạo đối tượng kết nối 
+
+        }
     }
 }
