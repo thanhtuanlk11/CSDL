@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
         private void btnLoad_Click(object sender, EventArgs e)
         {
             // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
-            string connectionString = "server =.;database= RestaurantManagement; Intergated Security = true;";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
 
             // Tạo đối tượng kết nối 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
