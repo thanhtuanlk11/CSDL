@@ -54,15 +54,15 @@ namespace WindowsFormsApp1
             while (reader.Read())
             {
                 //Tạo một dòng mới trong ListView
-                ListViewItem item = new ListViewItem(reader["ID"].ToString());
+                ListViewItem item = new ListViewItem(reader["MaLoai"].ToString());
 
                 //Them một dòng mới vào ListVew
                 lvCatelory.Items.Add(item);
 
 
                 // Bổ sung thông tin khác cho ListViewItem 
-                item.SubItems.Add(reader["Name"].ToString());
-                item.SubItems.Add(reader["Type"].ToString());
+                item.SubItems.Add(reader["TenMonAn"].ToString());
+                item.SubItems.Add(reader["Loai"].ToString());
 
             }
 
