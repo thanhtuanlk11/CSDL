@@ -8,6 +8,5 @@ E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Win
 E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
 E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
-E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
