@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnLoad = new System.Windows.Forms.Button();
             this.lvCatelory = new System.Windows.Forms.ListView();
             this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,6 +44,10 @@ namespace WindowsFormsApp1
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtType = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmViewFood = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -61,6 +66,7 @@ namespace WindowsFormsApp1
             this.chID,
             this.chName,
             this.chType});
+            this.lvCatelory.ContextMenuStrip = this.contextMenuStrip1;
             this.lvCatelory.FullRowSelect = true;
             this.lvCatelory.HideSelection = false;
             this.lvCatelory.Location = new System.Drawing.Point(3, 230);
@@ -70,6 +76,7 @@ namespace WindowsFormsApp1
             this.lvCatelory.TabIndex = 1;
             this.lvCatelory.UseCompatibleStateImageBehavior = false;
             this.lvCatelory.View = System.Windows.Forms.View.Details;
+            this.lvCatelory.Click += new System.EventHandler(this.lvCatelory_Click);
             // 
             // chID
             // 
@@ -104,6 +111,7 @@ namespace WindowsFormsApp1
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -113,6 +121,7 @@ namespace WindowsFormsApp1
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label1
             // 
@@ -145,7 +154,6 @@ namespace WindowsFormsApp1
             // 
             this.txtID.Location = new System.Drawing.Point(163, 7);
             this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(361, 22);
             this.txtID.TabIndex = 8;
             // 
@@ -162,6 +170,29 @@ namespace WindowsFormsApp1
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(361, 22);
             this.txtType.TabIndex = 10;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDelete,
+            this.tsmViewFood});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(237, 52);
+            // 
+            // tsmDelete
+            // 
+            this.tsmDelete.Name = "tsmDelete";
+            this.tsmDelete.Size = new System.Drawing.Size(236, 24);
+            this.tsmDelete.Text = "Xóa nhóm món ăn";
+            this.tsmDelete.Click += new System.EventHandler(this.tsmDelete_Click);
+            // 
+            // tsmViewFood
+            // 
+            this.tsmViewFood.Name = "tsmViewFood";
+            this.tsmViewFood.Size = new System.Drawing.Size(236, 24);
+            this.tsmViewFood.Text = "Xem danh sách món ăn ";
+            this.tsmViewFood.Click += new System.EventHandler(this.tsmViewFood_Click);
             // 
             // Form1
             // 
@@ -181,6 +212,8 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.btnLoad);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +235,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsmDelete;
+        private System.Windows.Forms.ToolStripMenuItem tsmViewFood;
     }
 }
 
