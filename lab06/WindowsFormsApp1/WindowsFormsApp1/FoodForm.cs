@@ -64,5 +64,40 @@ namespace WindowsFormsApp1
         {
 
         }
+
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            //Tạo đối tượng kết nối 
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            //Tạo đối tượng thực thi lệnh 
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            // thiết lập lệnh truy vấn cho đối tương Command
+            sqlCommand.CommandText = "select * from DanhSachMonAn";
+
+            //Mở kết nối tới csdl
+            sqlConnection.Open();
+
+            if (this.dgvFood.SelectedRows.Count > 0)
+            {
+                dgvFood.Rows.RemoveAt(this.dgvFood.SelectedRows[0].Index);
+                MessageBox.Show("Xóa nhóm món ăn thành công ");
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại");
+            }
+            // Đống kết nối 
+            sqlConnection.Close();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            // thêm 
+            
+        }
     }
 }
