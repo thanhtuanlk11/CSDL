@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
             string catName = sqlCommand.ExecuteScalar().ToString();
             this.Text = " Danh sách các món ăn thuộc nhóm :" + catName;
 
-            sqlCommand.CommandText = " select * from Food where FoodCategoryID = " + categoryID;
+            sqlCommand.CommandText = " select * from DanhSachCacMonAn where ID = " + categoryID;
 
             // tạo đối tượng Dataadapter
 
