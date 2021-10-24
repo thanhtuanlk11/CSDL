@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // thiết lập lệnh truy vấn cho đối tương Command
-            sqlCommand.CommandText = "delete from DanhSachTaiKhoan";
+            sqlCommand.CommandText = "delete from DanhSachTaiKhoan2 where id = '" + txtStt.Text + "'";
 
             //Mở kết nối tới csdl
             sqlConnection.Open();
@@ -71,7 +71,14 @@ namespace WindowsFormsApp1
             {
                 ListViewItem item = lvAccount.SelectedItems[0];
                 lvAccount.Items.Remove(item);
-                MessageBox.Show("Xóa nhóm món ăn thành công ");
+
+                // xóa ô nhập 
+                txtStt.Text = "";
+                txtAccount.Text = "";
+                txtPassword.Text = "";
+                txtAcctive.Text = "";
+
+                MessageBox.Show("Xóa tài khoản thành công ");
 
             }
             else
