@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.btnCheckBills = new System.Windows.Forms.Button();
+            this.btnAddTable = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCheckBills
@@ -41,11 +42,21 @@ namespace WindowsFormsApp1
             this.btnCheckBills.Text = "Xem hóa đơn";
             this.btnCheckBills.UseVisualStyleBackColor = true;
             // 
+            // btnAddTable
+            // 
+            this.btnAddTable.Location = new System.Drawing.Point(416, 61);
+            this.btnAddTable.Name = "btnAddTable";
+            this.btnAddTable.Size = new System.Drawing.Size(125, 28);
+            this.btnAddTable.TabIndex = 1;
+            this.btnAddTable.Text = "Thêm bàn mới";
+            this.btnAddTable.UseVisualStyleBackColor = true;
+            // 
             // TableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAddTable);
             this.Controls.Add(this.btnCheckBills);
             this.Name = "TableForm";
             this.Text = "TableForm";
@@ -56,5 +67,6 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Button btnCheckBills;
+        private System.Windows.Forms.Button btnAddTable;
     }
 }
