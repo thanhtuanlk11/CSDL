@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // thiết lập lệnh truy vấn cho đối tương Command
-            sqlCommand.CommandText = "select * from DanhSachMonA";
+            sqlCommand.CommandText = "select * from DanhSachMonAm";
 
             //Mở kết nối tới csdl
             sqlConnection.Open();
