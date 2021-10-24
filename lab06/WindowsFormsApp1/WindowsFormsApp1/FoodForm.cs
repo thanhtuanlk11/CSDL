@@ -96,8 +96,32 @@ namespace WindowsFormsApp1
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            // thêm 
-            
+            // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            // Tạo đối tượng thực thi lệnh 
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            // mở kết nối đến csdl
+            sqlConnection.Open();
+
+            sqlCommand.CommandText = " select * from DanhSachMonAn where FoodCateloryID = ";
+
+            // tạo đối tượng Dataadapter
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
+            da.Fill(ds);
+
+            // Hiển thị danh sách món ăn lên Form
+            dgvFood.DataSource = ds.Tables[0];
+            dgvFood.Refresh();
+            // Đóng kết nối và giải phóng bộ nhớ 
+            sqlConnection.Close();
+            sqlConnection.Dispose();
+            da.Dispose();
         }
+
+       
     }
 }
