@@ -232,5 +232,16 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void danhSáchTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountManager frm = new AccountManager();
+            frm.ShowDialog();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

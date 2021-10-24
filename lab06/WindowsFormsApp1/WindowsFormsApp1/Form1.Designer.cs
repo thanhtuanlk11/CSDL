@@ -35,6 +35,9 @@ namespace WindowsFormsApp1
             this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmViewFood = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -44,10 +47,15 @@ namespace WindowsFormsApp1
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtType = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmViewFood = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSáchTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSáchHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSáchBànĂnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -93,6 +101,30 @@ namespace WindowsFormsApp1
             this.chType.Text = "Loại";
             this.chType.Width = 292;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDelete,
+            this.tsmViewFood,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(237, 76);
+            // 
+            // tsmDelete
+            // 
+            this.tsmDelete.Name = "tsmDelete";
+            this.tsmDelete.Size = new System.Drawing.Size(236, 24);
+            this.tsmDelete.Text = "Xóa nhóm món ăn";
+            this.tsmDelete.Click += new System.EventHandler(this.tsmDelete_Click);
+            // 
+            // tsmViewFood
+            // 
+            this.tsmViewFood.Name = "tsmViewFood";
+            this.tsmViewFood.Size = new System.Drawing.Size(236, 24);
+            this.tsmViewFood.Text = "Xem danh sách món ăn ";
+            this.tsmViewFood.Click += new System.EventHandler(this.tsmViewFood_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(323, 191);
@@ -126,7 +158,7 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(13, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 5;
@@ -135,7 +167,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 69);
+            this.label2.Location = new System.Drawing.Point(13, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 17);
             this.label2.TabIndex = 6;
@@ -152,14 +184,14 @@ namespace WindowsFormsApp1
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(163, 7);
+            this.txtID.Location = new System.Drawing.Point(163, 62);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(361, 22);
             this.txtID.TabIndex = 8;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(163, 69);
+            this.txtName.Location = new System.Drawing.Point(163, 106);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(361, 22);
             this.txtName.TabIndex = 9;
@@ -171,34 +203,66 @@ namespace WindowsFormsApp1
             this.txtType.Size = new System.Drawing.Size(361, 22);
             this.txtType.TabIndex = 10;
             // 
-            // contextMenuStrip1
+            // toolStripMenuItem2
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmDelete,
-            this.tsmViewFood});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(237, 52);
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(236, 24);
+            this.toolStripMenuItem2.Text = "Thoát";
             // 
-            // tsmDelete
+            // menuStrip1
             // 
-            this.tsmDelete.Name = "tsmDelete";
-            this.tsmDelete.Size = new System.Drawing.Size(236, 24);
-            this.tsmDelete.Text = "Xóa nhóm món ăn";
-            this.tsmDelete.Click += new System.EventHandler(this.tsmDelete_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(799, 28);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // tsmViewFood
+            // menuToolStripMenuItem
             // 
-            this.tsmViewFood.Name = "tsmViewFood";
-            this.tsmViewFood.Size = new System.Drawing.Size(236, 24);
-            this.tsmViewFood.Text = "Xem danh sách món ăn ";
-            this.tsmViewFood.Click += new System.EventHandler(this.tsmViewFood_Click);
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.danhSáchTàiKhoảnToolStripMenuItem,
+            this.danhSáchHóaĐơnToolStripMenuItem,
+            this.danhSáchBànĂnToolStripMenuItem,
+            this.thoátToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // danhSáchTàiKhoảnToolStripMenuItem
+            // 
+            this.danhSáchTàiKhoảnToolStripMenuItem.Name = "danhSáchTàiKhoảnToolStripMenuItem";
+            this.danhSáchTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.danhSáchTàiKhoảnToolStripMenuItem.Text = "Danh Sách Tài Khoản";
+            this.danhSáchTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.danhSáchTàiKhoảnToolStripMenuItem_Click);
+            // 
+            // danhSáchHóaĐơnToolStripMenuItem
+            // 
+            this.danhSáchHóaĐơnToolStripMenuItem.Name = "danhSáchHóaĐơnToolStripMenuItem";
+            this.danhSáchHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.danhSáchHóaĐơnToolStripMenuItem.Text = "Danh Sách Hóa Đơn";
+            // 
+            // danhSáchBànĂnToolStripMenuItem
+            // 
+            this.danhSáchBànĂnToolStripMenuItem.Name = "danhSáchBànĂnToolStripMenuItem";
+            this.danhSáchBànĂnToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.danhSáchBànĂnToolStripMenuItem.Text = "Danh Sách Bàn Ăn";
+            // 
+            // thoátToolStripMenuItem
+            // 
+            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 573);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.txtType);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtID);
@@ -210,10 +274,13 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lvCatelory);
             this.Controls.Add(this.btnLoad);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,6 +305,13 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmViewFood;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchTàiKhoảnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchHóaĐơnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchBànĂnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
     }
 }
 

@@ -29,19 +29,27 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lvAccount = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip100 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xóaTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xemDanhSáchVaiTròToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip100.SuspendLayout();
             this.SuspendLayout();
             // 
             // lvAccount
             // 
             this.lvAccount.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.lvAccount.ContextMenuStrip = this.contextMenuStrip100;
             this.lvAccount.FullRowSelect = true;
             this.lvAccount.GridLines = true;
             this.lvAccount.HideSelection = false;
@@ -52,6 +60,7 @@ namespace WindowsFormsApp1
             this.lvAccount.TabIndex = 0;
             this.lvAccount.UseCompatibleStateImageBehavior = false;
             this.lvAccount.View = System.Windows.Forms.View.Details;
+            this.lvAccount.ContextMenuStripChanged += new System.EventHandler(this.AccountManager_Load);
             // 
             // label1
             // 
@@ -62,20 +71,47 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 1;
             this.label1.Text = "Danh sách các account";
             // 
-            // columnHeader1
+            // contextMenuStrip100
             // 
-            this.columnHeader1.Text = "Tài khoản";
-            this.columnHeader1.Width = 250;
+            this.contextMenuStrip100.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip100.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xóaTàiKhoảnToolStripMenuItem,
+            this.xemDanhSáchVaiTròToolStripMenuItem});
+            this.contextMenuStrip100.Name = "contextMenuStrip100";
+            this.contextMenuStrip100.Size = new System.Drawing.Size(225, 52);
             // 
-            // columnHeader2
+            // xóaTàiKhoảnToolStripMenuItem
             // 
-            this.columnHeader2.Text = "Mật khẩu";
-            this.columnHeader2.Width = 250;
+            this.xóaTàiKhoảnToolStripMenuItem.Name = "xóaTàiKhoảnToolStripMenuItem";
+            this.xóaTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
+            this.xóaTàiKhoảnToolStripMenuItem.Text = "Xóa tài khoản";
+            this.xóaTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.xóaTàiKhoảnToolStripMenuItem_Click);
             // 
-            // columnHeader3
+            // xemDanhSáchVaiTròToolStripMenuItem
             // 
-            this.columnHeader3.Text = "Trạng thái";
-            this.columnHeader3.Width = 300;
+            this.xemDanhSáchVaiTròToolStripMenuItem.Name = "xemDanhSáchVaiTròToolStripMenuItem";
+            this.xemDanhSáchVaiTròToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
+            this.xemDanhSáchVaiTròToolStripMenuItem.Text = "Xem danh sách vai trò";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "số thứ tự";
+            this.columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Tài khoản";
+            this.columnHeader5.Width = 200;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Mật khẩu";
+            this.columnHeader6.Width = 200;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Trạng thái";
+            this.columnHeader7.Width = 200;
             // 
             // AccountManager
             // 
@@ -87,6 +123,7 @@ namespace WindowsFormsApp1
             this.Name = "AccountManager";
             this.Text = "AccountManager";
             this.Load += new System.EventHandler(this.AccountManager_Load);
+            this.contextMenuStrip100.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,8 +133,12 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.ListView lvAccount;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip100;
+        private System.Windows.Forms.ToolStripMenuItem xóaTàiKhoảnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xemDanhSáchVaiTròToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
