@@ -147,7 +147,6 @@ namespace WindowsFormsApp1
             {
                 //Cập nhật dữ liệu trên listview
                 ListViewItem item = lvCatelory.SelectedItems[0];
-
                 item.SubItems[1].Text = txtName.Text;
                 item.SubItems[2].Text = txtType.Text;
 
