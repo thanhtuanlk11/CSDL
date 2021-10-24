@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmViewFood = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace WindowsFormsApp1
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtType = new System.Windows.Forms.TextBox();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,6 +124,12 @@ namespace WindowsFormsApp1
             this.tsmViewFood.Size = new System.Drawing.Size(236, 24);
             this.tsmViewFood.Text = "Xem danh sách món ăn ";
             this.tsmViewFood.Click += new System.EventHandler(this.tsmViewFood_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(236, 24);
+            this.toolStripMenuItem2.Text = "Thoát";
             // 
             // btnAdd
             // 
@@ -203,12 +209,6 @@ namespace WindowsFormsApp1
             this.txtType.Size = new System.Drawing.Size(361, 22);
             this.txtType.TabIndex = 10;
             // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(236, 24);
-            this.toolStripMenuItem2.Text = "Thoát";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -249,6 +249,7 @@ namespace WindowsFormsApp1
             this.danhSáchBànĂnToolStripMenuItem.Name = "danhSáchBànĂnToolStripMenuItem";
             this.danhSáchBànĂnToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.danhSáchBànĂnToolStripMenuItem.Text = "Danh Sách Bàn Ăn";
+            this.danhSáchBànĂnToolStripMenuItem.Click += new System.EventHandler(this.danhSáchBànĂnToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 

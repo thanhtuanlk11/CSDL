@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class TableForm : Form
+    public partial class frmTable : Form
     {
-        public TableForm()
+        public frmTable()
         {
             InitializeComponent();
         }
