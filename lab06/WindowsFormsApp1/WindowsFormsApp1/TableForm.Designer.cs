@@ -37,9 +37,9 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtStt = new System.Windows.Forms.TextBox();
+            this.txtTableMunber = new System.Windows.Forms.TextBox();
+            this.txtFloat = new System.Windows.Forms.TextBox();
             this.lvTable = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
             this.btnAddTable.TabIndex = 1;
             this.btnAddTable.Text = "Thêm bàn mới";
             this.btnAddTable.UseVisualStyleBackColor = true;
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
             // btnUpdate
             // 
@@ -119,26 +120,26 @@ namespace WindowsFormsApp1
             this.label3.TabIndex = 7;
             this.label3.Text = "Tầng";
             // 
-            // textBox1
+            // txtStt
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 22);
-            this.textBox1.TabIndex = 8;
+            this.txtStt.Location = new System.Drawing.Point(126, 17);
+            this.txtStt.Name = "txtStt";
+            this.txtStt.Size = new System.Drawing.Size(192, 22);
+            this.txtStt.TabIndex = 8;
             // 
-            // textBox2
+            // txtTableMunber
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 22);
-            this.textBox2.TabIndex = 9;
+            this.txtTableMunber.Location = new System.Drawing.Point(126, 67);
+            this.txtTableMunber.Name = "txtTableMunber";
+            this.txtTableMunber.Size = new System.Drawing.Size(192, 22);
+            this.txtTableMunber.TabIndex = 9;
             // 
-            // textBox3
+            // txtFloat
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 112);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 22);
-            this.textBox3.TabIndex = 10;
+            this.txtFloat.Location = new System.Drawing.Point(126, 112);
+            this.txtFloat.Name = "txtFloat";
+            this.txtFloat.Size = new System.Drawing.Size(192, 22);
+            this.txtFloat.TabIndex = 10;
             // 
             // lvTable
             // 
@@ -177,9 +178,9 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 450);
             this.Controls.Add(this.lvTable);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFloat);
+            this.Controls.Add(this.txtTableMunber);
+            this.Controls.Add(this.txtStt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -205,9 +206,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtStt;
+        private System.Windows.Forms.TextBox txtTableMunber;
+        private System.Windows.Forms.TextBox txtFloat;
         private System.Windows.Forms.ListView lvTable;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

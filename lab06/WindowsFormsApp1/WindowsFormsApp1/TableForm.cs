@@ -66,5 +66,49 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private void btnAddTable_Click(object sender, EventArgs e)
+        {
+            //Tạo đối tượng kết nối 
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            //Tạo đối tượng thực thi lệnh 
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            //Thiết lập lệnh truy vấn cho đối tượng Command 
+
+            sqlCommand.CommandText = "insert into DanhSachBanAn values('" + txtStt.Text + "','" + txtTableMunber.Text + "','" + txtFloat.Text + "')";
+
+            // mở kết nối đến cơ sở dữ liệu 
+            sqlConnection.Open();
+
+            // Thực thi lệnh bằng phương thức ExcuteReader
+            int numOfRowsEffected = sqlCommand.ExecuteNonQuery();
+
+            //Đóng kết nối 
+            sqlConnection.Close();
+
+            if (numOfRowsEffected == 1)
+            {
+                MessageBox.Show("Thêm bàn ăn thành công ");
+
+                // Tải lại dữ liệu 
+                btnLoad.PerformClick();
+
+                //Xóa các ô nhập 
+                txtStt.Text = "";
+                txtTableMunber.Text = "";
+                txtFloat.Text = "";
+
+
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại ");
+            }
+        }
+
+
     }
 }
