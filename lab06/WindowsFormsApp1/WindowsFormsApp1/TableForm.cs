@@ -201,7 +201,7 @@ namespace WindowsFormsApp1
                 txtTableMunber.Text = "";
                 txtFloat.Text = "";
 
-                MessageBox.Show("Xóa bàn ăn thành công ");
+                //MessageBox.Show("Xóa bàn ăn thành công ");
 
             }
             else
