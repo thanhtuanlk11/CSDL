@@ -86,9 +86,9 @@ namespace WindowsFormsApp1
             // 
             this.btnLoad.Location = new System.Drawing.Point(12, 155);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(153, 28);
+            this.btnLoad.Size = new System.Drawing.Size(90, 28);
             this.btnLoad.TabIndex = 4;
-            this.btnLoad.Text = "Tải danh sách bàn";
+            this.btnLoad.Text = "Tải dữ liệu";
             this.btnLoad.UseVisualStyleBackColor = true;
             // 
             // label1
