@@ -154,5 +154,20 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
             }
         }
+
+        private void lvTable_Click(object sender, EventArgs e)
+        {
+            // lấy dòng được chọn trong ListView
+            ListViewItem item = lvTable.SelectedItems[0];
+
+            // Hiển thị dữ liệu lên TextBox
+            txtStt.Text = item.Text;
+            txtTableMunber.Text = item.SubItems[1].Text;
+            txtFloat.Text = item.SubItems[2].Text;
+         
+
+            //Hiển thị nút cập nhật và xóa 
+            btnUpdate.Enabled = true;
+        }
     }
 }

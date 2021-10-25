@@ -157,6 +157,7 @@ namespace WindowsFormsApp1
             this.lvTable.TabIndex = 11;
             this.lvTable.UseCompatibleStateImageBehavior = false;
             this.lvTable.View = System.Windows.Forms.View.Details;
+            this.lvTable.Click += new System.EventHandler(this.lvTable_Click);
             // 
             // columnHeader1
             // 
