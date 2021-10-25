@@ -109,6 +109,50 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng kết nối 
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
 
+            // Tạo đối tượng thực thi lệnh 
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            // THiết lập lệnh truy vấn cho đối tượng Conmmad
+            sqlCommand.CommandText = "update DanhSachBanAn set SoBan ='" + txtTableMunber.Text + "', SoTang='" + txtFloat.Text +"'where ID ='" + txtStt.Text + "'";
+
+            //Mở kết nối CSDL
+            sqlConnection.Open();
+
+            // Thực thi lệnh bằng phương thức ExcuteReader
+            int munOfRowsEffected = sqlCommand.ExecuteNonQuery();
+
+            // Đống kết nối
+            sqlConnection.Close();
+
+            if (munOfRowsEffected == 1)
+            {
+                //Cập nhật dữ liệu trên listview
+                ListViewItem item = lvTable.SelectedItems[0];
+
+                item.SubItems[1].Text = txtTableMunber.Text;
+                item.SubItems[2].Text = txtFloat.Text;
+               
+
+                // Xóa các ô nhập 
+                txtStt.Text = "";
+                txtTableMunber.Text = "";
+                txtFloat.Text = "";
+              
+                //disable các nút xóa và cập nhật 
+                btnUpdate.Enabled = false;
+                MessageBox.Show("Cập nhật bàn ăn thành công");
+
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
+            }
+        }
     }
 }
