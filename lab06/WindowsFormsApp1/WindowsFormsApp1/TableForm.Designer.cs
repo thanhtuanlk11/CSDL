@@ -90,6 +90,7 @@ namespace WindowsFormsApp1
             this.btnLoad.TabIndex = 4;
             this.btnLoad.Text = "Tải dữ liệu";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // label1
             // 
