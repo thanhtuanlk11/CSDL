@@ -185,7 +185,7 @@ namespace WindowsFormsApp1
 
             // thực thi lệnh bằng phương thức ExcuteReader
             int munOfRowsEffected = sqlCommand.ExecuteNonQuery();
-
+            //
             // Đống kết nối 
             sqlConnection.Close();
 
