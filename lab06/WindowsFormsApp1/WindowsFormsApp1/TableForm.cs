@@ -30,8 +30,6 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = "select * from DanhSachBanAn ";
 
-            // TThiết lập lệnh truy vấn cho đối tượng Command
-            //string query = "SELECT ID, Name, Type FROM Category";
 
             // Mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
