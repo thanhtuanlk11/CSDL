@@ -188,7 +188,6 @@ namespace WindowsFormsApp1
             
             // Đống kết nối 
             sqlConnection.Close();
-            sqlCommand.Clon
 
             if (munOfRowsEffected == 1)
             {
