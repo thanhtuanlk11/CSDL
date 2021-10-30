@@ -126,7 +126,7 @@ namespace WindowsFormsApp1
         {
             // Tạo đối tượng kết nối 
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
-            SqlConnection sql = new SqlConnection(connectionString);
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             // Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
