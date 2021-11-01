@@ -55,6 +55,7 @@ namespace WindowsFormsApp1
             this.cbbCatelory.Name = "cbbCatelory";
             this.cbbCatelory.Size = new System.Drawing.Size(207, 24);
             this.cbbCatelory.TabIndex = 1;
+            this.cbbCatelory.SelectedIndexChanged += new System.EventHandler(this.cbbCatelory_SelectedIndexChanged);
             // 
             // dgvFoodList
             // 
@@ -66,7 +67,7 @@ namespace WindowsFormsApp1
             this.dgvFoodList.RowTemplate.Height = 24;
             this.dgvFoodList.Size = new System.Drawing.Size(792, 327);
             this.dgvFoodList.TabIndex = 2;
-         
+            // 
             // label2
             // 
             this.label2.AutoSize = true;

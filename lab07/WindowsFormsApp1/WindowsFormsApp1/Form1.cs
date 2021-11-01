@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        private DataTable foodTable;
         public Form1()
         {
             InitializeComponent();
@@ -46,5 +47,48 @@ namespace WindowsFormsApp1
             this.LoadCatelory();
         }
 
+        private void cbbCatelory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbCatelory.SelectedIndex == -1) return;
+
+            string connecttionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(connecttionString);
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select * from food where FoodCategoryID = @categoryId";
+
+            // Truyền tham số 
+            cmd.Parameters.Add("@categoryId", SqlDbType.Int);
+
+            if(cbbCatelory.SelectedValue is DataRowView)
+            {
+                DataRowView rowView = cbbCatelory.SelectedValue as DataRowView;
+                cmd.Parameters["@categoryId"].Value = rowView["ID"];
+            }
+            else
+            {
+                cmd.Parameters["@categoryId"].Value = cbbCatelory.SelectedValue;
+            }
+            // Tạo bộ điều khiển dữ liệu
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            foodTable = new DataTable();
+
+            // Mở kết nối 
+            conn.Open();
+
+            // Lấy dữ liệu 
+            adapter.Fill(foodTable);
+
+            conn.Close();
+            conn.Dispose();
+
+            // Đựa dữ liệu vào data girdView
+            dgvFoodList.DataSource = foodTable;
+
+            // Tính số lượng mẫu tin
+            lblQuantity.Text = foodTable.Rows.Count.ToString();
+            lblCatName.Text = cbbCatelory.Text;
+
+        }
     }
 }
