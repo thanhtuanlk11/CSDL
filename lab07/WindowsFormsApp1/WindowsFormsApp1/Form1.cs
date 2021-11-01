@@ -90,5 +90,13 @@ namespace WindowsFormsApp1
             lblCatName.Text = cbbCatelory.Text;
 
         }
+
+        private void smCalculateQuantity_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand cmd = conn.CreateCommand();
+
+        }
     }
 }

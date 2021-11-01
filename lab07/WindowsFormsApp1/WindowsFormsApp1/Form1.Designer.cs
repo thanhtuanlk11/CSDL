@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbCatelory = new System.Windows.Forms.ComboBox();
             this.dgvFoodList = new System.Windows.Forms.DataGridView();
@@ -36,7 +37,13 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblCatName = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.smCalculateQuantity = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSeperator = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAddFood = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmUpdateFood = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodList)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +67,7 @@ namespace WindowsFormsApp1
             // dgvFoodList
             // 
             this.dgvFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFoodList.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvFoodList.Location = new System.Drawing.Point(5, 57);
             this.dgvFoodList.MultiSelect = false;
             this.dgvFoodList.Name = "dgvFoodList";
@@ -104,6 +112,42 @@ namespace WindowsFormsApp1
             this.lblCatName.TabIndex = 6;
             this.lblCatName.Text = "...";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smCalculateQuantity,
+            this.tsmSeperator,
+            this.tsmAddFood,
+            this.tsmUpdateFood});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 128);
+            // 
+            // smCalculateQuantity
+            // 
+            this.smCalculateQuantity.Name = "smCalculateQuantity";
+            this.smCalculateQuantity.Size = new System.Drawing.Size(218, 24);
+            this.smCalculateQuantity.Text = "Tính số lượng đã bán";
+            this.smCalculateQuantity.Click += new System.EventHandler(this.smCalculateQuantity_Click);
+            // 
+            // tsmSeperator
+            // 
+            this.tsmSeperator.Name = "tsmSeperator";
+            this.tsmSeperator.Size = new System.Drawing.Size(196, 24);
+            this.tsmSeperator.Text = "Seperator";
+            // 
+            // tsmAddFood
+            // 
+            this.tsmAddFood.Name = "tsmAddFood";
+            this.tsmAddFood.Size = new System.Drawing.Size(196, 24);
+            this.tsmAddFood.Text = "Thêm món ăn";
+            // 
+            // tsmUpdateFood
+            // 
+            this.tsmUpdateFood.Name = "tsmUpdateFood";
+            this.tsmUpdateFood.Size = new System.Drawing.Size(196, 24);
+            this.tsmUpdateFood.Text = "Chỉnh sửa món ăn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -120,6 +164,7 @@ namespace WindowsFormsApp1
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodList)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +179,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Label lblCatName;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem smCalculateQuantity;
+        private System.Windows.Forms.ToolStripMenuItem tsmSeperator;
+        private System.Windows.Forms.ToolStripMenuItem tsmAddFood;
+        private System.Windows.Forms.ToolStripMenuItem tsmUpdateFood;
     }
 }
 
