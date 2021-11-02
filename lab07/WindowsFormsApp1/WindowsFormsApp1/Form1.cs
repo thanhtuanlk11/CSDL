@@ -96,6 +96,33 @@ namespace WindowsFormsApp1
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select @numSaleFood = sum(Quantity) form BillDetails where FoodID = @foodId";
+            // Lấy thông tín ản phẩm được chọn 
+            if(dgvFoodList.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvFoodList.SelectedRows[0];
+                DataRowView rowView = selectedRow.DataBoundItem as DataRowView;
+
+                // Truyền tham số 
+                cmd.Parameters.Add("@foodId", SqlDbType.Int);
+                cmd.Parameters["@foodId"].Value = rowView["ID"];
+
+                cmd.Parameters.Add("@numSaleFood", SqlDbType.Int);
+                cmd.Parameters["@numSaleFood"].Direction = ParameterDirection.Output;
+
+                // mở kết nối sql
+                conn.Open();
+                // thực thi truy vấn
+                cmd.ExecuteNonQuery();
+
+                string result = cmd.Parameters["@numSaleFood"].Value.ToString();
+                MessageBox.Show("Tổng số lượng món" + rowView["Name"] + "đã bán là" + result + "" + rowView["Unit"]);
+
+                conn.Close();
+
+            }
+            cmd.Dispose();
+            conn.Dispose();
 
         }
     }
