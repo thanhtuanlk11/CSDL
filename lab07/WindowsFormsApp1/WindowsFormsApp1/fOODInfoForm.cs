@@ -129,10 +129,66 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-            catch
+            catch(Exception exception)
             {
-
+                MessageBox.Show(exception.Message, "Error");
+                this.Close();
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "excute UpdateFood @id, @name, @unit, @foodCategoryID, @price,@notes";
+
+                // Thêm tham số vào đối tượng command
+                cmd.Parameters.Add("@id", SqlDbType.Int);
+                cmd.Parameters.Add("@name", SqlDbType.NVarChar, 1000);
+                cmd.Parameters.Add("@unit", SqlDbType.NVarChar, 100);
+                cmd.Parameters.Add("@foodCategoryId", SqlDbType.Int);
+                cmd.Parameters.Add("@price", SqlDbType.Int);
+                cmd.Parameters.Add("@notes", SqlDbType.NVarChar, 3000);
+
+                //Tuyền giá trị vào thủ tục qua tham số 
+                cmd.Parameters["@id"].Value = int.Parse(txtFoodID.Text);
+                cmd.Parameters["@name"].Value = txtName.Text;
+                cmd.Parameters["@unit"].Value = txtUnit.Text;
+                cmd.Parameters["@foodCategoryId"].Value = cbbCatName.SelectedValue;
+                cmd.Parameters["@price"].Value = nudPrice.Text;
+                cmd.Parameters["notes"].Value = txtNotes.Text;
+
+                conn.Open();
+                int numRowAffected = cmd.ExecuteNonQuery();
+                // thông báo kết quả 
+                if (numRowAffected > 0)
+                {
+                    MessageBox.Show("Successfully adating food", "Message");
+                    this.ResetText();
+                }
+                else
+                {
+                    MessageBox.Show("Updating food failed");
+                }
+                conn.Close();
+                conn.Dispose();
+            }
+            catch(SqlException exception)
+            {
+                MessageBox.Show(exception.Message, "SQL error");
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message, "error");
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
