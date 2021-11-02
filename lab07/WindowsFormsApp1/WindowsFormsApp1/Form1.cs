@@ -125,5 +125,15 @@ namespace WindowsFormsApp1
             conn.Dispose();
 
         }
+
+        private void tsmAddFood_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmUpdateFood_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
