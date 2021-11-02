@@ -128,9 +128,17 @@ namespace WindowsFormsApp1
 
         private void tsmAddFood_Click(object sender, EventArgs e)
         {
-
+            fOODInfoForm foodFrom = new fOODInfoForm();
+            foodFrom.FromClosed += new FormClosedEventHandler(foodFrom_FormClosed);
+            foodFrom.Show(this);
         }
-
+        
+        void foodFrom_FormClosed(object sender,FormClosedEventArgs e)
+        {
+            int index = cbbCatelory.SelectedIndex;
+            cbbCatelory.SelectedIndex = -1;
+            cbbCatelory.SelectedIndex = index;
+        }
         private void tsmUpdateFood_Click(object sender, EventArgs e)
         {
 
