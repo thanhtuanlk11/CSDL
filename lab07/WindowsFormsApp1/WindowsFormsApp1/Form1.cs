@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
         private void tsmAddFood_Click(object sender, EventArgs e)
         {
             fOODInfoForm foodFrom = new fOODInfoForm();
-            foodFrom.FromClosed += new FormClosedEventHandler(foodFrom_FormClosed);
+            foodFrom.FormClosed += new FormClosedEventHandler(foodFrom_FormClosed);
             foodFrom.Show(this);
         }
         
