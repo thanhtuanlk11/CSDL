@@ -106,5 +106,33 @@ namespace WindowsFormsApp1
                 MessageBox.Show(exception.Message, "Error");
             }
         }
+        public void DisplayFoodInfo(DataRowView rowView)
+        {
+            try
+            {
+                txtFoodID.Text = rowView["ID"].ToString();
+                txtName.Text = rowView["Name"].ToString();
+                txtUnit.Text = rowView["Unit"].ToString();
+                txtNotes.Text = rowView["Notes"].ToString();
+                nudPrice.Text = rowView["Price"].ToString();
+
+                cbbCatName.SelectedIndex = -1;
+
+                //Chọn món ăn tương ứng 
+                for(int index =0; index < cbbCatName.Items.Count; index++)
+                {
+                    DataRowView cat = cbbCatName.Items[index] as DataRowView;
+                    if (cat["ID"].ToString() == rowView["FoodCategoryID"].ToString())
+                    {
+                        cbbCatName.SelectedIndex = index;
+                        break;
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
