@@ -140,6 +140,9 @@ namespace WindowsFormsApp1
             // 
             // nudPrice
             // 
+            this.nudPrice.Items.Add("0");
+            this.nudPrice.Items.Add("1");
+            this.nudPrice.Items.Add("2");
             this.nudPrice.Location = new System.Drawing.Point(166, 253);
             this.nudPrice.Name = "nudPrice";
             this.nudPrice.Size = new System.Drawing.Size(586, 22);
@@ -163,6 +166,7 @@ namespace WindowsFormsApp1
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
