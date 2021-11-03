@@ -42,6 +42,8 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblCatName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSearchByName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +60,7 @@ namespace WindowsFormsApp1
             // cbbCategory
             // 
             this.cbbCategory.FormattingEnabled = true;
-            this.cbbCategory.Location = new System.Drawing.Point(240, 13);
+            this.cbbCategory.Location = new System.Drawing.Point(188, 6);
             this.cbbCategory.Name = "cbbCategory";
             this.cbbCategory.Size = new System.Drawing.Size(207, 24);
             this.cbbCategory.TabIndex = 1;
@@ -150,11 +152,30 @@ namespace WindowsFormsApp1
             this.lblCatName.TabIndex = 6;
             this.lblCatName.Text = "...";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(436, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Tìm kiếm theo tên :";
+            // 
+            // txtSearchByName
+            // 
+            this.txtSearchByName.Location = new System.Drawing.Point(571, 7);
+            this.txtSearchByName.Name = "txtSearchByName";
+            this.txtSearchByName.Size = new System.Drawing.Size(217, 22);
+            this.txtSearchByName.TabIndex = 8;
+            this.txtSearchByName.TextChanged += new System.EventHandler(this.txtSearchByName_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSearchByName);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblCatName);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.label3);
@@ -186,6 +207,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem tsmSeperator;
         private System.Windows.Forms.ToolStripMenuItem tsmAddFood;
         private System.Windows.Forms.ToolStripMenuItem tsmUpdateFood;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtSearchByName;
     }
 }
 

@@ -149,12 +149,30 @@ namespace WindowsFormsApp1
                 DataRowView rowView = selectedRow.DataBoundItem as DataRowView;
 
                 fOODInfoForm foodForm = new fOODInfoForm();
-                foodForm.FormClosed += new FormClosedEventHandler(foodFrom_FormClosed);
+                foodForm.FormClosed += new FormClosedEventHandler(foodForm_FormClosed);
                 foodForm.Show(this);
                 foodForm.DisplayFoodInfo(rowView);
             }
         }
 
-        
+        private void foodForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            int index = cbbCategory.SelectedIndex;
+            cbbCategory.SelectedIndex = -1;
+            cbbCategory.SelectedIndex = index;
+        }
+
+        private void txtSearchByName_TextChanged(object sender, EventArgs e)
+        {
+            if (foodTable == null) return;
+
+            string filterExpression = "Name like '%" + txtSearchByName.Text + "%'";
+            string sortExpression = "Price DESC";
+            DataViewRowState rowStateFilter = DataViewRowState.OriginalRows;
+
+            DataView foodView = new DataView(foodTable, filterExpression, sortExpression, rowStateFilter);
+
+            dgvFoodList.DataSource = foodView;
+        }
     }
 }
