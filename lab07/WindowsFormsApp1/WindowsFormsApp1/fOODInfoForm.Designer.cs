@@ -105,6 +105,7 @@ namespace WindowsFormsApp1
             // 
             this.txtFoodID.Location = new System.Drawing.Point(166, 23);
             this.txtFoodID.Name = "txtFoodID";
+            this.txtFoodID.ReadOnly = true;
             this.txtFoodID.Size = new System.Drawing.Size(198, 22);
             this.txtFoodID.TabIndex = 6;
             // 
