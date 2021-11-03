@@ -138,12 +138,23 @@ namespace WindowsFormsApp1
             int index = cbbCategory.SelectedIndex;
             cbbCategory.SelectedIndex = -1;
             cbbCategory.SelectedIndex = index;
-
         }
 
         private void tsmUpdateFood_Click(object sender, EventArgs e)
         {
-            // Lấy thông tín an
+            // Lấy thông tin món ăn
+            if(dgvFoodList.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvFoodList.SelectedRows[0];
+                DataRowView rowView = selectedRow.DataBoundItem as DataRowView;
+
+                fOODInfoForm foodForm = new fOODInfoForm();
+                foodForm.FormClosed += new FormClosedEventHandler(foodFrom_FormClosed);
+                foodForm.Show(this);
+                foodForm.DisplayFoodInfo(rowView);
+            }
         }
+
+        
     }
 }
