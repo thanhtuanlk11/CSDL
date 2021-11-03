@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbbCatelory = new System.Windows.Forms.ComboBox();
+            this.cbbCategory = new System.Windows.Forms.ComboBox();
             this.dgvFoodList = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.smCalculateQuantity = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,14 +55,14 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn nhóm món ăn :";
             // 
-            // cbbCatelory
+            // cbbCategory
             // 
-            this.cbbCatelory.FormattingEnabled = true;
-            this.cbbCatelory.Location = new System.Drawing.Point(240, 13);
-            this.cbbCatelory.Name = "cbbCatelory";
-            this.cbbCatelory.Size = new System.Drawing.Size(207, 24);
-            this.cbbCatelory.TabIndex = 1;
-            this.cbbCatelory.SelectedIndexChanged += new System.EventHandler(this.cbbCatelory_SelectedIndexChanged);
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.Location = new System.Drawing.Point(240, 13);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(207, 24);
+            this.cbbCategory.TabIndex = 1;
+            this.cbbCategory.SelectedIndexChanged += new System.EventHandler(this.cbbCatelory_SelectedIndexChanged);
             // 
             // dgvFoodList
             // 
@@ -85,7 +85,7 @@ namespace WindowsFormsApp1
             this.tsmAddFood,
             this.tsmUpdateFood});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 128);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 100);
             // 
             // smCalculateQuantity
             // 
@@ -160,7 +160,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvFoodList);
-            this.Controls.Add(this.cbbCatelory);
+            this.Controls.Add(this.cbbCategory);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -175,7 +175,7 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbbCatelory;
+        private System.Windows.Forms.ComboBox cbbCategory;
         private System.Windows.Forms.DataGridView dgvFoodList;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
