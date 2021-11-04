@@ -19,10 +19,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void dgvFood_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         public void LoadFood(int categoryID)
         {
             // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
@@ -128,7 +124,6 @@ namespace WindowsFormsApp1
                     dgvFood.Rows[i].Cells["Price"].Value,
                     dgvFood.Rows[i].Cells["Notes"].Value.ToString());
                     cmd.CommandText = query;
-                    cmd.ExecuteNonQuery();
                     MessageBox.Show("Thêm mới thành công");
                 }
                 else
@@ -141,7 +136,6 @@ namespace WindowsFormsApp1
                     dgvFood.Rows[i].Cells["Notes"].Value.ToString(),
                     id.ToString());
                     cmd.CommandText = query;
-                    
                     MessageBox.Show("Cập nhật thành công");
                 }
             }
