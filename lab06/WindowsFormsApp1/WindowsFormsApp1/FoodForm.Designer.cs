@@ -47,7 +47,6 @@ namespace WindowsFormsApp1
             this.dgvFood.RowTemplate.Height = 24;
             this.dgvFood.Size = new System.Drawing.Size(818, 471);
             this.dgvFood.TabIndex = 0;
-            this.dgvFood.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFood_CellContentClick);
             // 
             // btnLuu
             // 

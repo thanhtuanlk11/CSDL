@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmFood : Form
     {
+        int categoryID;
         public frmFood()
         {
             InitializeComponent();
@@ -68,58 +69,84 @@ namespace WindowsFormsApp1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (dgvFood.SelectedRows.Count == 0) return;
+            var selected = dgvFood.SelectedRows[0];
+            string foodID = selected.Cells[0].Value.ToString();
             //Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Tạo đối tượng thực thi lệnh 
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-
-            // thiết lập lệnh truy vấn cho đối tương Command
-            sqlCommand.CommandText = "select * from DanhSachMonAm";
-
-            //Mở kết nối tới csdl
+            SqlCommand cmd = sqlConnection.CreateCommand();
+            string query = "delete from Food where ID =" + foodID;
             sqlConnection.Open();
+            cmd.CommandText = "delete from BillDetails where FoodID = " + foodID;
+            cmd.ExecuteNonQuery();
 
-            if (this.dgvFood.SelectedRows.Count > 0)
+            cmd.CommandText = query;
+            int numOfRowsEffected = cmd.ExecuteNonQuery();
+            if (numOfRowsEffected == 1)
             {
-                dgvFood.Rows.RemoveAt(this.dgvFood.SelectedRows[0].Index);
-                MessageBox.Show("Xóa nhóm món ăn thành công ");
+                dgvFood.Rows.Remove(selected);
+                MessageBox.Show("Xóa món ăn thành công");
             }
             else
             {
-                MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại");
+                MessageBox.Show("Đã xảy ra lỗi");
+                return;
             }
-            // Đống kết nối 
-            sqlConnection.Close();
+
+
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             // Tạo đối tượng thực thi lệnh 
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            SqlCommand cmd = sqlConnection.CreateCommand();
 
             // mở kết nối đến csdl
             sqlConnection.Open();
 
-            sqlCommand.CommandText = " select * from DanhSachMonAn where FoodCateloryID = ";
+            for (int i = 0; i < dgvFood.Rows.Count - 1; i++)
+            {
+                int id = (int)dgvFood.Rows[i].Cells["ID"].Value;
+                cmd.CommandText = "SELECT * FROM Food WHERE ID = " + id;
+                var checkID = cmd.ExecuteScalar();
 
-            // tạo đối tượng Dataadapter
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
-            da.Fill(ds);
+                if (checkID == null)
+                {
+                    string query = string.Format(" insert into Food(Name, Unit, FoodCategoryID, Price, Notes) " +
+                    "values (N'{0}', N'{1}', {2}, {3}, N'{4}')",
+                    dgvFood.Rows[i].Cells["Name"].Value,
+                    dgvFood.Rows[i].Cells["Unit"].Value,
+                    categoryID,
+                    dgvFood.Rows[i].Cells["Price"].Value,
+                    dgvFood.Rows[i].Cells["Notes"].Value.ToString());
+                    cmd.CommandText = query;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Thêm mới thành công");
+                }
+                else
+                {
+                    string query = string.Format(" update Food set Name = N'{0}', Unit = N'{1}', FoodCategoryID = {2}, Price = {3}, Notes = N'{4}' WHERE ID = {5}",
+                    dgvFood.Rows[i].Cells["Name"].Value,
+                    dgvFood.Rows[i].Cells["Unit"].Value,
+                    categoryID,
+                    dgvFood.Rows[i].Cells["Price"].Value,
+                    dgvFood.Rows[i].Cells["Notes"].Value.ToString(),
+                    id.ToString());
+                    cmd.CommandText = query;
+                    
+                    MessageBox.Show("Cập nhật thành công");
+                }
+            }
 
-            // Hiển thị danh sách món ăn lên Form
-            dgvFood.DataSource = ds.Tables[0];
-            dgvFood.Refresh();
-            // Đóng kết nối và giải phóng bộ nhớ 
             sqlConnection.Close();
-            sqlConnection.Dispose();
-            da.Dispose();
         }
 
        
