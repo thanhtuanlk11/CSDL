@@ -20,26 +20,16 @@ namespace WindowsFormsApp1
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
-
-            // Tạo đối tượng kết nối 
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
-            // Tạo đối tượng thực thi lệnh 
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-            sqlCommand.CommandText = "select * from DanhSachBanAn ";
-
-
-            // Mở kết nối đến cơ sở dữ liệu 
+            SqlCommand cmd = sqlConnection.CreateCommand();
+            cmd.CommandText = "select * from Table";
             sqlConnection.Open();
-            //thực thi lệnh bằng phương thức ExcuteReader
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
 
-            // GỌi hàm hiển thị dữ liệu lên màn hình 
             this.DisplayCatelory(sqlDataReader);
 
-            //Đóng kết nối
             sqlConnection.Close();
         }
         private void DisplayCatelory(SqlDataReader reader)
@@ -58,8 +48,9 @@ namespace WindowsFormsApp1
 
 
                 // Bổ sung thông tin khác cho ListViewItem 
-                item.SubItems.Add(reader["SoBan"].ToString());
-                item.SubItems.Add(reader["SoTang"].ToString());
+                item.SubItems.Add(reader["Name"].ToString());
+                item.SubItems.Add(reader["Status"].ToString());
+                item.SubItems.Add(reader["Capacity"].ToString());
 
             }
 
@@ -206,6 +197,11 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại");
             }
+        }
+
+        private void lvTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -40,10 +40,11 @@ namespace WindowsFormsApp1
             this.txtStt = new System.Windows.Forms.TextBox();
             this.txtTableMunber = new System.Windows.Forms.TextBox();
             this.txtFloat = new System.Windows.Forms.TextBox();
-            this.lvTable = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvTable = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnCheckBills
@@ -143,23 +144,6 @@ namespace WindowsFormsApp1
             this.txtFloat.Size = new System.Drawing.Size(192, 22);
             this.txtFloat.TabIndex = 10;
             // 
-            // lvTable
-            // 
-            this.lvTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.lvTable.FullRowSelect = true;
-            this.lvTable.HideSelection = false;
-            this.lvTable.Location = new System.Drawing.Point(3, 213);
-            this.lvTable.MultiSelect = false;
-            this.lvTable.Name = "lvTable";
-            this.lvTable.Size = new System.Drawing.Size(551, 239);
-            this.lvTable.TabIndex = 11;
-            this.lvTable.UseCompatibleStateImageBehavior = false;
-            this.lvTable.View = System.Windows.Forms.View.Details;
-            this.lvTable.Click += new System.EventHandler(this.lvTable_Click);
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Số thứ tự";
@@ -168,18 +152,42 @@ namespace WindowsFormsApp1
             // columnHeader2
             // 
             this.columnHeader2.Text = "Số bàn";
-            this.columnHeader2.Width = 150;
+            this.columnHeader2.Width = 100;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Số Tầng";
+            this.columnHeader3.Text = "Trạng thái";
             this.columnHeader3.Width = 150;
+            // 
+            // lvTable
+            // 
+            this.lvTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvTable.FullRowSelect = true;
+            this.lvTable.HideSelection = false;
+            this.lvTable.Location = new System.Drawing.Point(3, 213);
+            this.lvTable.MultiSelect = false;
+            this.lvTable.Name = "lvTable";
+            this.lvTable.Size = new System.Drawing.Size(613, 239);
+            this.lvTable.TabIndex = 11;
+            this.lvTable.UseCompatibleStateImageBehavior = false;
+            this.lvTable.View = System.Windows.Forms.View.Details;
+            this.lvTable.SelectedIndexChanged += new System.EventHandler(this.lvTable_SelectedIndexChanged);
+            this.lvTable.Click += new System.EventHandler(this.lvTable_Click);
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Sức chứa";
+            this.columnHeader4.Width = 120;
             // 
             // frmTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 450);
+            this.ClientSize = new System.Drawing.Size(625, 450);
             this.Controls.Add(this.lvTable);
             this.Controls.Add(this.txtFloat);
             this.Controls.Add(this.txtTableMunber);
@@ -212,9 +220,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtStt;
         private System.Windows.Forms.TextBox txtTableMunber;
         private System.Windows.Forms.TextBox txtFloat;
-        private System.Windows.Forms.ListView lvTable;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ListView lvTable;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

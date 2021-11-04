@@ -22,24 +22,18 @@ namespace WindowsFormsApp1
         {
             // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
-
             // Tạo đối tượng kết nối 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             // Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = "select * from Category ";
-
-
-
             // Mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
             //thực thi lệnh bằng phương thức ExcuteReader
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
             // GỌi hàm hiển thị dữ liệu lên màn hình 
             this.DisplayCatelory(sqlDataReader);
-
             //Đóng kết nối
             sqlConnection.Close();
         }
@@ -48,17 +42,13 @@ namespace WindowsFormsApp1
         {
             // Xóa tất cả các dòng hiện tại 
             lvCatelory.Items.Clear();
-
             // Đọc 1 dòng dữ liệu 
             while (reader.Read())
             {
                 //Tạo một dòng mới trong ListView
                 ListViewItem item = new ListViewItem(reader["ID"].ToString());
-
                 //Them một dòng mới vào ListVew
                 lvCatelory.Items.Add(item);
-
-
                 // Bổ sung thông tin khác cho ListViewItem 
                 item.SubItems.Add(reader["Name"].ToString());
                 item.SubItems.Add(reader["Type"].ToString());
