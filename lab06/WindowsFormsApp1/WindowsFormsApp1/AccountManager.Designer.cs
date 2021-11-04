@@ -46,6 +46,12 @@ namespace WindowsFormsApp1
             this.txtAcctive = new System.Windows.Forms.TextBox();
             this.btnLoadData = new System.Windows.Forms.Button();
             this.dgvFood = new System.Windows.Forms.DataGridView();
+            this.AccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tell = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip100.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
             this.SuspendLayout();
@@ -178,12 +184,61 @@ namespace WindowsFormsApp1
             // dgvFood
             // 
             this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AccountName,
+            this.Password,
+            this.FullName,
+            this.Email,
+            this.Tell,
+            this.DateCreated});
             this.dgvFood.Location = new System.Drawing.Point(1, 195);
             this.dgvFood.Name = "dgvFood";
             this.dgvFood.RowHeadersWidth = 51;
             this.dgvFood.RowTemplate.Height = 24;
             this.dgvFood.Size = new System.Drawing.Size(798, 257);
             this.dgvFood.TabIndex = 14;
+            // 
+            // AccountName
+            // 
+            this.AccountName.HeaderText = "Tên tài khoản";
+            this.AccountName.MinimumWidth = 6;
+            this.AccountName.Name = "AccountName";
+            this.AccountName.Width = 125;
+            // 
+            // Password
+            // 
+            this.Password.HeaderText = "Mật khẩu";
+            this.Password.MinimumWidth = 6;
+            this.Password.Name = "Password";
+            this.Password.Width = 125;
+            // 
+            // FullName
+            // 
+            this.FullName.HeaderText = "Tên đầy đủ";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
+            this.FullName.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 125;
+            // 
+            // Tell
+            // 
+            this.Tell.HeaderText = "Liên hệ";
+            this.Tell.MinimumWidth = 6;
+            this.Tell.Name = "Tell";
+            this.Tell.Width = 125;
+            // 
+            // DateCreated
+            // 
+            this.DateCreated.HeaderText = "Ngày tạo";
+            this.DateCreated.MinimumWidth = 6;
+            this.DateCreated.Name = "DateCreated";
+            this.DateCreated.Width = 125;
             // 
             // AccountManager
             // 
@@ -230,5 +285,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtAcctive;
         private System.Windows.Forms.Button btnLoadData;
         private System.Windows.Forms.DataGridView dgvFood;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tell;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateCreated;
     }
 }
