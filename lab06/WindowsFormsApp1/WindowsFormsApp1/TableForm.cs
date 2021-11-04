@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             SqlCommand cmd = sqlConnection.CreateCommand();
-            cmd.CommandText = "select * from Table";
+            cmd.CommandText = "select * from Table123 ";
             sqlConnection.Open();
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
 
