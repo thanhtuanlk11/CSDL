@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Tạo đối tượng thực thi lệnh 
@@ -78,7 +78,7 @@ namespace WindowsFormsApp1
 
             //Thiết lập lệnh truy vấn cho đối tượng Command 
 
-            sqlCommand.CommandText = "insert into ThongTinMonAn values('" + txtID.Text + "','" + txtName.Text + "','" + txtType.Text + "')";
+            sqlCommand.CommandText = "insert into Category(Name,[Type])" + "values(N'" + txtName.Text + "'," + txtType.Text + ")";
 
             // mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
@@ -131,7 +131,7 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // THiết lập lệnh truy vấn cho đối tượng Conmmad
-            sqlCommand.CommandText = "update ThongTinMonAn set TenLoaiMonAn ='"+txtName.Text+"', Loai='"+txtType.Text +"'where MaLoai ='"+txtID.Text+"'";
+            sqlCommand.CommandText = "update ThongTinMonAn set Name ='"+txtName.Text+"', Type='"+txtType.Text +"'where ID ='"+txtID.Text+"'";
 
             //Mở kết nối CSDL
             sqlConnection.Open();

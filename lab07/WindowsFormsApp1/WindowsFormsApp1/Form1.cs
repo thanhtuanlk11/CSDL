@@ -174,5 +174,10 @@ namespace WindowsFormsApp1
 
             dgvFoodList.DataSource = foodView;
         }
+
+        private void dgvFoodList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

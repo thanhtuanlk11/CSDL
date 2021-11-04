@@ -192,6 +192,7 @@ namespace WindowsFormsApp1
             // 
             this.txtID.Location = new System.Drawing.Point(163, 62);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(361, 22);
             this.txtID.TabIndex = 8;
             // 
