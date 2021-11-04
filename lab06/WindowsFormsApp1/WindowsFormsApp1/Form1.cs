@@ -21,17 +21,16 @@ namespace WindowsFormsApp1
         private void btnLoad_Click(object sender, EventArgs e)
         {
             // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
 
             // Tạo đối tượng kết nối 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             // Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
-            sqlCommand.CommandText = "select * from ThongTinMonAn ";
+            sqlCommand.CommandText = "select * from Category ";
 
-            // TThiết lập lệnh truy vấn cho đối tượng Command
-            //string query = "SELECT ID, Name, Type FROM Category";
+
 
             // Mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
@@ -54,15 +53,15 @@ namespace WindowsFormsApp1
             while (reader.Read())
             {
                 //Tạo một dòng mới trong ListView
-                ListViewItem item = new ListViewItem(reader["MaLoai"].ToString());
+                ListViewItem item = new ListViewItem(reader["ID"].ToString());
 
                 //Them một dòng mới vào ListVew
                 lvCatelory.Items.Add(item);
 
 
                 // Bổ sung thông tin khác cho ListViewItem 
-                item.SubItems.Add(reader["TenLoaiMonAn"].ToString());
-                item.SubItems.Add(reader["Loai"].ToString());
+                item.SubItems.Add(reader["Name"].ToString());
+                item.SubItems.Add(reader["Type"].ToString());
 
             }
 
