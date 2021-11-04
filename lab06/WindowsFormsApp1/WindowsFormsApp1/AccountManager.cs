@@ -20,28 +20,29 @@ namespace WindowsFormsApp1
 
         private void AccountManager_Load(object sender, EventArgs e)
         {
-           
+            dgvF  
         }
         private void DisplayCatelory(SqlDataReader reader)
         {
             // Xóa tất cả các dòng hiện tại 
-            lvAccount.Items.Clear();
+            dgvFood.Items.Clear();
 
             // Đọc 1 dòng dữ liệu 
             while (reader.Read())
             {
                 //Tạo một dòng mới trong ListView
-                ListViewItem item = new ListViewItem(reader["id"].ToString());
+                ListViewItem item = new ListViewItem(reader["AccountName"].ToString());
 
                 //Them một dòng mới vào ListVew
-                lvAccount.Items.Add(item);
+                dgvFood.Items.Add(item);
 
 
                 // Bổ sung thông tin khác cho ListViewItem 
-                item.SubItems.Add(reader["account"].ToString());
-                item.SubItems.Add(reader["password"].ToString());
-                item.SubItems.Add(reader["active"].ToString());
-
+                item.SubItems.Add(reader["Password"].ToString());
+                item.SubItems.Add(reader["FullName"].ToString());
+                item.SubItems.Add(reader["Email"].ToString());
+                item.SubItems.Add(reader["Tell"].ToString());
+                item.SubItems.Add(reader["DateCreated"].ToString());
             }
 
         }
@@ -69,8 +70,8 @@ namespace WindowsFormsApp1
 
             if (munOfRowsEffected == 1)
             {
-                ListViewItem item = lvAccount.SelectedItems[0];
-                lvAccount.Items.Remove(item);
+                ListViewItem item = dgvFood.SelectedItems[0];
+                dgvFood.Items.Remove(item);
 
                 // xóa ô nhập 
                 txtStt.Text = "";
@@ -132,14 +133,14 @@ namespace WindowsFormsApp1
         private void btnLoadData_Click(object sender, EventArgs e)
         {
             // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
 
             // Tạo đối tượng kết nối 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             // Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
-            sqlCommand.CommandText = "select * from DanhSachTaiKhoan2 ";
+            sqlCommand.CommandText = "select * from Account ";
 
             // TThiết lập lệnh truy vấn cho đối tượng Command
             //string query = "SELECT ID, Name, Type FROM Category";
@@ -180,7 +181,7 @@ namespace WindowsFormsApp1
             if (munOfRowsEffected == 1)
             {
                 //Cập nhật dữ liệu trên listview
-                ListViewItem item = lvAccount.SelectedItems[0];
+                ListViewItem item = dgvFood.SelectedItems[0];
 
                 item.SubItems[1].Text = txtAccount.Text;
                 item.SubItems[2].Text = txtPassword.Text;
@@ -205,7 +206,7 @@ namespace WindowsFormsApp1
         private void lvAccount_Click(object sender, EventArgs e)
         {
             // lấy dòng được chọn trong ListView
-            ListViewItem item = lvAccount.SelectedItems[0];
+            ListViewItem item = dgvFood.SelectedItems[0];
 
             // Hiển thị dữ liệu lên TextBox
             txtStt.Text = item.Text;
@@ -215,6 +216,11 @@ namespace WindowsFormsApp1
 
             //Hiển thị nút cập nhật và xóa 
             btnCapNhat.Enabled = true;
+        }
+
+        private void lvAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,11 +30,6 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lvAccount = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip100 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xóaTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemDanhSáchVaiTròToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,49 +45,10 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.txtAcctive = new System.Windows.Forms.TextBox();
             this.btnLoadData = new System.Windows.Forms.Button();
+            this.dgvFood = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip100.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lvAccount
-            // 
-            this.lvAccount.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.lvAccount.ContextMenuStrip = this.contextMenuStrip100;
-            this.lvAccount.FullRowSelect = true;
-            this.lvAccount.GridLines = true;
-            this.lvAccount.HideSelection = false;
-            this.lvAccount.Location = new System.Drawing.Point(4, 195);
-            this.lvAccount.MultiSelect = false;
-            this.lvAccount.Name = "lvAccount";
-            this.lvAccount.Size = new System.Drawing.Size(794, 248);
-            this.lvAccount.TabIndex = 0;
-            this.lvAccount.UseCompatibleStateImageBehavior = false;
-            this.lvAccount.View = System.Windows.Forms.View.Details;
-            this.lvAccount.ContextMenuStripChanged += new System.EventHandler(this.AccountManager_Load);
-            this.lvAccount.Click += new System.EventHandler(this.lvAccount_Click);
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "số thứ tự";
-            this.columnHeader4.Width = 100;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Tài khoản";
-            this.columnHeader5.Width = 200;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Mật khẩu";
-            this.columnHeader6.Width = 200;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Trạng thái";
-            this.columnHeader7.Width = 200;
             // 
             // contextMenuStrip100
             // 
@@ -219,11 +175,22 @@ namespace WindowsFormsApp1
             this.btnLoadData.UseVisualStyleBackColor = true;
             this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
             // 
+            // dgvFood
+            // 
+            this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFood.Location = new System.Drawing.Point(1, 195);
+            this.dgvFood.Name = "dgvFood";
+            this.dgvFood.RowHeadersWidth = 51;
+            this.dgvFood.RowTemplate.Height = 24;
+            this.dgvFood.Size = new System.Drawing.Size(798, 257);
+            this.dgvFood.TabIndex = 14;
+            // 
             // AccountManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvFood);
             this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.txtAcctive);
             this.Controls.Add(this.label1);
@@ -236,26 +203,20 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.resetPassword);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.lvAccount);
             this.Name = "AccountManager";
             this.Text = "AccountManager";
             this.Load += new System.EventHandler(this.AccountManager_Load);
             this.contextMenuStrip100.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView lvAccount;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip100;
         private System.Windows.Forms.ToolStripMenuItem xóaTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xemDanhSáchVaiTròToolStripMenuItem;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button resetPassword;
@@ -268,5 +229,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAcctive;
         private System.Windows.Forms.Button btnLoadData;
+        private System.Windows.Forms.DataGridView dgvFood;
     }
 }

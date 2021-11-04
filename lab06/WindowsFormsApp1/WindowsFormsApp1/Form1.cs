@@ -124,14 +124,16 @@ namespace WindowsFormsApp1
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             // Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // THiết lập lệnh truy vấn cho đối tượng Conmmad
-            sqlCommand.CommandText = "update ThongTinMonAn set Name ='"+txtName.Text+"', Type='"+txtType.Text +"'where ID ='"+txtID.Text+"'";
+            sqlCommand.CommandText = "update Category set Name =N'" + txtName.Text + 
+                                        "',[Type] =" + txtType.Text +
+                                        "where ID=" + txtID.Text;
 
             //Mở kết nối CSDL
             sqlConnection.Open();
@@ -169,14 +171,14 @@ namespace WindowsFormsApp1
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // thiết lập lệnh truy vấn cho đối tương Command
-            sqlCommand.CommandText = "delete from ThongTinMonAn where MaLoai = '"+txtID.Text+"'";
+            sqlCommand.CommandText = "delete from Category where ID = '"+txtID.Text+"'";
 
             //Mở kết nối tới csdl
             sqlConnection.Open();
