@@ -25,14 +25,14 @@ namespace WindowsFormsApp1
         public void LoadFood(int categoryID)
         {
             // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             // Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // Thiết lập lệnh truy vấn cho đối tương command
-            sqlCommand.CommandText = "select TenLoaiMonAn from ThongTinMonAn where MaLoai = " + categoryID;
+            sqlCommand.CommandText = "select Name from Category where ID = " + categoryID;
 
             // mở kết nối đến csdl
             sqlConnection.Open();
@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
             string catName = sqlCommand.ExecuteScalar().ToString();
             this.Text = " Danh sách các món ăn thuộc nhóm :" + catName;
 
-            sqlCommand.CommandText = " select * from DanhSachMonAn where FoodCateloryID = " + categoryID;
+            sqlCommand.CommandText = " select * from Food where FoodCategoryID = " + categoryID;
 
             // tạo đối tượng Dataadapter
 
