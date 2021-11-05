@@ -113,8 +113,38 @@ namespace WindowsFormsApp1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            SqlCommand cmd = sqlConnection.CreateCommand();
+            cmd.CommandText = "update Category set Name = N'" + txtName.Text +
+                                                    "', [Type] = " + (txtType.Text == "Thức uống" ? 0 : 1) +
+                                                    " where ID = " + txtID.Text;
+
+            sqlConnection.Open();
+            int numOfRowsEffected = cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            if (numOfRowsEffected == 1)
+            {
+                ListViewItem item = lvCatelory.SelectedItems[0];
+                item.SubItems[1].Text = txtName.Text;
+                item.SubItems[2].Text = txtType.Text;
+
+                txtID.Text = "";
+                txtName.Text = "";
+                txtType.Text = "";
+
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+                MessageBox.Show("Cập nhật món ăn thành công");
+            }
+            else
+            {
+                MessageBox.Show("Đã xảy ra lỗi , vui long thử lại");
+            }
         }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
