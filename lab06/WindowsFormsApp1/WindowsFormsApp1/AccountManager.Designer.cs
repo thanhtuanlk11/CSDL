@@ -30,9 +30,6 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip100 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.xóaTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xemDanhSáchVaiTròToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.resetPassword = new System.Windows.Forms.Button();
@@ -52,34 +49,15 @@ namespace WindowsFormsApp1
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xóaTàiKhoảnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.xemDanhSáchVaiTròToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCall = new System.Windows.Forms.TextBox();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
-            this.contextMenuStrip100.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip100
-            // 
-            this.contextMenuStrip100.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip100.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xóaTàiKhoảnToolStripMenuItem,
-            this.xemDanhSáchVaiTròToolStripMenuItem});
-            this.contextMenuStrip100.Name = "contextMenuStrip100";
-            this.contextMenuStrip100.Size = new System.Drawing.Size(225, 52);
-            // 
-            // xóaTàiKhoảnToolStripMenuItem
-            // 
-            this.xóaTàiKhoảnToolStripMenuItem.Name = "xóaTàiKhoảnToolStripMenuItem";
-            this.xóaTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
-            this.xóaTàiKhoảnToolStripMenuItem.Text = "Xóa tài khoản";
-            this.xóaTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.xóaTàiKhoảnToolStripMenuItem_Click);
-            // 
-            // xemDanhSáchVaiTròToolStripMenuItem
-            // 
-            this.xemDanhSáchVaiTròToolStripMenuItem.Name = "xemDanhSáchVaiTròToolStripMenuItem";
-            this.xemDanhSáchVaiTròToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
-            this.xemDanhSáchVaiTròToolStripMenuItem.Text = "Xem danh sách vai trò";
             // 
             // btnThem
             // 
@@ -194,6 +172,7 @@ namespace WindowsFormsApp1
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
+            this.lvAccount.ContextMenuStrip = this.contextMenuStrip1;
             this.lvAccount.FullRowSelect = true;
             this.lvAccount.HideSelection = false;
             this.lvAccount.Location = new System.Drawing.Point(0, 191);
@@ -234,6 +213,28 @@ namespace WindowsFormsApp1
             // 
             this.columnHeader6.Text = "Ngày tạo";
             this.columnHeader6.Width = 120;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xóaTàiKhoảnToolStripMenuItem1,
+            this.xemDanhSáchVaiTròToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(229, 80);
+            // 
+            // xóaTàiKhoảnToolStripMenuItem1
+            // 
+            this.xóaTàiKhoảnToolStripMenuItem1.Name = "xóaTàiKhoảnToolStripMenuItem1";
+            this.xóaTàiKhoảnToolStripMenuItem1.Size = new System.Drawing.Size(228, 24);
+            this.xóaTàiKhoảnToolStripMenuItem1.Text = "Xóa tài khoản";
+            this.xóaTàiKhoảnToolStripMenuItem1.Click += new System.EventHandler(this.xóaTàiKhoảnToolStripMenuItem1_Click);
+            // 
+            // xemDanhSáchVaiTròToolStripMenuItem1
+            // 
+            this.xemDanhSáchVaiTròToolStripMenuItem1.Name = "xemDanhSáchVaiTròToolStripMenuItem1";
+            this.xemDanhSáchVaiTròToolStripMenuItem1.Size = new System.Drawing.Size(228, 24);
+            this.xemDanhSáchVaiTròToolStripMenuItem1.Text = "Xem danh sách vai trò ";
             // 
             // label5
             // 
@@ -292,16 +293,13 @@ namespace WindowsFormsApp1
             this.Name = "AccountManager";
             this.Text = "AccountManager";
             this.Load += new System.EventHandler(this.AccountManager_Load);
-            this.contextMenuStrip100.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip100;
-        private System.Windows.Forms.ToolStripMenuItem xóaTàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xemDanhSáchVaiTròToolStripMenuItem;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button resetPassword;
@@ -325,5 +323,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCall;
         private System.Windows.Forms.DateTimePicker dtpNgay;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem xóaTàiKhoảnToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem xemDanhSáchVaiTròToolStripMenuItem1;
     }
 }
