@@ -130,9 +130,13 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // THiết lập lệnh truy vấn cho đối tượng Conmmad
-            sqlCommand.CommandText = "update Account set Password =N'" + txtPassword.Text +
-                                        "',[FullName] =" + txtFullName.Text +
-                                        "where AccountName=" + txtName.Text;
+            sqlCommand.CommandText = "update Account set Password = N'" + txtPassword.Text +
+                                                    "',FullName = " + txtFullName.Text +
+                                                    "',Email = " + txtEmail.Text +
+                                                    "',Tell = " + txtCall.Text +
+                                                    "',DateCreated = " + dtpNgay.Text +
+                                                    " where AccountName = " + txtName.Text;
+
 
             //Mở kết nối CSDL
             sqlConnection.Open();
