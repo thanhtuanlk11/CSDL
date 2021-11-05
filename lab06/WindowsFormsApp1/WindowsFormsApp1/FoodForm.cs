@@ -143,6 +143,9 @@ namespace WindowsFormsApp1
             sqlConnection.Close();
         }
 
-       
+        private void dgvFood_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
