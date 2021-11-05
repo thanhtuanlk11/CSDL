@@ -200,5 +200,10 @@ namespace WindowsFormsApp1
 
             sqlConnection.Close();
         }
+
+        private void frmTable_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -113,49 +113,7 @@ namespace WindowsFormsApp1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            // Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            // Tạo đối tượng thực thi lệnh 
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-
-            // THiết lập lệnh truy vấn cho đối tượng Conmmad
-            sqlCommand.CommandText = "update Category set Name =N'" + txtName.Text + 
-                                        "',[Type] =" + txtType.Text +
-                                        "where ID=" + txtID.Text;
-
-            //Mở kết nối CSDL
-            sqlConnection.Open();
-
-            // Thực thi lệnh bằng phương thức ExcuteReader
-            int munOfRowsEffected = sqlCommand.ExecuteNonQuery();
-
-            // Đống kết nối
-            sqlConnection.Close();
-
-            if(munOfRowsEffected == 1)
-            {
-                //Cập nhật dữ liệu trên listview
-                ListViewItem item = lvCatelory.SelectedItems[0];
-                item.SubItems[1].Text = txtName.Text;
-                item.SubItems[2].Text = txtType.Text;
-
-                // Xóa các ô nhập 
-                txtID.Text = "";
-                txtName.Text = "";
-                txtType.Text = "";
-                //disable các nút xóa và cập nhật 
-                btnUpdate.Enabled = false;
-                btnDelete.Enabled = false;
-
-                MessageBox.Show("Cập nhật nhóm món ăn thành công");
-
-            }
-            else
-            {
-                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
-            }
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

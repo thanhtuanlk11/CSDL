@@ -165,7 +165,6 @@ namespace WindowsFormsApp1
             this.lvTable.TabIndex = 11;
             this.lvTable.UseCompatibleStateImageBehavior = false;
             this.lvTable.View = System.Windows.Forms.View.Details;
-       
             this.lvTable.Click += new System.EventHandler(this.lvTable_Click);
             // 
             // columnHeader4
@@ -202,7 +201,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.btnCheckBills);
             this.Name = "frmTable";
             this.Text = "TableForm";
-            
+            this.Load += new System.EventHandler(this.frmTable_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

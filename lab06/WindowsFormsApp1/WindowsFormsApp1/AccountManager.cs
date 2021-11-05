@@ -122,8 +122,58 @@ namespace WindowsFormsApp1
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            
-               
+            // Tạo đối tượng kết nối 
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            // Tạo đối tượng thực thi lệnh 
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            // THiết lập lệnh truy vấn cho đối tượng Conmmad
+            sqlCommand.CommandText = "update Account set Password =N'" + txtPassword.Text +
+                                        "',[FullName] =" + txtFullName.Text +
+                                        "where AccountName=" + txtName.Text;
+
+            //Mở kết nối CSDL
+            sqlConnection.Open();
+
+            // Thực thi lệnh bằng phương thức ExcuteReader
+            int munOfRowsEffected = sqlCommand.ExecuteNonQuery();
+
+            // Đống kết nối
+            sqlConnection.Close();
+
+            if (munOfRowsEffected == 1)
+            {
+                //Cập nhật dữ liệu trên listview
+                ListViewItem item = lvAccount.SelectedItems[0];
+
+                item.SubItems[1].Text = txtPassword.Text;
+                item.SubItems[2].Text = txtFullName.Text;
+                item.SubItems[3].Text = txtEmail.Text;
+                item.SubItems[4].Text = txtCall.Text;
+                item.SubItems[5].Text = dtpNgay.Text;
+
+
+                // Xóa các ô nhập 
+                txtName.Text = "";
+                txtPassword.Text = "";
+                txtFullName.Text = "";
+                txtEmail.Text = "";
+                txtCall.Text = "";
+                dtpNgay.Value = DateTime.Now;
+                
+
+                //disable các nút xóa và cập nhật 
+                btnCapNhat.Enabled = false;
+                MessageBox.Show("Cập nhật tài khoản thành công");
+
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
+            }
+
         }
 
         private void lvAccount_Click(object sender, EventArgs e)
@@ -139,6 +189,22 @@ namespace WindowsFormsApp1
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lvAccount_Click_1(object sender, EventArgs e)
+        {
+            // lấy dòng được chọn trong ListView
+            ListViewItem item = lvAccount.SelectedItems[0];
+
+            // Hiển thị dữ liệu lên TextBox
+            txtName.Text = item.Text;
+            txtPassword.Text = item.SubItems[1].Text;
+            txtFullName.Text = item.SubItems[2].Text;
+            txtEmail.Text = item.SubItems[3].Text;
+            txtCall.Text = item.SubItems[4].Text;
+            dtpNgay.Text = item.SubItems[5].Text;
+            //Hiển thị nút cập nhật và xóa 
+            btnCapNhat.Enabled = true;
         }
     }
 }

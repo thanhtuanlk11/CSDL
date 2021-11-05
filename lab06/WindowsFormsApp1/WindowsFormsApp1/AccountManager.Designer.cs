@@ -203,6 +203,7 @@ namespace WindowsFormsApp1
             this.lvAccount.TabIndex = 14;
             this.lvAccount.UseCompatibleStateImageBehavior = false;
             this.lvAccount.View = System.Windows.Forms.View.Details;
+            this.lvAccount.Click += new System.EventHandler(this.lvAccount_Click_1);
             // 
             // columnHeader1
             // 
