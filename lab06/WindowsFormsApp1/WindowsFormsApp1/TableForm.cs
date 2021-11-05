@@ -18,20 +18,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            SqlCommand cmd = sqlConnection.CreateCommand();
-            cmd.CommandText = "select * from Table123 ";
-            sqlConnection.Open();
-            SqlDataReader sqlDataReader = cmd.ExecuteReader();
-
-            this.DisplayCatelory(sqlDataReader);
-
-            sqlConnection.Close();
-        }
         private void DisplayCatelory(SqlDataReader reader)
         {
             // Xóa tất cả các dòng hiện tại 
@@ -83,7 +69,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Thêm bàn ăn thành công ");
 
                 // Tải lại dữ liệu 
-                btnLoad.PerformClick();
+                btn_load.PerformClick();
 
                 //Xóa các ô nhập 
                 txtStt.Text = "";
@@ -199,9 +185,20 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void lvTable_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void btn_load_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            SqlCommand cmd = sqlConnection.CreateCommand();
+            cmd.CommandText = "select * from Table123 ";
+            sqlConnection.Open();
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+
+            this.DisplayCatelory(sqlDataReader);
+
+            sqlConnection.Close();
         }
     }
 }

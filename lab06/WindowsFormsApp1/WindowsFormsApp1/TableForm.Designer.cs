@@ -33,7 +33,6 @@ namespace WindowsFormsApp1
             this.btnAddTable = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@ namespace WindowsFormsApp1
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvTable = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_load = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCheckBills
@@ -85,16 +85,6 @@ namespace WindowsFormsApp1
             this.btnDelete.Text = "Xóa bàn";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(12, 155);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(90, 28);
-            this.btnLoad.TabIndex = 4;
-            this.btnLoad.Text = "Tải dữ liệu";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // label1
             // 
@@ -175,7 +165,7 @@ namespace WindowsFormsApp1
             this.lvTable.TabIndex = 11;
             this.lvTable.UseCompatibleStateImageBehavior = false;
             this.lvTable.View = System.Windows.Forms.View.Details;
-            this.lvTable.SelectedIndexChanged += new System.EventHandler(this.lvTable_SelectedIndexChanged);
+       
             this.lvTable.Click += new System.EventHandler(this.lvTable_Click);
             // 
             // columnHeader4
@@ -183,11 +173,22 @@ namespace WindowsFormsApp1
             this.columnHeader4.Text = "Sức chứa";
             this.columnHeader4.Width = 120;
             // 
+            // btn_load
+            // 
+            this.btn_load.Location = new System.Drawing.Point(28, 171);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(138, 36);
+            this.btn_load.TabIndex = 12;
+            this.btn_load.Text = "Tải danh sách bàn";
+            this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            // 
             // frmTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 450);
+            this.Controls.Add(this.btn_load);
             this.Controls.Add(this.lvTable);
             this.Controls.Add(this.txtFloat);
             this.Controls.Add(this.txtTableMunber);
@@ -195,13 +196,13 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAddTable);
             this.Controls.Add(this.btnCheckBills);
             this.Name = "frmTable";
             this.Text = "TableForm";
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +214,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button btnAddTable;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -225,5 +225,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ListView lvTable;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btn_load;
     }
 }

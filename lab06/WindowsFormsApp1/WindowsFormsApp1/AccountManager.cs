@@ -22,11 +22,7 @@ namespace WindowsFormsApp1
         {
             
         }
-        private void DisplayCatelory(SqlDataReader reader)
-        {
-            
-
-        }
+ 
 
         private void xóaTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -37,7 +33,7 @@ namespace WindowsFormsApp1
         private void btnThem_Click(object sender, EventArgs e)
         {
             //Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Tạo đối tượng thực thi lệnh 
@@ -45,7 +41,7 @@ namespace WindowsFormsApp1
 
             //Thiết lập lệnh truy vấn cho đối tượng Command 
 
-            sqlCommand.CommandText = "insert into DanhSachTaiKhoan2 values('"+txtStt.Text+"','"+txtAccount.Text+"','"+txtPassword.Text+"','"+txtAcctive.Text+"')";
+            sqlCommand.CommandText = "insert into Account values('" + txtName.Text + "','" + txtPassword.Text + "','" + txtFullName.Text +"','"+txtEmail.Text+"','"+txtCall.Text+"','"+dtpNgay.Value + "')";
 
             // mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
@@ -58,17 +54,18 @@ namespace WindowsFormsApp1
 
             if (numOfRowsEffected == 1)
             {
-                MessageBox.Show("Thêm tài khoản thành công ");
+                MessageBox.Show("Thêm tài khoản mới thành công ");
 
                 // Tải lại dữ liệu 
                 btnLoadData.PerformClick();
 
                 //Xóa các ô nhập 
-                txtStt.Text = "";
-                txtAccount.Text = "";
+                txtName.Text = "";
                 txtPassword.Text = "";
-                txtAcctive.Text = "";
-
+                txtFullName.Text = "";
+                txtEmail.Text = "";
+                txtCall.Text = "";
+                dtpNgay.Value = DateTime.Now;
             }
             else
             {
@@ -102,6 +99,26 @@ namespace WindowsFormsApp1
             //Đóng kết nối
             sqlConnection.Close();
         }
+        private void DisplayCatelory(SqlDataReader reader)
+        {
+            // Xóa tất cả các dòng hiện tại 
+            lvAccount.Items.Clear();
+            // Đọc 1 dòng dữ liệu 
+            while (reader.Read())
+            {
+                //Tạo một dòng mới trong ListView
+                ListViewItem item = new ListViewItem(reader["AccountName"].ToString());
+                //Them một dòng mới vào ListVew
+                lvAccount.Items.Add(item);
+                // Bổ sung thông tin khác cho ListViewItem 
+                item.SubItems.Add(reader["Password"].ToString());
+                item.SubItems.Add(reader["FullName"].ToString());
+                item.SubItems.Add(reader["Email"].ToString());
+                item.SubItems.Add(reader["Tell"].ToString());
+                item.SubItems.Add(reader["DateCreated"].ToString());
+            }
+
+        }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
@@ -115,6 +132,11 @@ namespace WindowsFormsApp1
         }
 
         private void lvAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
