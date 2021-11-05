@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCheckBills = new System.Windows.Forms.Button();
             this.btnAddTable = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -45,6 +46,11 @@ namespace WindowsFormsApp1
             this.lvTable = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_load = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xóaBànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xemDanhMụcHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xemNhậtKýHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCheckBills
@@ -156,6 +162,7 @@ namespace WindowsFormsApp1
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lvTable.ContextMenuStrip = this.contextMenuStrip1;
             this.lvTable.FullRowSelect = true;
             this.lvTable.HideSelection = false;
             this.lvTable.Location = new System.Drawing.Point(3, 213);
@@ -182,6 +189,35 @@ namespace WindowsFormsApp1
             this.btn_load.UseVisualStyleBackColor = true;
             this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xóaBànToolStripMenuItem,
+            this.xemDanhMụcHóaĐơnToolStripMenuItem,
+            this.xemNhậtKýHóaĐơnToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(237, 104);
+            // 
+            // xóaBànToolStripMenuItem
+            // 
+            this.xóaBànToolStripMenuItem.Name = "xóaBànToolStripMenuItem";
+            this.xóaBànToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
+            this.xóaBànToolStripMenuItem.Text = "Xóa bàn ";
+            this.xóaBànToolStripMenuItem.Click += new System.EventHandler(this.xóaBànToolStripMenuItem_Click);
+            // 
+            // xemDanhMụcHóaĐơnToolStripMenuItem
+            // 
+            this.xemDanhMụcHóaĐơnToolStripMenuItem.Name = "xemDanhMụcHóaĐơnToolStripMenuItem";
+            this.xemDanhMụcHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
+            this.xemDanhMụcHóaĐơnToolStripMenuItem.Text = "Xem danh mục hóa đơn";
+            // 
+            // xemNhậtKýHóaĐơnToolStripMenuItem
+            // 
+            this.xemNhậtKýHóaĐơnToolStripMenuItem.Name = "xemNhậtKýHóaĐơnToolStripMenuItem";
+            this.xemNhậtKýHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
+            this.xemNhậtKýHóaĐơnToolStripMenuItem.Text = "Xem nhật ký hóa đơn";
+            // 
             // frmTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -202,6 +238,7 @@ namespace WindowsFormsApp1
             this.Name = "frmTable";
             this.Text = "TableForm";
             this.Load += new System.EventHandler(this.frmTable_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +262,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ListView lvTable;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btn_load;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem xóaBànToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xemDanhMụcHóaĐơnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xemNhậtKýHóaĐơnToolStripMenuItem;
     }
 }

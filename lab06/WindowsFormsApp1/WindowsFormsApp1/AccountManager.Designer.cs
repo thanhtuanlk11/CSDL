@@ -235,6 +235,7 @@ namespace WindowsFormsApp1
             this.xemDanhSáchVaiTròToolStripMenuItem1.Name = "xemDanhSáchVaiTròToolStripMenuItem1";
             this.xemDanhSáchVaiTròToolStripMenuItem1.Size = new System.Drawing.Size(228, 24);
             this.xemDanhSáchVaiTròToolStripMenuItem1.Text = "Xem danh sách vai trò ";
+            this.xemDanhSáchVaiTròToolStripMenuItem1.Click += new System.EventHandler(this.xemDanhSáchVaiTròToolStripMenuItem1_Click);
             // 
             // label5
             // 

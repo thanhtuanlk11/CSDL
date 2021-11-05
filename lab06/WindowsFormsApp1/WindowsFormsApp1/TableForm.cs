@@ -176,7 +176,7 @@ namespace WindowsFormsApp1
                 txtTableMunber.Text = "";
                 txtFloat.Text = "";
 
-                //MessageBox.Show("Xóa bàn ăn thành công ");
+                MessageBox.Show("Xóa bàn ăn thành công ");
 
             }
             else
@@ -204,6 +204,46 @@ namespace WindowsFormsApp1
         private void frmTable_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void xóaBànToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Tạo đối tượng kết nối 
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            //Tạo đối tượng thực thi lệnh 
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            // thiết lập lệnh truy vấn cho đối tương Command
+            sqlCommand.CommandText = "delete from DanhSachBanAn where ID = '" + txtStt.Text + "'";
+
+            //Mở kết nối tới csdl
+            sqlConnection.Open();
+
+            // thực thi lệnh bằng phương thức ExcuteReader
+            int munOfRowsEffected = sqlCommand.ExecuteNonQuery();
+
+            // Đống kết nối 
+            sqlConnection.Close();
+
+            if (munOfRowsEffected == 1)
+            {
+                ListViewItem item = lvTable.SelectedItems[0];
+                lvTable.Items.Remove(item);
+
+                // xóa ô nhập 
+                txtStt.Text = "";
+                txtTableMunber.Text = "";
+                txtFloat.Text = "";
+
+                MessageBox.Show("Xóa bàn ăn thành công ");
+
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại");
+            }
         }
     }
 }

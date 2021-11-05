@@ -252,6 +252,15 @@ namespace WindowsFormsApp1
             }
         }
 
- 
+        private void xemDanhSáchVaiTròToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != "")
+            {
+                frmVaiTro frm = new frmVaiTro();
+                frm.Show(this);
+                frm.LoadAccount(txtName.Text);
+            }
+            
+        }
     }
 }
