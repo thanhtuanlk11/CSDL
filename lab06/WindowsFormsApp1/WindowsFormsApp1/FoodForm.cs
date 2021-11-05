@@ -121,7 +121,7 @@ namespace WindowsFormsApp1
                     dgvFood.Rows[i].Cells["Name"].Value,
                     dgvFood.Rows[i].Cells["Unit"].Value,
                     categoryID,
-                    dgvFood.Rows[i].Cells["Price"].Value,
+                    dgvFood.Rows[i].Cells["Price"].Value,s
                     dgvFood.Rows[i].Cells["Notes"].Value.ToString());
                     cmd.CommandText = query;
                     MessageBox.Show("Thêm mới thành công");
