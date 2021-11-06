@@ -22,13 +22,14 @@ namespace WindowsFormsApp1
         {
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = connection.CreateCommand();
+            SqlCommand sqlCommand = connection.CreateCommand();
 
-            command.CommandText = String.Format("select * from Bills where CheckoutDate BETWEEN '{0}' AND '{1}'", fromTime, toTime);
+            sqlCommand.CommandText = String.Format("select * from Bills where CheckoutDate BETWEEN '{0}' AND '{1}'", fromTime, toTime);
             connection.Open();
-            //string categoryName = command.ExecuteScalar().ToString();
-            this.Text = "Danh sach hoa don tu ngay " + fromTime + " toi ngay " + toTime;
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            this.Text = "Danh sách hóa đơn từ ngày " + fromTime + "tới ngày " + toTime;
+
+            sqlCommand.CommandText = "select * from Food";
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable("Food");
             adapter.Fill(dt);
 
