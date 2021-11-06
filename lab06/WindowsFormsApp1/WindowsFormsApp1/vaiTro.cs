@@ -37,23 +37,21 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // Thiết lập lệnh truy vấn cho đối tương command
-            sqlCommand.CommandText = "select AccountName from Account where AccountName = " + accountName;
+            sqlCommand.CommandText = "select * from Account where AccountName = " + accountName;
 
             // mở kết nối đến csdl
             sqlConnection.Open();
 
-            //// Gán tên nhóm sản phẩm cho tiêu đề
-            //string catName = sqlCommand.ExecuteScalar().ToString();
-            //this.Text = " Danh sách tài khoản :" + catName;
+            this.Text = "Danh sách tài khoản " + accountName;
 
-            sqlCommand.CommandText = " select * from RoleAccount where AccountName = " + accountName;
+            sqlCommand.CommandText = " select * from Role";
 
             // tạo đối tượng Dataadapter
 
             SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
 
             // tạo database chứa dữ liệu 
-            DataTable dt = new DataTable("RoleAccount");
+            DataTable dt = new DataTable("Role");
             da.Fill(dt);
 
             // Hiển thị danh sách món ăn lên Form
