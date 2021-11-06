@@ -94,7 +94,9 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // THiết lập lệnh truy vấn cho đối tượng Conmmad
-            sqlCommand.CommandText = "update DanhSachBanAn set SoBan ='" + txtTableMunber.Text + "', SoTang='" + txtFloat.Text +"'where ID ='" + txtStt.Text + "'";
+            sqlCommand.CommandText = "update DanhSachBanAn set SoBan ='" + txtTableMunber.Text
+                                    + "', SoTang='" + txtFloat.Text +
+                                    "'where ID ='" + txtStt.Text + "'";
 
             //Mở kết nối CSDL
             sqlConnection.Open();

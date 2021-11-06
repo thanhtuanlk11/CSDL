@@ -27,7 +27,44 @@ namespace WindowsFormsApp1
         private void xóaTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Tạo đối tượng kết nối 
-            
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            //Tạo đối tượng thực thi lệnh 
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            // thiết lập lệnh truy vấn cho đối tương Command
+            sqlCommand.CommandText = "delete from Account where AccountName = '" + txtName.Text + "'";
+
+            //Mở kết nối tới csdl
+            sqlConnection.Open();
+
+            // thực thi lệnh bằng phương thức ExcuteReader
+            int munOfRowsEffected = sqlCommand.ExecuteNonQuery();
+
+            // Đống kết nối 
+            sqlConnection.Close();
+
+            if (munOfRowsEffected == 1)
+            {
+                ListViewItem item = lvAccount.SelectedItems[0];
+                lvAccount.Items.Remove(item);
+
+                // xóa ô nhập 
+                txtName.Text = "";
+                txtPassword.Text = "";
+                txtFullName.Text = "";
+                txtEmail.Text = "";
+                txtCall.Text = "";
+                dtpNgay.Value = DateTime.Now;
+                MessageBox.Show("Xóa tài khoản thành công");
+
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại");
+            }
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -130,7 +167,12 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // THiết lập lệnh truy vấn cho đối tượng Conmmad
-            sqlCommand.CommandText = "";
+            sqlCommand.CommandText = "update Account set Password='"+txtPassword.Text
+                                        +"',FullName='"+txtFullName.Text
+                                        +"',Email='"+txtEmail.Text
+                                        +"',Tell='"+txtCall.Text
+                                        +"',DateCreted='"+dtpNgay.Value
+                                        +"'where AccountName='"+txtName.Text+"'";
 
 
             //Mở kết nối CSDL
