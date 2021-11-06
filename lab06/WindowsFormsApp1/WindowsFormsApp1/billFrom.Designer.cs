@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
             this.dgvBill.Name = "dgvBill";
             this.dgvBill.RowHeadersWidth = 51;
             this.dgvBill.RowTemplate.Height = 24;
-            this.dgvBill.Size = new System.Drawing.Size(788, 353);
+            this.dgvBill.Size = new System.Drawing.Size(1124, 353);
             this.dgvBill.TabIndex = 0;
             this.dgvBill.DoubleClick += new System.EventHandler(this.dgvBill_DoubleClick);
             // 
@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1136, 450);
             this.Controls.Add(this.dgvBill);
             this.Name = "billFrom";
             this.Text = "billFrom";
