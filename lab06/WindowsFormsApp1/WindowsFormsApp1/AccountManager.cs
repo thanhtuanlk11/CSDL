@@ -262,5 +262,23 @@ namespace WindowsFormsApp1
             }
             
         }
+
+        private void resetPassword_Click(object sender, EventArgs e)
+        {
+            string defaultPass = "123456";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            SqlCommand sqlComd = sqlConn.CreateCommand();
+
+            sqlComd.CommandText = string.Format("UPDATE Account SET Password = '{1}' WHERE AccountName = '{0}' ",
+                txtName.Text, defaultPass);
+
+            sqlConn.Open();
+
+            sqlComd.ExecuteNonQuery();
+            MessageBox.Show("Reset mật khẩu thành công");
+            btnLoadData.PerformClick();
+            sqlConn.Close();
+        }
     }
 }

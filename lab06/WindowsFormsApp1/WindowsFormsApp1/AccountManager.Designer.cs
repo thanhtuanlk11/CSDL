@@ -87,6 +87,7 @@ namespace WindowsFormsApp1
             this.resetPassword.TabIndex = 4;
             this.resetPassword.Text = "Reset mật khẩu";
             this.resetPassword.UseVisualStyleBackColor = true;
+            this.resetPassword.Click += new System.EventHandler(this.resetPassword_Click);
             // 
             // label2
             // 
@@ -221,7 +222,7 @@ namespace WindowsFormsApp1
             this.xóaTàiKhoảnToolStripMenuItem1,
             this.xemDanhSáchVaiTròToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(229, 80);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(229, 52);
             // 
             // xóaTàiKhoảnToolStripMenuItem1
             // 
