@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // Thiết lập lệnh truy vấn cho đối tương command
-            sqlCommand.CommandText = "select * from Account where AccountName = " + accountName;
+            sqlCommand.CommandText = "select AccountName from Account where AccountName = " + accountName;
 
             // mở kết nối đến csdl
             sqlConnection.Open();

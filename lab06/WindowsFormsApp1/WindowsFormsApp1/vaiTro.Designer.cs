@@ -30,21 +30,12 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.dgvVaiTro = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Path = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVaiTro)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVaiTro
             // 
             this.dgvVaiTro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVaiTro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.RoleName,
-            this.Path,
-            this.Notes});
             this.dgvVaiTro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvVaiTro.Location = new System.Drawing.Point(0, 0);
             this.dgvVaiTro.Name = "dgvVaiTro";
@@ -53,34 +44,6 @@ namespace WindowsFormsApp1
             this.dgvVaiTro.Size = new System.Drawing.Size(839, 450);
             this.dgvVaiTro.TabIndex = 0;
             this.dgvVaiTro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVaiTro_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "số thứ tự";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 150;
-            // 
-            // RoleName
-            // 
-            this.RoleName.HeaderText = "Vai trò tài khoản";
-            this.RoleName.MinimumWidth = 6;
-            this.RoleName.Name = "RoleName";
-            this.RoleName.Width = 150;
-            // 
-            // Path
-            // 
-            this.Path.HeaderText = "Đương dẫn";
-            this.Path.MinimumWidth = 6;
-            this.Path.Name = "Path";
-            this.Path.Width = 150;
-            // 
-            // Notes
-            // 
-            this.Notes.HeaderText = "Ghi chú";
-            this.Notes.MinimumWidth = 6;
-            this.Notes.Name = "Notes";
-            this.Notes.Width = 150;
             // 
             // frmVaiTro
             // 
@@ -99,9 +62,5 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.DataGridView dgvVaiTro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Path;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
     }
 }

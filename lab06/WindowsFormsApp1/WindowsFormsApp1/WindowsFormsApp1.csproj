@@ -61,6 +61,12 @@
     <Compile Include="BillDetailsForm.Designer.cs">
       <DependentUpon>BillDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="billFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="billFrom.Designer.cs">
+      <DependentUpon>billFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="FoodForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <EmbeddedResource Include="AccountManager.resx">
       <DependentUpon>AccountManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillDetailsForm.resx">
+      <DependentUpon>BillDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="billFrom.resx">
+      <DependentUpon>billFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FoodForm.resx">
       <DependentUpon>FoodForm.cs</DependentUpon>

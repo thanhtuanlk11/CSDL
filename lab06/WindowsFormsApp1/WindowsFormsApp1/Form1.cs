@@ -227,5 +227,15 @@ namespace WindowsFormsApp1
             frmTable frm = new frmTable();
             frm.ShowDialog();
         }
+
+        private void btnShowBill_Click(object sender, EventArgs e)
+        {
+            if (dtp1.Value.ToShortDateString() != null || dtp2.Value.ToShortDateString() != null)
+            {
+                BillFrom frm = new BillFrom();
+                frm.Show(this);
+                frm.LoadBills(dtp1.Value.ToString(), dtp2.Value.ToString());
+            }
+        }
     }
 }

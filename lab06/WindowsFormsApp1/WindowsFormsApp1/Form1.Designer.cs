@@ -56,9 +56,9 @@ namespace WindowsFormsApp1
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dtp1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp2 = new System.Windows.Forms.DateTimePicker();
+            this.btnShowBill = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -222,7 +222,7 @@ namespace WindowsFormsApp1
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(799, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(799, 30);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -282,37 +282,40 @@ namespace WindowsFormsApp1
             this.label5.TabIndex = 13;
             this.label5.Text = "Đến ngày:";
             // 
-            // dateTimePicker1
+            // dtp1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(648, 37);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(124, 22);
-            this.dateTimePicker1.TabIndex = 14;
+            this.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp1.Location = new System.Drawing.Point(648, 37);
+            this.dtp1.Name = "dtp1";
+            this.dtp1.Size = new System.Drawing.Size(124, 22);
+            this.dtp1.TabIndex = 14;
             // 
-            // dateTimePicker2
+            // dtp2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(647, 73);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(125, 22);
-            this.dateTimePicker2.TabIndex = 15;
+            this.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp2.Location = new System.Drawing.Point(647, 73);
+            this.dtp2.Name = "dtp2";
+            this.dtp2.Size = new System.Drawing.Size(125, 22);
+            this.dtp2.TabIndex = 15;
             // 
-            // button1
+            // btnShowBill
             // 
-            this.button1.Location = new System.Drawing.Point(605, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 41);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Hiển thị hóa đơn";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnShowBill.Location = new System.Drawing.Point(605, 117);
+            this.btnShowBill.Name = "btnShowBill";
+            this.btnShowBill.Size = new System.Drawing.Size(150, 41);
+            this.btnShowBill.TabIndex = 16;
+            this.btnShowBill.Text = "Hiển thị hóa đơn";
+            this.btnShowBill.UseVisualStyleBackColor = true;
+            this.btnShowBill.Click += new System.EventHandler(this.btnShowBill_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 573);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnShowBill);
+            this.Controls.Add(this.dtp2);
+            this.Controls.Add(this.dtp1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.menuStrip1);
@@ -367,9 +370,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dtp1;
+        private System.Windows.Forms.DateTimePicker dtp2;
+        private System.Windows.Forms.Button btnShowBill;
     }
 }
 
