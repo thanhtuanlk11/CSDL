@@ -11,12 +11,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class BillFrom : Form
+    public partial class billFrom : Form
     {
-        public BillFrom()
+        public billFrom()
         {
             InitializeComponent();
         }
+
         public void LoadBills(string fromTime, string toTime)
         {
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
@@ -26,7 +27,7 @@ namespace WindowsFormsApp1
             command.CommandText = String.Format("SELECT * FROM Bills WHERE CheckoutDate BETWEEN '{0}' AND '{1}'", fromTime, toTime);
             connection.Open();
             //string categoryName = command.ExecuteScalar().ToString();
-            this.Text = "Danh sách hóa đơn từ ngày " + fromTime + " đến ngày " + toTime;
+            this.Text = "Danh sach hoa don tu ngay " + fromTime + " toi ngay " + toTime;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable("Food");
             adapter.Fill(dt);
@@ -38,15 +39,6 @@ namespace WindowsFormsApp1
             connection.Close();
             connection.Dispose();
             adapter.Dispose();
-        }
-        private void billFrom_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dgvBill_DoubleClick(object sender, EventArgs e)

@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class BillFrom
+    partial class billFrom
     {
         /// <summary>
         /// Required designer variable.
@@ -36,24 +36,23 @@ namespace WindowsFormsApp1
             // dgvBill
             // 
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBill.Location = new System.Drawing.Point(1, 64);
+            this.dgvBill.Location = new System.Drawing.Point(0, 85);
             this.dgvBill.Name = "dgvBill";
             this.dgvBill.RowHeadersWidth = 51;
             this.dgvBill.RowTemplate.Height = 24;
-            this.dgvBill.Size = new System.Drawing.Size(797, 386);
+            this.dgvBill.Size = new System.Drawing.Size(788, 353);
             this.dgvBill.TabIndex = 0;
-            this.dgvBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellContentClick);
             this.dgvBill.DoubleClick += new System.EventHandler(this.dgvBill_DoubleClick);
             // 
-            // BillFrom
+            // billFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvBill);
-            this.Name = "BillFrom";
+            this.Name = "billFrom";
             this.Text = "billFrom";
-            this.Load += new System.EventHandler(this.billFrom_Load);
+       
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.ResumeLayout(false);
 
