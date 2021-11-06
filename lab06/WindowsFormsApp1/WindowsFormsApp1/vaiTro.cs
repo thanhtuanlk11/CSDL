@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
             // mở kết nối đến csdl
             sqlConnection.Open();
 
-            this.Text = "Danh sách tài khoản " + accountName;
+            this.Text = "Vai trò tài khoản " + accountName;
 
             sqlCommand.CommandText = " select * from Role";
 
