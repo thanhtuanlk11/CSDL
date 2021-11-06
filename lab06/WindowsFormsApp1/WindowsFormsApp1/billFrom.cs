@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
             connection.Open();
             this.Text = "Danh sách hóa đơn từ ngày " + fromTime + "tới ngày " + toTime;
 
-            sqlCommand.CommandText = "select * from Food";
+            sqlCommand.CommandText = "select * from Bills";
             SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable("Food");
             adapter.Fill(dt);
