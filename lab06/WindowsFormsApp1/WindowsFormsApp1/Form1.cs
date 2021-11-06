@@ -232,7 +232,7 @@ namespace WindowsFormsApp1
         {
             if (dtp1.Value.ToShortDateString() != null || dtp2.Value.ToShortDateString() != null)
             {
-                BillFrom frm = new BillFrom();
+                billFrom frm = new billFrom();
                 frm.Show(this);
                 frm.LoadBills(dtp1.Value.ToString(), dtp2.Value.ToString());
             }

@@ -16,4 +16,3 @@ E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Win
 E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmVaiTro.resources
 E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.billFrom.resources
 E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BillDetailsForm.resources
-E:\three year\from C#\CSDL\lab06\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
