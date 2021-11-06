@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = connection.CreateCommand();
 
-            command.CommandText = String.Format("SELECT * FROM Bills WHERE CheckoutDate BETWEEN '{0}' AND '{1}'", fromTime, toTime);
+            command.CommandText = String.Format("select * from Bills where CheckoutDate BETWEEN '{0}' AND '{1}'", fromTime, toTime);
             connection.Open();
             //string categoryName = command.ExecuteScalar().ToString();
             this.Text = "Danh sach hoa don tu ngay " + fromTime + " toi ngay " + toTime;
@@ -47,6 +47,11 @@ namespace WindowsFormsApp1
             string id = dgvBill.SelectedRows[0].Cells[0].Value.ToString();
             frm.Show(this);
             frm.LoadBillDetail(int.Parse(id));
+        }
+
+        private void billFrom_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

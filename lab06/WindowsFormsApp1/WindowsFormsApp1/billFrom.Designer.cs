@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dgvBill);
             this.Name = "billFrom";
             this.Text = "billFrom";
-       
+            this.Load += new System.EventHandler(this.billFrom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.ResumeLayout(false);
 
