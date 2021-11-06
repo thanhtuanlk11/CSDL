@@ -123,19 +123,14 @@ namespace WindowsFormsApp1
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             // Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             // Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // THiết lập lệnh truy vấn cho đối tượng Conmmad
-            sqlCommand.CommandText = "update Account set Password = N'" + txtPassword.Text +
-                                                    "',FullName = " + txtFullName.Text +
-                                                    "',Email = " + txtEmail.Text +
-                                                    "',Tell = " + txtCall.Text +
-                                                    "',DateCreated = " + dtpNgay.Text +
-                                                    " where AccountName = " + txtName.Text;
+            sqlCommand.CommandText = "";
 
 
             //Mở kết nối CSDL
