@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
 
             //Thiết lập lệnh truy vấn cho đối tượng Command 
 
-            sqlCommand.CommandText = "insert into DanhSachBanAn values('" + txtStt.Text + "','" + txtTableMunber.Text + "','" + txtStatus.Text + "')";
+            sqlCommand.CommandText = "insert into DanhSachBanAn values('" + txtStt.Text + "','" + txtTableMunber.Text + "','" + txtStatus.Text +"','"+txtCapacity+ "')";
 
             // mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
@@ -140,7 +140,7 @@ namespace WindowsFormsApp1
             // Hiển thị dữ liệu lên TextBox
             txtStt.Text = item.Text;
             txtTableMunber.Text = item.SubItems[1].Text;
-            txtStatus.Text = item.SubItems[2].Text;
+            txtStatus.Text = item.SubItems[2].Text =="0"?"Trống":"Có người";
             txtCapacity.Text = item.SubItems[3].Text;
          
 
@@ -250,6 +250,11 @@ namespace WindowsFormsApp1
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCheckBills_Click(object sender, EventArgs e)
         {
 
         }

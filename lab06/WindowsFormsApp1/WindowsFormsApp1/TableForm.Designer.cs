@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
             this.btnCheckBills.TabIndex = 0;
             this.btnCheckBills.Text = "Xem hóa đơn";
             this.btnCheckBills.UseVisualStyleBackColor = true;
+            this.btnCheckBills.Click += new System.EventHandler(this.btnCheckBills_Click);
             // 
             // btnAddTable
             // 
