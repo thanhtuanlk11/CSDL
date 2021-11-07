@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
 
             //Thiết lập lệnh truy vấn cho đối tượng Command 
 
-            sqlCommand.CommandText = "insert into DanhSachBanAn values('" + txtStt.Text + "','" + txtTableMunber.Text + "','" + txtFloat.Text + "')";
+            sqlCommand.CommandText = "insert into DanhSachBanAn values('" + txtStt.Text + "','" + txtTableMunber.Text + "','" + txtStatus.Text + "')";
 
             // mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
                 //Xóa các ô nhập 
                 txtStt.Text = "";
                 txtTableMunber.Text = "";
-                txtFloat.Text = "";
+                txtStatus.Text = "";
 
 
             }
@@ -95,7 +95,7 @@ namespace WindowsFormsApp1
 
             // THiết lập lệnh truy vấn cho đối tượng Conmmad
             sqlCommand.CommandText = "update DanhSachBanAn set SoBan ='" + txtTableMunber.Text
-                                    + "', SoTang='" + txtFloat.Text +
+                                    + "', SoTang='" + txtStatus.Text +
                                     "'where ID ='" + txtStt.Text + "'";
 
             //Mở kết nối CSDL
@@ -113,13 +113,13 @@ namespace WindowsFormsApp1
                 ListViewItem item = lvTable.SelectedItems[0];
 
                 item.SubItems[1].Text = txtTableMunber.Text;
-                item.SubItems[2].Text = txtFloat.Text;
+                item.SubItems[2].Text = txtStatus.Text;
                
 
                 // Xóa các ô nhập 
                 txtStt.Text = "";
                 txtTableMunber.Text = "";
-                txtFloat.Text = "";
+                txtStatus.Text = "";
               
                 //disable các nút xóa và cập nhật 
                 btnUpdate.Enabled = false;
@@ -140,7 +140,8 @@ namespace WindowsFormsApp1
             // Hiển thị dữ liệu lên TextBox
             txtStt.Text = item.Text;
             txtTableMunber.Text = item.SubItems[1].Text;
-            txtFloat.Text = item.SubItems[2].Text;
+            txtStatus.Text = item.SubItems[2].Text;
+            txtCapacity.Text = item.SubItems[3].Text;
          
 
             //Hiển thị nút cập nhật và xóa 
@@ -176,7 +177,7 @@ namespace WindowsFormsApp1
                 // xóa ô nhập 
                 txtStt.Text = "";
                 txtTableMunber.Text = "";
-                txtFloat.Text = "";
+                txtStatus.Text = "";
 
                 MessageBox.Show("Xóa bàn ăn thành công ");
 
@@ -237,7 +238,7 @@ namespace WindowsFormsApp1
                 // xóa ô nhập 
                 txtStt.Text = "";
                 txtTableMunber.Text = "";
-                txtFloat.Text = "";
+                txtStatus.Text = "";
 
                 MessageBox.Show("Xóa bàn ăn thành công ");
 
@@ -246,6 +247,11 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại");
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

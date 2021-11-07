@@ -39,17 +39,19 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.txtStt = new System.Windows.Forms.TextBox();
             this.txtTableMunber = new System.Windows.Forms.TextBox();
-            this.txtFloat = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvTable = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_load = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xóaBànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemDanhMụcHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemNhậtKýHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_load = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCapacity = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,11 +115,12 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 106);
+            this.label3.Location = new System.Drawing.Point(21, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Tầng";
+            this.label3.Text = "Trạng thái";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtStt
             // 
@@ -133,12 +136,12 @@ namespace WindowsFormsApp1
             this.txtTableMunber.Size = new System.Drawing.Size(192, 22);
             this.txtTableMunber.TabIndex = 9;
             // 
-            // txtFloat
+            // txtStatus
             // 
-            this.txtFloat.Location = new System.Drawing.Point(126, 112);
-            this.txtFloat.Name = "txtFloat";
-            this.txtFloat.Size = new System.Drawing.Size(192, 22);
-            this.txtFloat.TabIndex = 10;
+            this.txtStatus.Location = new System.Drawing.Point(126, 107);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(192, 22);
+            this.txtStatus.TabIndex = 10;
             // 
             // columnHeader1
             // 
@@ -179,16 +182,6 @@ namespace WindowsFormsApp1
             this.columnHeader4.Text = "Sức chứa";
             this.columnHeader4.Width = 120;
             // 
-            // btn_load
-            // 
-            this.btn_load.Location = new System.Drawing.Point(28, 171);
-            this.btn_load.Name = "btn_load";
-            this.btn_load.Size = new System.Drawing.Size(138, 36);
-            this.btn_load.TabIndex = 12;
-            this.btn_load.Text = "Tải danh sách bàn";
-            this.btn_load.UseVisualStyleBackColor = true;
-            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -197,7 +190,7 @@ namespace WindowsFormsApp1
             this.xemDanhMụcHóaĐơnToolStripMenuItem,
             this.xemNhậtKýHóaĐơnToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(237, 104);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(237, 76);
             // 
             // xóaBànToolStripMenuItem
             // 
@@ -218,14 +211,42 @@ namespace WindowsFormsApp1
             this.xemNhậtKýHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
             this.xemNhậtKýHóaĐơnToolStripMenuItem.Text = "Xem nhật ký hóa đơn";
             // 
+            // btn_load
+            // 
+            this.btn_load.Location = new System.Drawing.Point(28, 171);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(138, 36);
+            this.btn_load.TabIndex = 12;
+            this.btn_load.Text = "Tải danh sách bàn";
+            this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 151);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 17);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Sức chứa";
+            // 
+            // txtCapacity
+            // 
+            this.txtCapacity.Location = new System.Drawing.Point(126, 148);
+            this.txtCapacity.Name = "txtCapacity";
+            this.txtCapacity.Size = new System.Drawing.Size(192, 22);
+            this.txtCapacity.TabIndex = 14;
+            // 
             // frmTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 450);
+            this.Controls.Add(this.txtCapacity);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_load);
             this.Controls.Add(this.lvTable);
-            this.Controls.Add(this.txtFloat);
+            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtTableMunber);
             this.Controls.Add(this.txtStt);
             this.Controls.Add(this.label3);
@@ -255,7 +276,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtStt;
         private System.Windows.Forms.TextBox txtTableMunber;
-        private System.Windows.Forms.TextBox txtFloat;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -266,5 +287,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem xóaBànToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xemDanhMụcHóaĐơnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xemNhậtKýHóaĐơnToolStripMenuItem;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCapacity;
     }
 }
