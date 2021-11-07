@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
         private void btnAddTable_Click(object sender, EventArgs e)
         {
             //Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Tạo đối tượng thực thi lệnh 
@@ -53,7 +53,10 @@ namespace WindowsFormsApp1
 
             //Thiết lập lệnh truy vấn cho đối tượng Command 
 
-            sqlCommand.CommandText = "insert into DanhSachBanAn values('" + txtStt.Text + "','" + txtTableMunber.Text + "','" + txtStatus.Text +"','"+txtCapacity+ "')";
+            sqlCommand.CommandText = "insert into Table123 values('" + txtStt.Text + "','"
+                                                            + txtTableMunber.Text + "','"
+                                                            + txtStatus.Text +"','"
+                                                            + txtCapacity.Text+ "')";
 
             // mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
@@ -87,15 +90,16 @@ namespace WindowsFormsApp1
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             // Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // THiết lập lệnh truy vấn cho đối tượng Conmmad
-            sqlCommand.CommandText = "update DanhSachBanAn set SoBan ='" + txtTableMunber.Text
-                                    + "', SoTang='" + txtStatus.Text +
+            sqlCommand.CommandText = "update Table123 set Name ='" + txtTableMunber.Text
+                                    + "',Status ='" + txtStatus.Text
+                                    + "',Capacity'" + txtCapacity.Text+                          
                                     "'where ID ='" + txtStt.Text + "'";
 
             //Mở kết nối CSDL
@@ -151,14 +155,14 @@ namespace WindowsFormsApp1
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // thiết lập lệnh truy vấn cho đối tương Command
-            sqlCommand.CommandText = "delete from DanhSachBanAn where ID = '" + txtStt.Text + "'";
+            sqlCommand.CommandText = "delete from Table123 where ID = '" + txtStt.Text + "'";
 
             //Mở kết nối tới csdl
             sqlConnection.Open();
