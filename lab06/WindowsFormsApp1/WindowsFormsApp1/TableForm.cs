@@ -53,10 +53,10 @@ namespace WindowsFormsApp1
 
             //Thiết lập lệnh truy vấn cho đối tượng Command 
 
-            sqlCommand.CommandText = "insert into Table123 values('" + txtStt.Text + "','"
+            sqlCommand.CommandText = "insert into Table1 values('" + txtStt.Text + "','"
                                                             + txtTableMunber.Text + "','"
-                                                            + txtStatus.Text +"','"
-                                                            + txtCapacity.Text+ "')";
+                                                            + txtStatus.Text + "','"
+                                                            + txtCapacity.Text + "')";
 
             // mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
 
             if (numOfRowsEffected == 1)
             {
-                MessageBox.Show("Thêm bàn ăn thành công ");
+                MessageBox.Show("Thêm bàn mới thành công ");
 
                 // Tải lại dữ liệu 
                 btn_load.PerformClick();
@@ -78,8 +78,8 @@ namespace WindowsFormsApp1
                 txtStt.Text = "";
                 txtTableMunber.Text = "";
                 txtStatus.Text = "";
-
-
+                txtCapacity.Text = "";
+                
             }
             else
             {
@@ -97,7 +97,7 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // THiết lập lệnh truy vấn cho đối tượng Conmmad
-            sqlCommand.CommandText = "update Table123 set Name ='" + txtTableMunber.Text
+            sqlCommand.CommandText = "UPDATE Table1 SET Name ='" + txtTableMunber.Text
                                     + "',Status ='" + txtStatus.Text
                                     + "',Capacity'" + txtCapacity.Text+                          
                                     "'where ID ='" + txtStt.Text + "'";
@@ -118,7 +118,8 @@ namespace WindowsFormsApp1
 
                 item.SubItems[1].Text = txtTableMunber.Text;
                 item.SubItems[2].Text = txtStatus.Text;
-               
+                item.SubItems[3].Text = txtCapacity.Text;
+
 
                 // Xóa các ô nhập 
                 txtStt.Text = "";
@@ -162,7 +163,7 @@ namespace WindowsFormsApp1
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // thiết lập lệnh truy vấn cho đối tương Command
-            sqlCommand.CommandText = "delete from Table123 where ID = '" + txtStt.Text + "'";
+            sqlCommand.CommandText = "delete from Table1 where ID = '" + txtStt.Text + "'";
 
             //Mở kết nối tới csdl
             sqlConnection.Open();
@@ -199,7 +200,7 @@ namespace WindowsFormsApp1
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             SqlCommand cmd = sqlConnection.CreateCommand();
-            cmd.CommandText = "select * from Table123 ";
+            cmd.CommandText = "select * from Table1 ";
             sqlConnection.Open();
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
 
@@ -216,14 +217,14 @@ namespace WindowsFormsApp1
         private void xóaBànToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=QLMonAn;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Tạo đối tượng thực thi lệnh 
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
 
             // thiết lập lệnh truy vấn cho đối tương Command
-            sqlCommand.CommandText = "delete from DanhSachBanAn where ID = '" + txtStt.Text + "'";
+            sqlCommand.CommandText = "delete from Table1 where ID = '" + txtStt.Text + "'";
 
             //Mở kết nối tới csdl
             sqlConnection.Open();
@@ -261,6 +262,13 @@ namespace WindowsFormsApp1
         private void btnCheckBills_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void xemDanhMụcHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            billFrom frm = new billFrom();
+            frm.Show(this);
+          
         }
     }
 }

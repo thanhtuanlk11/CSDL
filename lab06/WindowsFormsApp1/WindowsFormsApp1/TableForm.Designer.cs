@@ -205,6 +205,7 @@ namespace WindowsFormsApp1
             this.xemDanhMụcHóaĐơnToolStripMenuItem.Name = "xemDanhMụcHóaĐơnToolStripMenuItem";
             this.xemDanhMụcHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
             this.xemDanhMụcHóaĐơnToolStripMenuItem.Text = "Xem danh mục hóa đơn";
+            this.xemDanhMụcHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.xemDanhMụcHóaĐơnToolStripMenuItem_Click);
             // 
             // xemNhậtKýHóaĐơnToolStripMenuItem
             // 

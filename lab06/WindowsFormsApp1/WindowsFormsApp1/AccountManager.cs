@@ -78,7 +78,12 @@ namespace WindowsFormsApp1
 
             //Thiết lập lệnh truy vấn cho đối tượng Command 
 
-            sqlCommand.CommandText = "insert into Account values('" + txtName.Text + "','" + txtPassword.Text + "','" + txtFullName.Text +"','"+txtEmail.Text+"','"+txtCall.Text+"','"+dtpNgay.Value + "')";
+            sqlCommand.CommandText = "insert into Account values('" + txtName.Text + "','" 
+                                                            + txtPassword.Text + "','" 
+                                                            + txtFullName.Text +"','"
+                                                            +txtEmail.Text+"','"
+                                                            +txtCall.Text+"','"
+                                                            +dtpNgay.Value + "')";
 
             // mở kết nối đến cơ sở dữ liệu 
             sqlConnection.Open();
