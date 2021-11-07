@@ -268,7 +268,8 @@ namespace WindowsFormsApp1
         {
             billFrom frm = new billFrom();
             frm.Show(this);
-          
+            frm.LoadBills1();
+
         }
     }
 }

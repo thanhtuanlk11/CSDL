@@ -41,6 +41,29 @@ namespace WindowsFormsApp1
             connection.Dispose();
             adapter.Dispose();
         }
+        public void LoadBills1()
+        {
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = connection.CreateCommand();
+
+            sqlCommand.CommandText = String.Format("select * from Bills where CheckoutDate");
+            connection.Open();
+            this.Text = "Danh sách hóa đơn ";
+
+            sqlCommand.CommandText = "select * from Bills";
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable("Food");
+            adapter.Fill(dt);
+
+            dgvBill.DataSource = dt;
+
+            dgvBill.Columns[0].ReadOnly = true;
+
+            connection.Close();
+            connection.Dispose();
+            adapter.Dispose();
+        }
 
         private void dgvBill_DoubleClick(object sender, EventArgs e)
         {
