@@ -296,13 +296,13 @@ namespace WindowsFormsApp1
 
         private void xemDanhSáchVaiTròToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != "")
+            ListViewItem item = lvAccount.SelectedItems[0];
+            if (lvAccount.SelectedItems.Count > 0)
             {
-                frmVaiTro frm = new frmVaiTro();
+                Role frm = new Role();
                 frm.Show(this);
-                frm.LoadAccount(txtName.Text);
+                frm.LoadRole();
             }
-            
         }
 
         private void resetPassword_Click(object sender, EventArgs e)

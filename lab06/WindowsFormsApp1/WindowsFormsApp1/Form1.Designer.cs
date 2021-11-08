@@ -88,6 +88,7 @@ namespace WindowsFormsApp1
             this.lvCatelory.TabIndex = 1;
             this.lvCatelory.UseCompatibleStateImageBehavior = false;
             this.lvCatelory.View = System.Windows.Forms.View.Details;
+            this.lvCatelory.SelectedIndexChanged += new System.EventHandler(this.lvCatelory_SelectedIndexChanged);
             this.lvCatelory.Click += new System.EventHandler(this.lvCatelory_Click);
             // 
             // chID

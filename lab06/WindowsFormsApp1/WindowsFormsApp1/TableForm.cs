@@ -271,5 +271,10 @@ namespace WindowsFormsApp1
             frm.LoadBills1();
 
         }
+
+        private void lvTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

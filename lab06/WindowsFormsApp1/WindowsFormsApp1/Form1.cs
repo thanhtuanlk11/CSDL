@@ -237,5 +237,10 @@ namespace WindowsFormsApp1
                 frm.LoadBills(dtp1.Value.ToString(), dtp2.Value.ToString());
             }
         }
+
+        private void lvCatelory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
