@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
             for (int i = 0; i < dgvFood.Rows.Count - 1; i++)
             {
                 int id = (int)dgvFood.Rows[i].Cells["ID"].Value;
-                cmd.CommandText = "SELECT * FROM Food WHERE ID = " + id;
+                cmd.CommandText = "select * from Food WHERE ID = " + id;
                 var checkID = cmd.ExecuteScalar();
 
                 if (checkID == null)
