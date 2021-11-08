@@ -96,7 +96,8 @@ namespace WindowsFormsApp1
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select @numSaleFood = sum(Quantity) form BillDetails where FoodID = @foodId";
+            cmd.CommandText = "select @numSaleFood = sum(Quantity) from BillDetails where FoodID = @foodId";
+     
             // Lấy thông tín ản phẩm được chọn 
             if(dgvFoodList.SelectedRows.Count > 0)
             {
@@ -116,7 +117,7 @@ namespace WindowsFormsApp1
                 cmd.ExecuteNonQuery();
 
                 string result = cmd.Parameters["@numSaleFood"].Value.ToString();
-                MessageBox.Show("Tổng số lượng món" + rowView["Name"] + "đã bán là" + result + "" + rowView["Unit"]);
+                MessageBox.Show("Tổng số lượng món" + rowView["Name"] + "đã bán là: " + result + "" + rowView["Unit"]);
 
                 conn.Close();
 
