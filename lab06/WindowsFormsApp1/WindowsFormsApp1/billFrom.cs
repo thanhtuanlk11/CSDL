@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
 
             sqlCommand.CommandText = String.Format("select * from Bills where CheckoutDate BETWEEN '{0}' AND '{1}'", fromTime, toTime);
             connection.Open();
-            this.Text = "Danh sách hóa đơn";
+            this.Text = "Danh sach hoa don tu ngay " + fromTime + " toi ngay " + toTime;
 
             sqlCommand.CommandText = "select * from Bills";
             SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
 
             sqlCommand.CommandText = String.Format("select * from Bills where CheckoutDate");
             connection.Open();
-            this.Text = "Danh sách hóa đơn ";
+            this.Text = "Danh sach hoa don tu ngay ";
 
             sqlCommand.CommandText = "select * from Bills";
             SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);

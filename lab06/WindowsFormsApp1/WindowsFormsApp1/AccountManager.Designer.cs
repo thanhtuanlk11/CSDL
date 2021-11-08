@@ -111,6 +111,7 @@ namespace WindowsFormsApp1
             // 
             this.txtPassword.Location = new System.Drawing.Point(141, 49);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(213, 22);
             this.txtPassword.TabIndex = 7;
             // 
