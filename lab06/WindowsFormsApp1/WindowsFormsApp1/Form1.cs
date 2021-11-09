@@ -59,6 +59,7 @@ namespace WindowsFormsApp1
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            
             //Tạo đối tượng kết nối 
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -104,7 +105,7 @@ namespace WindowsFormsApp1
             // Hiển thị dữ liệu lên TextBox
             txtID.Text = item.Text;
             txtName.Text = item.SubItems[1].Text;
-            txtType.Text = item.SubItems[2].Text == "0" ? "thức uống " : "Đồ ăn";
+            txtType.Text = item.SubItems[2].Text == "0" ? "thức uống " :"Đồ ăn";
 
             //Hiển thị nút cập nhật và xóa 
             btnUpdate.Enabled = true;
