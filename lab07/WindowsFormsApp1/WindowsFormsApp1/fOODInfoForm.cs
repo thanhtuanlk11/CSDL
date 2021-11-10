@@ -193,42 +193,7 @@ namespace WindowsFormsApp1
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            //Tạo đối tượng kết nối 
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            //Tạo đối tượng thực thi lệnh 
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-
-            //Thiết lập lệnh truy vấn cho đối tượng Command 
-
-            sqlCommand.CommandText = "insert into Category(Name,[Type])" + "values(N'" + txtName.Text + "'," + txtType.Text + ")";
-
-            // mở kết nối đến cơ sở dữ liệu 
-            sqlConnection.Open();
-
-            // Thực thi lệnh bằng phương thức ExcuteReader
-            int numOfRowsEffected = sqlCommand.ExecuteNonQuery();
-
-            //Đóng kết nối 
-            sqlConnection.Close();
-
-            if (numOfRowsEffected == 1)
-            {
-                MessageBox.Show("Thêm món ăn thành công ");
-
-                // Tải lại dữ liệu 
-                btnLoad.PerformClick();
-
-                //Xóa các ô nhập 
-                txtName.Text = "";
-                txtType.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại ");
-            }
-            Close();
+           
         }
     }
 }
