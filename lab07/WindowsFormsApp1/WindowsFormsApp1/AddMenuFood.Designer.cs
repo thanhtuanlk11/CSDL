@@ -32,6 +32,8 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddMenuFood = new System.Windows.Forms.TextBox();
             this.btnAddMenuFood = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtType = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -60,11 +62,29 @@ namespace WindowsFormsApp1
             this.btnAddMenuFood.UseVisualStyleBackColor = true;
             this.btnAddMenuFood.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Thể loại:";
+            // 
+            // txtType
+            // 
+            this.txtType.Location = new System.Drawing.Point(186, 41);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(100, 22);
+            this.txtType.TabIndex = 4;
+            // 
             // AddMenuFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 162);
+            this.Controls.Add(this.txtType);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAddMenuFood);
             this.Controls.Add(this.txtAddMenuFood);
             this.Controls.Add(this.label1);
@@ -80,5 +100,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAddMenuFood;
         private System.Windows.Forms.Button btnAddMenuFood;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtType;
     }
 }

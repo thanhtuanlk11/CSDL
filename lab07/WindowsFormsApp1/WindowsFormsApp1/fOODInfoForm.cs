@@ -97,11 +97,11 @@ namespace WindowsFormsApp1
                 conn.Dispose();
             }
             // Bắt lỗi sql và các lỗi khác
-            catch(SqlException exception)
+            catch (SqlException exception)
             {
                 MessageBox.Show(exception.Message, "SQL Error");
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.Message, "Error");
             }
@@ -119,7 +119,7 @@ namespace WindowsFormsApp1
                 cbbCatName.SelectedIndex = -1;
 
                 //Chọn món ăn tương ứng 
-                for(int index =0; index < cbbCatName.Items.Count; index++)
+                for (int index = 0; index < cbbCatName.Items.Count; index++)
                 {
                     DataRowView cat = cbbCatName.Items[index] as DataRowView;
                     if (cat["ID"].ToString() == rowView["FoodCategoryID"].ToString())
@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.Message, "Error");
                 this.Close();
@@ -176,11 +176,11 @@ namespace WindowsFormsApp1
                 conn.Close();
                 conn.Dispose();
             }
-            catch(SqlException exception)
+            catch (SqlException exception)
             {
                 MessageBox.Show(exception.Message, "SQL error");
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.Message, "error");
             }
@@ -195,23 +195,21 @@ namespace WindowsFormsApp1
         {
             AddMenuFood frm = new AddMenuFood();
             frm.Show();
-            {
-                // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
-                string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
-                SqlConnection sqlConnection = new SqlConnection(connectionString);
+            // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
 
-                // Tạo đối tượng thực thi lệnh 
-                SqlCommand cmd = sqlConnection.CreateCommand();
-                cmd.CommandText = "inse";
+            // Tạo đối tượng thực thi lệnh 
+            SqlCommand cmd = sqlConnection.CreateCommand();
+            cmd.CommandText = "inse";
 
-                // mở kết nối đến csdl
-                sqlConnection.Open();
-
+            // mở kết nối đến csdl
+            sqlConnection.Open();
 
 
-                sqlConnection.Close();
 
-            }
+            sqlConnection.Close();
+
         }
     }
 }
