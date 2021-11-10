@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class fOODInfoForm : Form
     {
+        public Form1 frm1;
         public fOODInfoForm()
         {
             InitializeComponent();
@@ -195,20 +196,8 @@ namespace WindowsFormsApp1
         {
             AddMenuFood frm = new AddMenuFood();
             frm.Show();
-            // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
 
-            // Tạo đối tượng thực thi lệnh 
-            SqlCommand cmd = sqlConnection.CreateCommand();
-            cmd.CommandText = "inse";
-
-            // mở kết nối đến csdl
-            sqlConnection.Open();
-
-
-
-            sqlConnection.Close();
+            
 
         }
     }

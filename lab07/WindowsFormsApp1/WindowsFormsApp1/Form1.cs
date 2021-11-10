@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        private void LoadCatelory()
+        public void LoadCatelory()
         {
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connectionString);
