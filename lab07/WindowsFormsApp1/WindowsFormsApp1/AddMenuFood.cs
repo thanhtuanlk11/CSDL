@@ -29,14 +29,14 @@ namespace WindowsFormsApp1
 
                 //// Tạo đối tượng thực thi lệnh 
                 SqlCommand cmd = sqlConnection.CreateCommand();
-                //cmd.CommandText = "insert into Category(Name,[Type])" + "values(N'" + txtAddMenuFood.Text + "', " + txtType.Text + ")";
+                
 
 
                 cmd.CommandText = "Exucute InsertCategory @id OUTPUT,@name,@type";
                 // Thêm tham số vào đối tượng commadn
                 cmd.Parameters.Add("@id", SqlDbType.Int);
                 cmd.Parameters.Add("@name", SqlDbType.NVarChar, 100);
-                cmd.Parameters.Add("@type", SqlDbType.NVarChar, 100);
+                cmd.Parameters.Add("@type", SqlDbType.Int);
 
                 cmd.Parameters["@id"].Direction = ParameterDirection.Output;
                 // Truyền giá trị thủ tục qua tham số 
