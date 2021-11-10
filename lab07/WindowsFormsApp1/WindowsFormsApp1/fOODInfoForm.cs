@@ -193,7 +193,49 @@ namespace WindowsFormsApp1
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-           
+            // tạo chuỗi  kết nối tới cơ sở dữ liệu RestaurantManagerment
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            // Tạo đối tượng thực thi lệnh 
+            SqlCommand cmd = sqlConnection.CreateCommand();
+
+            // mở kết nối đến csdl
+            sqlConnection.Open();
+
+            for (int i = 0; i < dgvFood.Rows.Count - 1; i++)
+            {
+                int id = (int)dgvFood.Rows[i].Cells["ID"].Value;
+                cmd.CommandText = "select * from Food WHERE ID = " + id;
+                var checkID = cmd.ExecuteScalar();
+
+                if (checkID == null)
+                {
+                    string query = string.Format(" insert into Food(Name, Unit, FoodCategoryID, Price, Notes) " +
+                    "values (N'{0}', N'{1}', {2}, {3}, N'{4}')",
+                    dgvFood.Rows[i].Cells["Name"].Value,
+                    dgvFood.Rows[i].Cells["Unit"].Value,
+                    categoryID,
+                    dgvFood.Rows[i].Cells["Price"].Value,
+                    dgvFood.Rows[i].Cells["Notes"].Value.ToString());
+                    cmd.CommandText = query;
+                    MessageBox.Show("Thêm mới thành công");
+                }
+                else
+                {
+                    string query = string.Format(" update Food set Name = N'{0}', Unit = N'{1}', FoodCategoryID = {2}, Price = {3}, Notes = N'{4}' WHERE ID = {5}",
+                    dgvFood.Rows[i].Cells["Name"].Value,
+                    dgvFood.Rows[i].Cells["Unit"].Value,
+                    categoryID,
+                    dgvFood.Rows[i].Cells["Price"].Value,
+                    dgvFood.Rows[i].Cells["Notes"].Value.ToString(),
+                    id.ToString());
+                    cmd.CommandText = query;
+                    MessageBox.Show("Cập nhật thành công");
+                }
+            }
+
+            sqlConnection.Close();
         }
     }
 }
