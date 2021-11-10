@@ -191,6 +191,9 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-    
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
