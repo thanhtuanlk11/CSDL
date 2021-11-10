@@ -44,7 +44,7 @@ namespace WindowsFormsApp1
                 cmd.Parameters["@type"].Value = txtType.Text;
 
                 // mở kết nối đến csdl
-                sqlConnection.Open();
+                sqlConnection.Open(); 
                 int numRowAffected = cmd.ExecuteNonQuery();
                 // Thông báo kết quả 
                 if (numRowAffected > 0)
@@ -70,5 +70,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show(exception.Message, "Error");
             }
         }
+
+        private void AddMenuFood_Load(object sender, EventArgs e)
+        {
+           
+        }
+        
     }
 }

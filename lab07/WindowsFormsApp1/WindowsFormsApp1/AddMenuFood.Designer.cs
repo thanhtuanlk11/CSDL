@@ -90,6 +90,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Name = "AddMenuFood";
             this.Text = "AddMenuFood";
+            this.Load += new System.EventHandler(this.AddMenuFood_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
