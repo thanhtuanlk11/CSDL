@@ -16,5 +16,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void btn_LoadBill_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

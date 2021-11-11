@@ -60,6 +60,7 @@ namespace WindowsFormsApp1
             this.btn_LoadBill.TabIndex = 2;
             this.btn_LoadBill.Text = "Xem doanh thu";
             this.btn_LoadBill.UseVisualStyleBackColor = true;
+            this.btn_LoadBill.Click += new System.EventHandler(this.btn_LoadBill_Click);
             // 
             // OrderForm
             // 
