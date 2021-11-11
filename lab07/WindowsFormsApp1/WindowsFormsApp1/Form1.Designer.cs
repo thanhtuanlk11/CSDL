@@ -44,6 +44,7 @@ namespace WindowsFormsApp1
             this.lblCatName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearchByName = new System.Windows.Forms.TextBox();
+            this.danhSáchTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,9 +87,10 @@ namespace WindowsFormsApp1
             this.smCalculateQuantity,
             this.tsmBill,
             this.tsmAddFood,
-            this.tsmUpdateFood});
+            this.tsmUpdateFood,
+            this.danhSáchTàiKhoảnToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 128);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 152);
             // 
             // smCalculateQuantity
             // 
@@ -171,6 +173,13 @@ namespace WindowsFormsApp1
             this.txtSearchByName.TabIndex = 8;
             this.txtSearchByName.TextChanged += new System.EventHandler(this.txtSearchByName_TextChanged);
             // 
+            // danhSáchTàiKhoảnToolStripMenuItem
+            // 
+            this.danhSáchTàiKhoảnToolStripMenuItem.Name = "danhSáchTàiKhoảnToolStripMenuItem";
+            this.danhSáchTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(218, 24);
+            this.danhSáchTàiKhoảnToolStripMenuItem.Text = "Danh sách tài khoản";
+            this.danhSáchTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.danhSáchTàiKhoảnToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,6 +220,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem tsmUpdateFood;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSearchByName;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchTàiKhoảnToolStripMenuItem;
     }
 }
 

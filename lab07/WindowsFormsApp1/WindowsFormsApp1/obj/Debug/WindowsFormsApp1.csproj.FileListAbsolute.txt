@@ -13,3 +13,4 @@ E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Sys
 E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fOODInfoForm.resources
 E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddMenuFood.resources
 E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.OrderForm.resources
+E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AccountForm.resources

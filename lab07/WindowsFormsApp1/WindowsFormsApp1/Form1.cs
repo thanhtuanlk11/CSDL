@@ -186,5 +186,11 @@ namespace WindowsFormsApp1
             OrderForm frm = new OrderForm();
             frm.ShowDialog();
         }
+
+        private void danhSáchTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountForm frm = new AccountForm();
+            frm.ShowDialog();
+        }
     }
 }
