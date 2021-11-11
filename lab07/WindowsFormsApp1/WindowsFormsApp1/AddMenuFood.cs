@@ -32,10 +32,10 @@ namespace WindowsFormsApp1
                 
 
 
-                cmd.CommandText = "Exucute InsertCategory @id OUTPUT,@name,@type";
+                cmd.CommandText = "Exucute InsertCategory @id OUTPUT,@name,@ype";
                 // Thêm tham số vào đối tượng commadn
                 cmd.Parameters.Add("@id", SqlDbType.Int);
-                cmd.Parameters.Add("@name", SqlDbType.NVarChar, 100);
+                cmd.Parameters.Add("@name", SqlDbType.NVarChar, 300);
                 cmd.Parameters.Add("@type", SqlDbType.Int);
 
                 cmd.Parameters["@id"].Direction = ParameterDirection.Output;

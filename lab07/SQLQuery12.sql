@@ -262,6 +262,20 @@ AS
 
 go
 
+CREATE PROCEDURE InsertCategory
+@ID int output,
+@Name nvarchar(3000), 
+@Type int output
+AS
+	INSERT INTO Category([Name],[Type])
+	VALUES ( @Name, @Type)
+
+	SELECT @ID = SCOPE_IDENTITY()
+go
+
+
+
+
 CREATE PROCEDURE [UpdateFood]
 @ID int,
 @Name nvarchar(1000),
