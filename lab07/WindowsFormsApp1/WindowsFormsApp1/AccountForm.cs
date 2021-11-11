@@ -55,5 +55,20 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private void lvAccount_Click(object sender, EventArgs e)
+        {
+            // lấy dòng được chọn trong ListView
+            ListViewItem item = lvAccount.SelectedItems[0];
+
+            // Hiển thị dữ liệu lên TextBox
+            txtName.Text = item.Text;
+            txtPassword.Text = item.SubItems[1].Text;
+            txtFullName.Text = item.SubItems[2].Text;
+            txtEmail.Text = item.SubItems[3].Text;
+            txtCall.Text = item.SubItems[4].Text;
+            dtpNgay.Text = item.SubItems[5].Text;
+
+        }
     }
 }
