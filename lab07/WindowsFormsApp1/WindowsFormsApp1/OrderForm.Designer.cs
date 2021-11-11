@@ -87,6 +87,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Name = "OrderForm";
             this.Text = "OrderForm";
+            this.Load += new System.EventHandler(this.OrderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
