@@ -255,7 +255,7 @@ CREATE PROCEDURE InsertFood
 @Price int,  
 @Notes nvarchar(3000)
 AS
-	INSERT INTO Food (Name, Unit, FoodCategoryID, Price,  Notes)
+	INSERT INTO Food ([Name],[Unit], [FoodCategoryID], [Price] ,[Notes])
 	VALUES ( @Name, @Unit, @FoodCategoryID, @Price,  @Notes)
 
 	SELECT @ID = SCOPE_IDENTITY()
