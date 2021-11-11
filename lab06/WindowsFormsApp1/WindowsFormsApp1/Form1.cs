@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+       
         public Form1()
         {
             InitializeComponent();
@@ -60,6 +61,7 @@ namespace WindowsFormsApp1
         private void btnAdd_Click(object sender, EventArgs e)
         {
             
+
             //Tạo đối tượng kết nối 
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -82,11 +84,11 @@ namespace WindowsFormsApp1
 
             if(numOfRowsEffected == 1)
             {
-                MessageBox.Show("Thêm món ăn thành công ");
+                MessageBox.Show("Thêm nhóm món ăn thành công ");
 
                 // Tải lại dữ liệu 
-                btnLoad.PerformClick();
-
+                Form1 frm = new Form1();
+                
                 //Xóa các ô nhập 
                 txtName.Text = "";
                 txtType.Text = "";

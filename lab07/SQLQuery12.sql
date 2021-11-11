@@ -262,9 +262,35 @@ AS
 
 go
 
+CREATE PROCEDURE [UpdateFood]
+@ID int,
+@Name nvarchar(1000),
+@Unit nvarchar(100),
+@FoodCategoryID int,
+@Price int,
+@Notes nvarchar(3000)
+AS
+UPDATE [Food]
+SET
+	[Name] =@Name,
+	[Unit] = @Unit,
+	[FoodCategoryID] = @FoodCategoryID,
+	[Price] =@Price,
+	[Notes] =@Notes
+WHERE ID = @ID
+IF @@ERROR <>0
+RETURN 0
+ELSE
+RETURN 1
+GO
+
+
+
+
 select f.Name, f.Price, bd.Quantity, f.Price * bd.Quantity as Amount from Food f, BillDetails bd, Bills b
 where bd.FoodID = f.ID and bd.InvoiceID = b.ID and bd.InvoiceID = 1
 
 select sum(f.Price * bd.Quantity) from Food f, BillDetails bd, Bills b
 where bd.FoodID = f.ID and bd.InvoiceID = b.ID and bd.InvoiceID = 1
-1
+
+
