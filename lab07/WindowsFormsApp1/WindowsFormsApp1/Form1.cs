@@ -180,5 +180,11 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void tsmBill_Click(object sender, EventArgs e)
+        {
+            OrderForm frm = new OrderForm();
+            frm.ShowDialog();
+        }
     }
 }

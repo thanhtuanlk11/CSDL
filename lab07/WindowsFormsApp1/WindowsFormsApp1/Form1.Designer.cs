@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             this.dgvFoodList = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.smCalculateQuantity = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmSeperator = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmBill = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAddFood = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmUpdateFood = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,11 +84,11 @@ namespace WindowsFormsApp1
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.smCalculateQuantity,
-            this.tsmSeperator,
+            this.tsmBill,
             this.tsmAddFood,
             this.tsmUpdateFood});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 100);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(219, 128);
             // 
             // smCalculateQuantity
             // 
@@ -97,11 +97,12 @@ namespace WindowsFormsApp1
             this.smCalculateQuantity.Text = "Tính số lượng đã bán";
             this.smCalculateQuantity.Click += new System.EventHandler(this.smCalculateQuantity_Click);
             // 
-            // tsmSeperator
+            // tsmBill
             // 
-            this.tsmSeperator.Name = "tsmSeperator";
-            this.tsmSeperator.Size = new System.Drawing.Size(218, 24);
-            this.tsmSeperator.Text = "Seperator";
+            this.tsmBill.Name = "tsmBill";
+            this.tsmBill.Size = new System.Drawing.Size(218, 24);
+            this.tsmBill.Text = "Xem hóa đơn";
+            this.tsmBill.Click += new System.EventHandler(this.tsmBill_Click);
             // 
             // tsmAddFood
             // 
@@ -205,7 +206,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label lblCatName;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem smCalculateQuantity;
-        private System.Windows.Forms.ToolStripMenuItem tsmSeperator;
+        private System.Windows.Forms.ToolStripMenuItem tsmBill;
         private System.Windows.Forms.ToolStripMenuItem tsmAddFood;
         private System.Windows.Forms.ToolStripMenuItem tsmUpdateFood;
         private System.Windows.Forms.Label label4;
