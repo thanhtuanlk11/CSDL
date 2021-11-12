@@ -48,14 +48,9 @@ namespace WindowsFormsApp1
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xemDanhSáchVaiTròToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemNhậtKíHoạtĐộngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lvAccount = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -174,6 +169,7 @@ namespace WindowsFormsApp1
             this.btnAdd.TabIndex = 24;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -205,63 +201,23 @@ namespace WindowsFormsApp1
             this.xemNhậtKíHoạtĐộngToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.xemNhậtKíHoạtĐộngToolStripMenuItem.Text = "Xem nhật kí hoạt động";
             // 
-            // lvAccount
+            // dgvAccount
             // 
-            this.lvAccount.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.lvAccount.ContextMenuStrip = this.contextMenuStrip1;
-            this.lvAccount.FullRowSelect = true;
-            this.lvAccount.HideSelection = false;
-            this.lvAccount.Location = new System.Drawing.Point(-1, 209);
-            this.lvAccount.MultiSelect = false;
-            this.lvAccount.Name = "lvAccount";
-            this.lvAccount.Size = new System.Drawing.Size(804, 323);
-            this.lvAccount.TabIndex = 26;
-            this.lvAccount.UseCompatibleStateImageBehavior = false;
-            this.lvAccount.View = System.Windows.Forms.View.Details;
-            this.lvAccount.Click += new System.EventHandler(this.lvAccount_Click);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tên tài khoản";
-            this.columnHeader1.Width = 120;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Mật khẩu";
-            this.columnHeader2.Width = 120;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Tên đầy đủ ";
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Email";
-            this.columnHeader4.Width = 120;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Liên hệ";
-            this.columnHeader5.Width = 120;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Ngày tạo";
-            this.columnHeader6.Width = 120;
+            this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvAccount.Location = new System.Drawing.Point(0, 161);
+            this.dgvAccount.Name = "dgvAccount";
+            this.dgvAccount.RowHeadersWidth = 51;
+            this.dgvAccount.RowTemplate.Height = 24;
+            this.dgvAccount.Size = new System.Drawing.Size(934, 498);
+            this.dgvAccount.TabIndex = 27;
             // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 535);
-            this.Controls.Add(this.lvAccount);
+            this.ClientSize = new System.Drawing.Size(934, 659);
+            this.Controls.Add(this.dgvAccount);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnLoadAccount);
@@ -281,6 +237,7 @@ namespace WindowsFormsApp1
             this.Text = "AccountForm";
             this.Load += new System.EventHandler(this.AccountForm_Load);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,12 +263,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xemDanhSáchVaiTròToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xemNhậtKíHoạtĐộngToolStripMenuItem;
-        private System.Windows.Forms.ListView lvAccount;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.DataGridView dgvAccount;
     }
 }

@@ -273,6 +273,20 @@ AS
 	SELECT @ID = SCOPE_IDENTITY()
 go
 
+CREATE PROCEDURE InsertAccount
+@AccountName int output,
+@Password nvarchar(3000), 
+@Fullname nvarchar(3000), 
+@Email nvarchar(3000), 
+@Tell nvarchar(3000),  
+@Datecreated nvarchar(3000)
+AS
+	INSERT INTO Account([AccountName],[Password],[FullName],[Email],[Tell],[DateCreated])
+	VALUES (@AccountName,@Password,@Fullname,@Email,@Tell,@Datecreated)
+
+	SELECT @AccountName = SCOPE_IDENTITY()
+
+go
 
 
 

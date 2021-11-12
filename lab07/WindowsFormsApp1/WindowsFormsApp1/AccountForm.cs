@@ -29,46 +29,56 @@ namespace WindowsFormsApp1
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = "select * from Account";
-            
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable accountable = new DataTable();
             connection.Open();
-            SqlDataReader sqlDataReader = cmd.ExecuteReader();
-            this.DisplayCatelory(sqlDataReader);
+            adapter.Fill(accountable);
             connection.Close();
+            connection.Dispose();
+
+            dgvAccount.DataSource = accountable;
+
         }
-        private void DisplayCatelory(SqlDataReader reader)
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            // Xóa tất cả các dòng hiện tại 
-            lvAccount.Items.Clear();
-            // Đọc 1 dòng dữ liệu 
-            while (reader.Read())
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand cmd = sqlConnection.CreateCommand();
+            cmd.CommandText = "execute InsertAccount @accountName OUTPUT,@password,@fullname,@email,@tell,@datecreated";
+
+            // thêm tham số vào đối tượng command
+            cmd.Parameters.Add("@accountname", SqlDbType.NVarChar, 300);
+            cmd.Parameters.Add("@password", SqlDbType.NVarChar, 300);
+            cmd.Parameters.Add("@fullname", SqlDbType.NVarChar, 300);
+            cmd.Parameters.Add("@email", SqlDbType.NVarChar, 300);
+            cmd.Parameters.Add("@tell", SqlDbType.NVarChar, 300);
+            cmd.Parameters.Add("@datecreated", SqlDbType.NVarChar, 300);
+
+            cmd.Parameters["@accountname"].Direction = ParameterDirection.Output;
+            // Truyền giá trị vào thủ tục qua tham số
+            cmd.Parameters["@accountname"].Value = txtName.Text;
+            cmd.Parameters["@password"].Value = txtPassword.Text;
+            cmd.Parameters["@email"].Value = txtEmail.Text;
+            cmd.Parameters["@tell"].Value = txtCall.Text;
+            cmd.Parameters["@datecreated"].Value = dtpNgay.Value;
+
+            sqlConnection.Open();
+            int numOfAffected = cmd.ExecuteNonQuery();
+            // thông báo kết quả 
+            if (numOfAffected > 0)
             {
-                //Tạo một dòng mới trong ListView
-                ListViewItem item = new ListViewItem(reader["AccountName"].ToString());
-                //Them một dòng mới vào ListVew
-                lvAccount.Items.Add(item);
-                // Bổ sung thông tin khác cho ListViewItem 
-                item.SubItems.Add(reader["Password"].ToString());
-                item.SubItems.Add(reader["FullName"].ToString());
-                item.SubItems.Add(reader["Email"].ToString());
-                item.SubItems.Add(reader["Tell"].ToString());
-                item.SubItems.Add(reader["DateCreated"].ToString());
+                string AccountName = cmd.Parameters["@accountname"].Value.ToString();
+                MessageBox.Show("Thêm tài khoản thành công với tên là = " + AccountName,"Message");
+                this.ResetText();
+
             }
-
-        }
-
-        private void lvAccount_Click(object sender, EventArgs e)
-        {
-            // lấy dòng được chọn trong ListView
-            ListViewItem item = lvAccount.SelectedItems[0];
-
-            // Hiển thị dữ liệu lên TextBox
-            txtName.Text = item.Text;
-            txtPassword.Text = item.SubItems[1].Text;
-            txtFullName.Text = item.SubItems[2].Text;
-            txtEmail.Text = item.SubItems[3].Text;
-            txtCall.Text = item.SubItems[4].Text;
-            dtpNgay.Text = item.SubItems[5].Text;
-
+            else
+            {
+                MessageBox.Show("Thêm tài khoản thất bại");
+            }
+            sqlConnection.Close();
+            sqlConnection.Dispose();
         }
     }
 }
