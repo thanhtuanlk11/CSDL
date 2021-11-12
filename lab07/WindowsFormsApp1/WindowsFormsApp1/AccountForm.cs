@@ -47,16 +47,16 @@ namespace WindowsFormsApp1
                 string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
                 SqlConnection conn = new SqlConnection(connectionString);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "execute InsertAccount @accountname OUTPUT, @password,@fullname,@email,@tell,@datecreated";
+                cmd.CommandText = "execute InsertAccount @accountname OUTPUT ,@password,@fullname,@email,@tell,@datecreated";
 
                 // Thêm tham số vào đối tượng command
-                cmd.Parameters.Add("@accountname", SqlDbType.Int);
+                cmd.Parameters.Add("@accountname", SqlDbType.NVarChar , 100);
                 cmd.Parameters.Add("@password", SqlDbType.NVarChar, 100);
                 cmd.Parameters.Add("@fullname", SqlDbType.NVarChar, 100);
                 cmd.Parameters.Add("@email", SqlDbType.NVarChar,100);
                 cmd.Parameters.Add("@tell", SqlDbType.NVarChar,100);
                 cmd.Parameters.Add("@datecreated", SqlDbType.NVarChar, 300);
-                cmd.Parameters["@accountname"].Direction = ParameterDirection.Output;
+                
                 //Truyền giá trị vào thủ tục qua tham số
                 cmd.Parameters["@accountname"].Value = txtName.Text;
                 cmd.Parameters["@password"].Value = txtPassword.Text;
@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
                 conn.Open();
                 int numRowAffected = cmd.ExecuteNonQuery();
                 // thông báo kêt quả
-                if (numRowAffected > 0)
+                if (numRowAffected == 1)
                 {
                     string accountname = cmd.Parameters["@accountname"].Value.ToString();
                     MessageBox.Show("Thêm tài khoản thành công. tên tài khoản = " + accountname, "Message");
