@@ -42,43 +42,54 @@ namespace WindowsFormsApp1
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand cmd = sqlConnection.CreateCommand();
-            cmd.CommandText = "execute InsertAccount @accountName OUTPUT,@password,@fullname,@email,@tell,@datecreated";
-
-            // thêm tham số vào đối tượng command
-            cmd.Parameters.Add("@accountname", SqlDbType.NVarChar, 300);
-            cmd.Parameters.Add("@password", SqlDbType.NVarChar, 300);
-            cmd.Parameters.Add("@fullname", SqlDbType.NVarChar, 300);
-            cmd.Parameters.Add("@email", SqlDbType.NVarChar, 300);
-            cmd.Parameters.Add("@tell", SqlDbType.NVarChar, 300);
-            cmd.Parameters.Add("@datecreated", SqlDbType.NVarChar, 300);
-
-            cmd.Parameters["@accountname"].Direction = ParameterDirection.Output;
-            // Truyền giá trị vào thủ tục qua tham số
-            cmd.Parameters["@accountname"].Value = txtName.Text;
-            cmd.Parameters["@password"].Value = txtPassword.Text;
-            cmd.Parameters["@email"].Value = txtEmail.Text;
-            cmd.Parameters["@tell"].Value = txtCall.Text;
-            cmd.Parameters["@datecreated"].Value = dtpNgay.Value;
-
-            sqlConnection.Open();
-            int numOfAffected = cmd.ExecuteNonQuery();
-            // thông báo kết quả 
-            if (numOfAffected > 0)
+            try
             {
-                string AccountName = cmd.Parameters["@accountname"].Value.ToString();
-                MessageBox.Show("Thêm tài khoản thành công với tên là = " + AccountName,"Message");
-                this.ResetText();
+                string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "execute InsertAccount @accountname OUTPUT, @password,@fullname,@email,@tell,@datecreated";
 
+                // Thêm tham số vào đối tượng command
+                cmd.Parameters.Add("@accountname", SqlDbType.Int);
+                cmd.Parameters.Add("@password", SqlDbType.NVarChar, 100);
+                cmd.Parameters.Add("@fullname", SqlDbType.NVarChar, 100);
+                cmd.Parameters.Add("@email", SqlDbType.NVarChar,100);
+                cmd.Parameters.Add("@tell", SqlDbType.NVarChar,100);
+                cmd.Parameters.Add("@datecreated", SqlDbType.NVarChar, 300);
+                cmd.Parameters["@accountname"].Direction = ParameterDirection.Output;
+                //Truyền giá trị vào thủ tục qua tham số
+                cmd.Parameters["@accountname"].Value = txtName.Text;
+                cmd.Parameters["@password"].Value = txtPassword.Text;
+                cmd.Parameters["@fullname"].Value = txtFullName.Text;
+                cmd.Parameters["@email"].Value = txtEmail.Text;
+                cmd.Parameters["@tell"].Value = txtCall.Text;
+                cmd.Parameters["@datecreated"].Value = dtpNgay.Text;
+
+                conn.Open();
+                int numRowAffected = cmd.ExecuteNonQuery();
+                // thông báo kêt quả
+                if (numRowAffected > 0)
+                {
+                    string accountname = cmd.Parameters["@accountname"].Value.ToString();
+                    MessageBox.Show("Thêm tài khoản thành công. tên tài khoản = " + accountname, "Message");
+                    this.ResetText();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm tài khoản thất bại");
+                }
+                conn.Close();
+                conn.Dispose();
             }
-            else
+            // Bắt lỗi sql và các lỗi khác
+            catch (SqlException exception)
             {
-                MessageBox.Show("Thêm tài khoản thất bại");
+                MessageBox.Show(exception.Message, "SQL Error");
             }
-            sqlConnection.Close();
-            sqlConnection.Dispose();
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error");
+            }
         }
     }
 }
