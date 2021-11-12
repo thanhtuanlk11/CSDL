@@ -20,8 +20,9 @@ namespace WindowsFormsApp1
 
         private void AccountForm_Load(object sender, EventArgs e)
         {
-
+            
         }
+       
 
         private void btnLoadAccount_Click(object sender, EventArgs e)
         {
@@ -56,7 +57,7 @@ namespace WindowsFormsApp1
                 cmd.Parameters.Add("@email", SqlDbType.NVarChar,100);
                 cmd.Parameters.Add("@tell", SqlDbType.NVarChar,100);
                 cmd.Parameters.Add("@datecreated", SqlDbType.NVarChar, 300);
-                
+
                 //Truyền giá trị vào thủ tục qua tham số
                 cmd.Parameters["@accountname"].Value = txtName.Text;
                 cmd.Parameters["@password"].Value = txtPassword.Text;
@@ -71,8 +72,8 @@ namespace WindowsFormsApp1
                 if (numRowAffected == 1)
                 {
                     string accountname = cmd.Parameters["@accountname"].Value.ToString();
-                    MessageBox.Show("Thêm tài khoản thành công. tên tài khoản = " + accountname, "Message");
-                    this.ResetText();
+                    MessageBox.Show("Thêm tài khoản thành công. Tên tài khoản có tên = " + accountname, "Message");
+                    btnLoadAccount.PerformClick();
                 }
                 else
                 {
@@ -89,6 +90,22 @@ namespace WindowsFormsApp1
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message, "Error");
+            }
+        }
+
+        private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvAccount.Rows[e.RowIndex];
+
+                txtName.Text = row.Cells[0].Value.ToString();
+                txtPassword.Text = row.Cells[1].Value.ToString();
+                txtFullName.Text = row.Cells[2].Value.ToString();
+                txtEmail.Text = row.Cells[3].Value.ToString();
+                txtCall.Text = row.Cells[4].Value.ToString();
+                dtpNgay.Text = row.Cells[5].Value.ToString();
+
             }
         }
     }

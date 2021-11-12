@@ -211,6 +211,7 @@ namespace WindowsFormsApp1
             this.dgvAccount.RowTemplate.Height = 24;
             this.dgvAccount.Size = new System.Drawing.Size(934, 498);
             this.dgvAccount.TabIndex = 27;
+            this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
             // 
             // AccountForm
             // 

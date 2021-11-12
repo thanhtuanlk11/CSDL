@@ -274,7 +274,7 @@ AS
 go
 
 CREATE PROCEDURE InsertAccount
-@AccountName int output,
+@AccountName nvarchar(3000),
 @Password nvarchar(3000), 
 @Fullname nvarchar(3000), 
 @Email nvarchar(3000), 
