@@ -179,6 +179,7 @@ namespace WindowsFormsApp1
             this.btnUpdate.TabIndex = 25;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // contextMenuStrip1
             // 
