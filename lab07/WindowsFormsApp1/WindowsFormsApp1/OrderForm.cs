@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             SqlCommand cmd = sqlConnection.CreateCommand();
-            cmd.CommandText = "select * from Bills";
+            cmd.CommandText = "select * from Bills ";
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sqlConnection.Open();
@@ -55,6 +55,8 @@ namespace WindowsFormsApp1
         {
             BuilDetailFrom frm = new BuilDetailFrom();
             frm.Show();
+         
         }
+        
     }
 }

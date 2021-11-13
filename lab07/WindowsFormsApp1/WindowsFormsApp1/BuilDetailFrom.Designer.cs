@@ -43,6 +43,7 @@ namespace WindowsFormsApp1
             this.dgvBuilDetail.RowTemplate.Height = 24;
             this.dgvBuilDetail.Size = new System.Drawing.Size(800, 450);
             this.dgvBuilDetail.TabIndex = 0;
+            this.dgvBuilDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuilDetail_CellContentClick);
             // 
             // BuilDetailFrom
             // 
@@ -52,6 +53,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dgvBuilDetail);
             this.Name = "BuilDetailFrom";
             this.Text = "BuilDetailFrom";
+            this.Load += new System.EventHandler(this.BuilDetailFrom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuilDetail)).EndInit();
             this.ResumeLayout(false);
 
