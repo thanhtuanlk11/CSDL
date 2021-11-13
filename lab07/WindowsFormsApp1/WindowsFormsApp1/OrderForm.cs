@@ -42,6 +42,8 @@ namespace WindowsFormsApp1
             sqlConnection.Close();
             sqlConnection.Dispose();
 
+            dgvBill.DataSource = dt;
+
 
         }
         private void OrderForm_Load(object sender, EventArgs e)
