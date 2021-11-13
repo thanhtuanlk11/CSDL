@@ -50,5 +50,11 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void dgvBill_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            BuilDetailFrom frm = new BuilDetailFrom();
+            frm.Show();
+        }
     }
 }
