@@ -171,12 +171,13 @@ namespace WindowsFormsApp1
 
             //Tạo đối tượng thực thi lệnh 
             SqlCommand cmd = sqlConnection.CreateCommand();
-            string query = "delete * from Account";
+            cmd.CommandText = "delete from Account where AccountName = '" + txtName.Text + "'";
+
             sqlConnection.Open();
             
             cmd.ExecuteNonQuery();
 
-            cmd.CommandText = query;
+            sqlConnection.Close();
             int numOfRowsEffected = cmd.ExecuteNonQuery();
             if (numOfRowsEffected == 1)
             {
