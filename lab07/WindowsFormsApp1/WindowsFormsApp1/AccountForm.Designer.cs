@@ -41,7 +41,6 @@ namespace WindowsFormsApp1
             this.label5 = new System.Windows.Forms.Label();
             this.txtCall = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.btnLoadAccount = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@ namespace WindowsFormsApp1
             this.xemDanhSáchVaiTròToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemNhậtKíHoạtĐộngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
+            this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.SuspendLayout();
@@ -143,14 +143,6 @@ namespace WindowsFormsApp1
             this.label6.TabIndex = 21;
             this.label6.Text = "Ngày tạo:";
             // 
-            // dtpNgay
-            // 
-            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgay.Location = new System.Drawing.Point(437, 45);
-            this.dtpNgay.Name = "dtpNgay";
-            this.dtpNgay.Size = new System.Drawing.Size(213, 22);
-            this.dtpNgay.TabIndex = 22;
-            // 
             // btnLoadAccount
             // 
             this.btnLoadAccount.Location = new System.Drawing.Point(363, 90);
@@ -214,6 +206,14 @@ namespace WindowsFormsApp1
             this.dgvAccount.TabIndex = 27;
             this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
             // 
+            // dtpNgay
+            // 
+            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgay.Location = new System.Drawing.Point(437, 45);
+            this.dtpNgay.Name = "dtpNgay";
+            this.dtpNgay.Size = new System.Drawing.Size(213, 22);
+            this.dtpNgay.TabIndex = 22;
+            // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,7 +258,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCall;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpNgay;
         private System.Windows.Forms.Button btnLoadAccount;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
@@ -266,5 +265,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem xemDanhSáchVaiTròToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xemNhậtKíHoạtĐộngToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvAccount;
+        private System.Windows.Forms.DateTimePicker dtpNgay;
     }
 }

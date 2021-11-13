@@ -51,11 +51,11 @@ namespace WindowsFormsApp1
                 cmd.CommandText = "execute InsertAccount @accountname ,@password,@fullname,@email,@tell,@datecreated";
 
                 // Thêm tham số vào đối tượng command
-                cmd.Parameters.Add("@accountname", SqlDbType.NVarChar , 3000);
-                cmd.Parameters.Add("@password", SqlDbType.NVarChar, 300);
-                cmd.Parameters.Add("@fullname", SqlDbType.NVarChar, 300);
-                cmd.Parameters.Add("@email", SqlDbType.NVarChar,300);
-                cmd.Parameters.Add("@tell", SqlDbType.NVarChar,300);
+                cmd.Parameters.Add("@accountname", SqlDbType.NVarChar , 100);
+                cmd.Parameters.Add("@password", SqlDbType.NVarChar, 200);
+                cmd.Parameters.Add("@fullname", SqlDbType.NVarChar, 1000);
+                cmd.Parameters.Add("@email", SqlDbType.NVarChar,1000);
+                cmd.Parameters.Add("@tell", SqlDbType.NVarChar,200);
                 cmd.Parameters.Add("@datecreated", SqlDbType.SmallDateTime);
 
                 //Truyền giá trị vào thủ tục qua tham số
@@ -71,8 +71,8 @@ namespace WindowsFormsApp1
                 // thông báo kêt quả
                 if (numRowAffected == 1)
                 {
-                    string accountname = cmd.Parameters["@accountname"].Value.ToString();
-                    MessageBox.Show("Thêm tài khoản thành công. Tên tài khoản có tên = " + accountname, "Message");
+              
+                    MessageBox.Show("Thêm tài khoản thành công");
                     btnLoadAccount.PerformClick();
                 }
                 else
@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
                 //Tuyền giá trị vào thủ tục qua tham số 
                 cmd.Parameters["@accountname"].Value = txtName.Text;
                 cmd.Parameters["@password"].Value = txtPassword.Text;
-                cmd.Parameters["@fullname"].Value = txtName.Text;
+                cmd.Parameters["@fullname"].Value = txtFullName.Text;
                 cmd.Parameters["@email"].Value = txtEmail.Text;
                 cmd.Parameters["@tell"].Value = txtCall.Text;
                 cmd.Parameters["@datecreated"].Value = DateTime.Now.ToString();
@@ -139,6 +139,7 @@ namespace WindowsFormsApp1
                 // thông báo kết quả 
                 if (numRowAffected == 1)
                 {
+                    
                     MessageBox.Show("cập nhập tài khoản thành công", "Message");
                     this.ResetText();
                 }
