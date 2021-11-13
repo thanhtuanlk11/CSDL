@@ -49,6 +49,7 @@ namespace WindowsFormsApp1
             this.xemNhậtKíHoạtĐộngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.SuspendLayout();
@@ -178,9 +179,10 @@ namespace WindowsFormsApp1
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xemDanhSáchVaiTròToolStripMenuItem,
-            this.xemNhậtKíHoạtĐộngToolStripMenuItem});
+            this.xemNhậtKíHoạtĐộngToolStripMenuItem,
+            this.xóaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(230, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(230, 76);
             // 
             // xemDanhSáchVaiTròToolStripMenuItem
             // 
@@ -197,6 +199,7 @@ namespace WindowsFormsApp1
             // dgvAccount
             // 
             this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccount.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvAccount.Location = new System.Drawing.Point(0, 161);
             this.dgvAccount.Name = "dgvAccount";
@@ -213,6 +216,13 @@ namespace WindowsFormsApp1
             this.dtpNgay.Name = "dtpNgay";
             this.dtpNgay.Size = new System.Drawing.Size(213, 22);
             this.dtpNgay.TabIndex = 22;
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+            this.xóaToolStripMenuItem.Text = "Xóa ";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
             // AccountForm
             // 
@@ -266,5 +276,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem xemNhậtKíHoạtĐộngToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvAccount;
         private System.Windows.Forms.DateTimePicker dtpNgay;
+        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
     }
 }

@@ -159,5 +159,35 @@ namespace WindowsFormsApp1
                 MessageBox.Show(exception.Message, "error");
             }
         }
+
+        private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvAccount.SelectedRows.Count == 0) return;
+            var selected = dgvAccount.SelectedRows[0];
+            
+            //Tạo đối tượng kết nối 
+            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            //Tạo đối tượng thực thi lệnh 
+            SqlCommand cmd = sqlConnection.CreateCommand();
+            string query = "delete * from Account";
+            sqlConnection.Open();
+            
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = query;
+            int numOfRowsEffected = cmd.ExecuteNonQuery();
+            if (numOfRowsEffected == 1)
+            {
+                dgvAccount.Rows.Remove(selected);
+                MessageBox.Show("Xóa món ăn thành công");
+            }
+            else
+            {
+                MessageBox.Show("Đã xảy ra lỗi");
+                return;
+            }
+        }
     }
 }

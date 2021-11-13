@@ -271,20 +271,19 @@ AS
 	VALUES ( @Name, @Type)
 
 	SELECT @ID = SCOPE_IDENTITY()
-go
-
-CREATE PROCEDURE InsertAccount
+go	
+-- Thêm account
+CREATE PROCEDURE [InsertAccount]
 @AccountName nvarchar(3000),
-@Password nvarchar(3000), 
-@Fullname nvarchar(3000), 
-@Email nvarchar(3000), 
-@Tell nvarchar(3000),  
-@Datecreated nvarchar(3000)
+@Password nvarchar(300), 
+@Fullname nvarchar(300), 
+@Email nvarchar(300), 
+@Tell nvarchar(300),  
+@Datecreated smalldatetime
 AS
 	INSERT INTO Account([AccountName],[Password],[FullName],[Email],[Tell],[DateCreated])
 	VALUES (@AccountName,@Password,@Fullname,@Email,@Tell,@Datecreated)
 
-	SELECT @AccountName = SCOPE_IDENTITY()
 
 go
 
@@ -306,6 +305,31 @@ SET
 	[Price] =@Price,
 	[Notes] =@Notes
 WHERE ID = @ID
+IF @@ERROR <>0
+RETURN 0
+ELSE
+RETURN 1
+GO
+ 
+-- update account 
+
+CREATE PROCEDURE [UpdateAccount]
+@AccountName nvarchar(1000),
+@Password nvarchar(1000),
+@FullName nvarchar(100),
+@Email nvarchar(100),
+@Tell nvarchar(100),
+@DateCreated smalldatetime
+AS
+UPDATE [Account]
+SET
+	[AccountName] =@AccountName,
+	[Password] =@Password,
+	[FullName] = @FullName,
+	[Email] = @Email,
+	[Tell] = @Tell,
+	[DateCreated] = @DateCreated
+WHERE AccountName = @AccountName
 IF @@ERROR <>0
 RETURN 0
 ELSE
