@@ -92,7 +92,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show(exception.Message, "Error");
             }
         }
-
+      
         private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex >= 0)
@@ -141,7 +141,7 @@ namespace WindowsFormsApp1
                 {
                     
                     MessageBox.Show("cập nhập tài khoản thành công", "Message");
-                    this.ResetText();
+                    btnLoadAccount.PerformClick();
                 }
                 else
                 {
