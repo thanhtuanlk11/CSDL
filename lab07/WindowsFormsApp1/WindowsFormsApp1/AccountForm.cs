@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
                 string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
                 SqlConnection conn = new SqlConnection(connectionString);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "execute InsertAccount @accountname OUTPUT ,@password,@fullname,@email,@tell,@datecreated";
+                cmd.CommandText = "execute InsertAccount @accountname ,@password,@fullname,@email,@tell,@datecreated";
 
                 // Thêm tham số vào đối tượng command
                 cmd.Parameters.Add("@accountname", SqlDbType.NVarChar , 100);
