@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
                 // thông báo kêt quả
                 if (numRowAffected == 1)
                 {
-              
+                     
                     MessageBox.Show("Thêm tài khoản thành công");
                     btnLoadAccount.PerformClick();
                 }
