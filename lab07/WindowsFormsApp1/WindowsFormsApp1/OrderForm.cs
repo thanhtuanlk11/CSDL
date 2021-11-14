@@ -33,7 +33,10 @@ namespace WindowsFormsApp1
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             SqlCommand cmd = sqlConnection.CreateCommand();
-            cmd.CommandText = "select * from Bills ";
+            cmd.CommandText = "select * from Bills where CheckoutDate = @date";
+            cmd.Parameters.Add("@date", SqlDbType.DateTime);
+            cmd.Parameters["@date"].Value = DateTime.Parse(dtpDateTime.Value.ToString("dd/MM/yyyy"));
+
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sqlConnection.Open();

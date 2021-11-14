@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
             this.btn_LoadBill = new System.Windows.Forms.Button();
             this.dgvBill = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
@@ -45,14 +45,14 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn ngày :";
             // 
-            // dateTimePicker1
+            // dtpDateTime
             // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(112, 22);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtpDateTime.CustomFormat = "";
+            this.dtpDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDateTime.Location = new System.Drawing.Point(116, 23);
+            this.dtpDateTime.Name = "dtpDateTime";
+            this.dtpDateTime.Size = new System.Drawing.Size(112, 22);
+            this.dtpDateTime.TabIndex = 1;
             // 
             // btn_LoadBill
             // 
@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(990, 639);
             this.Controls.Add(this.dgvBill);
             this.Controls.Add(this.btn_LoadBill);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDateTime);
             this.Controls.Add(this.label1);
             this.Name = "OrderForm";
             this.Text = "OrderForm";
@@ -98,7 +98,7 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDateTime;
         private System.Windows.Forms.Button btn_LoadBill;
         private System.Windows.Forms.DataGridView dgvBill;
     }
