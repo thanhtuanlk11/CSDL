@@ -190,5 +190,11 @@ namespace WindowsFormsApp1
                 return;
             }
         }
+
+        private void xemDanhSáchVaiTròToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VaiTro frm = new VaiTro();
+            frm.ShowDialog();
+        }
     }
 }

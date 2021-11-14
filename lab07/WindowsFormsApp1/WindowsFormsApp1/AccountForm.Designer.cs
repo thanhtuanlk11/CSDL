@@ -47,9 +47,9 @@ namespace WindowsFormsApp1
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xemDanhSáchVaiTròToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemNhậtKíHoạtĐộngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.SuspendLayout();
@@ -182,19 +182,27 @@ namespace WindowsFormsApp1
             this.xemNhậtKíHoạtĐộngToolStripMenuItem,
             this.xóaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(230, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(230, 104);
             // 
             // xemDanhSáchVaiTròToolStripMenuItem
             // 
             this.xemDanhSáchVaiTròToolStripMenuItem.Name = "xemDanhSáchVaiTròToolStripMenuItem";
             this.xemDanhSáchVaiTròToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.xemDanhSáchVaiTròToolStripMenuItem.Text = "Xem danh sách vai trò ";
+            this.xemDanhSáchVaiTròToolStripMenuItem.Click += new System.EventHandler(this.xemDanhSáchVaiTròToolStripMenuItem_Click);
             // 
             // xemNhậtKíHoạtĐộngToolStripMenuItem
             // 
             this.xemNhậtKíHoạtĐộngToolStripMenuItem.Name = "xemNhậtKíHoạtĐộngToolStripMenuItem";
             this.xemNhậtKíHoạtĐộngToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.xemNhậtKíHoạtĐộngToolStripMenuItem.Text = "Xem nhật kí hoạt động";
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+            this.xóaToolStripMenuItem.Text = "Xóa ";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
             // dgvAccount
             // 
@@ -216,13 +224,6 @@ namespace WindowsFormsApp1
             this.dtpNgay.Name = "dtpNgay";
             this.dtpNgay.Size = new System.Drawing.Size(213, 22);
             this.dtpNgay.TabIndex = 22;
-            // 
-            // xóaToolStripMenuItem
-            // 
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
-            this.xóaToolStripMenuItem.Text = "Xóa ";
-            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
             // AccountForm
             // 

@@ -15,3 +15,4 @@ E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Win
 E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.OrderForm.resources
 E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AccountForm.resources
 E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BuilDetailFrom.resources
+E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.VaiTro.resources
