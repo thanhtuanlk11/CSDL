@@ -337,7 +337,31 @@ RETURN 1
 GO
 
 
+--get buil by times
+create procedure GetBillsByDay
+(
+	@Date smalldatetime
+)
+as
+begin
+	select * from Bills
+	where CheckoutDate = @Date
+end
+go
 
+-- get Buil by id
+create procedure GetBillDetailsByID
+(
+	@ID int
+)
+as
+begin
+	select BillDetails.ID, Food.[Name], BillDetails.Quantity
+	from BillDetails
+	join Food on BillDetails.FoodID = Food.ID
+	where BillDetails.InvoiceID = @ID
+end
+go
 
 select f.Name, f.Price, bd.Quantity, f.Price * bd.Quantity as Amount from Food f, BillDetails bd, Bills b
 where bd.FoodID = f.ID and bd.InvoiceID = b.ID and bd.InvoiceID = 1

@@ -196,5 +196,10 @@ namespace WindowsFormsApp1
             VaiTro frm = new VaiTro();
             frm.ShowDialog();
         }
+
+        private void dgvAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

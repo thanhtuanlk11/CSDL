@@ -73,12 +73,13 @@ namespace WindowsFormsApp1
 
         }
 
-        private void dgvBill_CellClick(object sender, DataGridViewCellEventArgs e)
+     
+        private void dgvBill_DoubleClick(object sender, EventArgs e)
         {
-            BuilDetailFrom frm = new BuilDetailFrom();
-            frm.Show();
-         
+            var billID = dgvBill.SelectedRows[0].Cells[0].Value.ToString();
+            BuilDetails frm = new BuilDetails();
+            frm.LoadBuilDetails(billID);
+            frm.ShowDialog(this);
         }
-        
     }
 }

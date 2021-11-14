@@ -76,8 +76,8 @@ namespace WindowsFormsApp1
             this.dgvBill.RowTemplate.Height = 24;
             this.dgvBill.Size = new System.Drawing.Size(990, 540);
             this.dgvBill.TabIndex = 3;
-            this.dgvBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellClick);
             this.dgvBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellContentClick);
+            this.dgvBill.DoubleClick += new System.EventHandler(this.dgvBill_DoubleClick);
             // 
             // label2
             // 

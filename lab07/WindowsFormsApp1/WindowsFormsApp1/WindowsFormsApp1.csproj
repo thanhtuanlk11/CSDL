@@ -61,11 +61,11 @@
     <Compile Include="AddMenuFood.Designer.cs">
       <DependentUpon>AddMenuFood.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuilDetailFrom.cs">
+    <Compile Include="BuilDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuilDetailFrom.Designer.cs">
-      <DependentUpon>BuilDetailFrom.cs</DependentUpon>
+    <Compile Include="BuilDetails.Designer.cs">
+      <DependentUpon>BuilDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="fOODInfoForm.cs">
       <SubType>Form</SubType>
@@ -99,8 +99,8 @@
     <EmbeddedResource Include="AddMenuFood.resx">
       <DependentUpon>AddMenuFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuilDetailFrom.resx">
-      <DependentUpon>BuilDetailFrom.cs</DependentUpon>
+    <EmbeddedResource Include="BuilDetails.resx">
+      <DependentUpon>BuilDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fOODInfoForm.resx">
       <DependentUpon>fOODInfoForm.cs</DependentUpon>

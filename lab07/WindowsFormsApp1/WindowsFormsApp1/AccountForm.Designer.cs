@@ -182,7 +182,7 @@ namespace WindowsFormsApp1
             this.xemNhậtKíHoạtĐộngToolStripMenuItem,
             this.xóaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(230, 104);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(230, 76);
             // 
             // xemDanhSáchVaiTròToolStripMenuItem
             // 
@@ -216,6 +216,7 @@ namespace WindowsFormsApp1
             this.dgvAccount.Size = new System.Drawing.Size(934, 498);
             this.dgvAccount.TabIndex = 27;
             this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
+            this.dgvAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellContentClick);
             // 
             // dtpNgay
             // 
