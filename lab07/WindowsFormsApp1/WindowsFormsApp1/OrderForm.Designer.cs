@@ -33,8 +33,6 @@ namespace WindowsFormsApp1
             this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
             this.btn_LoadBill = new System.Windows.Forms.Button();
             this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblDoanhThu = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,31 +77,11 @@ namespace WindowsFormsApp1
             this.dgvBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellContentClick);
             this.dgvBill.DoubleClick += new System.EventHandler(this.dgvBill_DoubleClick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(509, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Tổng doanh thu :";
-            // 
-            // lblDoanhThu
-            // 
-            this.lblDoanhThu.AutoSize = true;
-            this.lblDoanhThu.Location = new System.Drawing.Point(632, 35);
-            this.lblDoanhThu.Name = "lblDoanhThu";
-            this.lblDoanhThu.Size = new System.Drawing.Size(12, 17);
-            this.lblDoanhThu.TabIndex = 5;
-            this.lblDoanhThu.Text = ".";
-            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 639);
-            this.Controls.Add(this.lblDoanhThu);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvBill);
             this.Controls.Add(this.btn_LoadBill);
             this.Controls.Add(this.dtpDateTime);
@@ -123,7 +101,5 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DateTimePicker dtpDateTime;
         private System.Windows.Forms.Button btn_LoadBill;
         private System.Windows.Forms.DataGridView dgvBill;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblDoanhThu;
     }
 }

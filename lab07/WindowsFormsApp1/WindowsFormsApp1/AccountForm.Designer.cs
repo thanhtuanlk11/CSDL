@@ -182,7 +182,7 @@ namespace WindowsFormsApp1
             this.xemNhậtKíHoạtĐộngToolStripMenuItem,
             this.xóaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(230, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(230, 104);
             // 
             // xemDanhSáchVaiTròToolStripMenuItem
             // 
@@ -196,6 +196,7 @@ namespace WindowsFormsApp1
             this.xemNhậtKíHoạtĐộngToolStripMenuItem.Name = "xemNhậtKíHoạtĐộngToolStripMenuItem";
             this.xemNhậtKíHoạtĐộngToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.xemNhậtKíHoạtĐộngToolStripMenuItem.Text = "Xem nhật kí hoạt động";
+            this.xemNhậtKíHoạtĐộngToolStripMenuItem.Click += new System.EventHandler(this.xemNhậtKíHoạtĐộngToolStripMenuItem_Click);
             // 
             // xóaToolStripMenuItem
             // 

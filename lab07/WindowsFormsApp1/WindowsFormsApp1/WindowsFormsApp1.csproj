@@ -55,6 +55,12 @@
     <Compile Include="AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AcctiveFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcctiveFrom.Designer.cs">
+      <DependentUpon>AcctiveFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddMenuFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </Compile>
     <EmbeddedResource Include="AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AcctiveFrom.resx">
+      <DependentUpon>AcctiveFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddMenuFood.resx">
       <DependentUpon>AddMenuFood.cs</DependentUpon>

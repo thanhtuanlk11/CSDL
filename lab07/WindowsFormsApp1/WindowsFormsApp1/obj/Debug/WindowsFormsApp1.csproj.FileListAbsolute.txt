@@ -16,3 +16,4 @@ E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Win
 E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AccountForm.resources
 E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.VaiTro.resources
 E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BuilDetails.resources
+E:\three year\from C#\CSDL\lab07\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AcctiveFrom.resources

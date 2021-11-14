@@ -36,10 +36,8 @@ namespace WindowsFormsApp1
                 adapter.Fill(dt);
                 cmd.CommandText = "SELECT SUM(Amount) FROM Bills WHERE CheckoutDate = @Date";
                 setNameColumns(dt);
-                var doanhThu = cmd.ExecuteScalar();
-                lblDoanhThu.Text = doanhThu.ToString() + " VND";
+                
 
-                dgvBill.DataSource = dt;
                 sqlConnection.Close();
             }
             catch(Exception exc)

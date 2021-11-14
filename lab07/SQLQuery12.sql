@@ -148,7 +148,8 @@ INSERT [dbo].[BillDetails] ([ID], [InvoiceID], [FoodID], [Quantity]) VALUES (2, 
 SET IDENTITY_INSERT [dbo].[BillDetails] OFF
 SET IDENTITY_INSERT [dbo].[Bills] ON 
 
-INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Discount], [Tax], [Status], [CheckoutDate], [Account]) VALUES (1, N'Hóa đơn thanh toán', 5, 150000, 0.05, 0, 1, NULL, N'tdquy')
+INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Discount], [Tax], [Status], [CheckoutDate], [Account]) VALUES (1, N'Hóa đơn thanh toán', 5, 150000, 0.05, 0, 1, '2021-01-01', N'tdquy')
+INSERT [dbo].[Bills] ([ID], [Name], [TableID], [Amount], [Discount], [Tax], [Status], [CheckoutDate], [Account]) VALUES (2, N'Hóa đơn thanh toán', 5, 150000, 0.05, 0, 1, '2021-01-01', N'nam')
 SET IDENTITY_INSERT [dbo].[Bills] OFF
 SET IDENTITY_INSERT [dbo].[Category] ON 
 
@@ -273,18 +274,21 @@ AS
 	SELECT @ID = SCOPE_IDENTITY()
 go	
 -- Thêm account
-CREATE PROCEDURE [InsertAccount]
-@AccountName nvarchar(3000),
-@Password nvarchar(300), 
-@Fullname nvarchar(300), 
-@Email nvarchar(300), 
-@Tell nvarchar(300),  
-@Datecreated smalldatetime
-AS
-	INSERT INTO Account([AccountName],[Password],[FullName],[Email],[Tell],[DateCreated])
-	VALUES (@AccountName,@Password,@Fullname,@Email,@Tell,@Datecreated)
-
-
+create procedure InsertAccount
+(
+	@AccountName nvarchar(100),
+	@Password nvarchar(100),
+	@FullName nvarchar(1000),
+	@Email nvarchar(300),
+	@Tell nvarchar(100),
+	@DateCreated smalldatetime
+)
+as
+begin
+	if(not exists(SELECT AccountName From Account Where @AccountName = AccountName))
+		insert into Account(AccountName, Password, FullName, Email, Tell, DateCreated)
+		values(@AccountName, @Password, @FullName, @Email, @Tell, @DateCreated)
+end
 go
 
 

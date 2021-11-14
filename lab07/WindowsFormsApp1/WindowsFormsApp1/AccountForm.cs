@@ -193,13 +193,23 @@ namespace WindowsFormsApp1
 
         private void xemDanhSáchVaiTròToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (dgvAccount.SelectedRows.Count == 0) return;
+            var rowSelected = dgvAccount.SelectedRows[0];
+            string name = dgvAccount.SelectedRows[0].Cells[0].Value.ToString();
             VaiTro frm = new VaiTro();
+            frm.LoadRole();
             frm.ShowDialog();
         }
 
         private void dgvAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void xemNhậtKíHoạtĐộngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcctiveFrom frm = new AcctiveFrom();
+            frm.ShowDialog();
         }
     }
 }
