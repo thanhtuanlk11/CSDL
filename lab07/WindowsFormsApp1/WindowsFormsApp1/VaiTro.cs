@@ -25,8 +25,8 @@ namespace WindowsFormsApp1
             string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=RestaurantManagement;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             SqlCommand cmd = sqlConnection.CreateCommand();
-            cmd.CommandText = "select * from RoleAccount ";
-
+            cmd.CommandText = "select * from RoleAccount";
+            
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sqlConnection.Open();
