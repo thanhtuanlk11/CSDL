@@ -431,7 +431,7 @@ ELSE IF @Action = 2 -- Nếu Action = 2, xóa dữ liệu
 BEGIN
 DELETE FROM [Food] WHERE [ID] = @ID
 END
----
+-----------------------------------------------------------------------------
 
 select f.Name, f.Price, bd.Quantity, f.Price * bd.Quantity as Amount from Food f, BillDetails bd, Bills b
 where bd.FoodID = f.ID and bd.InvoiceID = b.ID and bd.InvoiceID = 1
