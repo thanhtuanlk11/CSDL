@@ -1,5 +1,5 @@
 ﻿
-namespace WindowsFormsApp1
+namespace RestaurantManagementProject
 {
     partial class Form1
     {
