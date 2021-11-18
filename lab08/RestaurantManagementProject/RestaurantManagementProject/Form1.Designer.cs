@@ -139,6 +139,7 @@ namespace RestaurantManagementProject
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Nhập lại";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label5
             // 

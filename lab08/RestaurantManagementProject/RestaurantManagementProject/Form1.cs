@@ -21,5 +21,18 @@ namespace RestaurantManagementProject
         {
             Application.Exit();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+            txtPrice.Text = "";
+            txtUnit.Text = "";
+            txtUnit.Text = "";
+
+            if (cbbCategory.Items.Count > 0)
+            {
+                cbbCategory.SelectedIndex = 0;
+            }
+        }
     }
 }
