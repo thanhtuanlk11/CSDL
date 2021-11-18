@@ -235,14 +235,17 @@ namespace RestaurantManagementProject
             this.lvFood.TabIndex = 0;
             this.lvFood.UseCompatibleStateImageBehavior = false;
             this.lvFood.View = System.Windows.Forms.View.Details;
+            this.lvFood.Click += new System.EventHandler(this.lvFood_Click);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "STT";
+            this.columnHeader1.Width = 50;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên thực phẩm";
+            this.columnHeader2.Width = 120;
             // 
             // columnHeader3
             // 
@@ -251,14 +254,17 @@ namespace RestaurantManagementProject
             // columnHeader4
             // 
             this.columnHeader4.Text = "Giá";
+            this.columnHeader4.Width = 70;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Loại thực phẩm ";
+            this.columnHeader5.Width = 80;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Ghi chú";
+            this.columnHeader6.Width = 150;
             // 
             // lblStatistic
             // 
@@ -291,6 +297,7 @@ namespace RestaurantManagementProject
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Thêm - xóa - sửa bảng FOOD";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

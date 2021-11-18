@@ -1,0 +1,9 @@
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\BusinessLogic\bin\Debug\BusinessLogic.dll
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\BusinessLogic\bin\Debug\BusinessLogic.pdb
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\BusinessLogic\bin\Debug\DataAccess.dll
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\BusinessLogic\bin\Debug\DataAccess.pdb
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\BusinessLogic\obj\Debug\BusinessLogic.dll
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\BusinessLogic\obj\Debug\BusinessLogic.pdb

@@ -1,0 +1,6 @@
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\DataAccess\bin\Debug\DataAccess.dll
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\DataAccess\bin\Debug\DataAccess.pdb
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\DataAccess\obj\Debug\DataAccess.dll
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\DataAccess\obj\Debug\DataAccess.pdb

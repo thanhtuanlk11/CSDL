@@ -1,0 +1,14 @@
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\obj\Debug\RestaurantManagementProject.csproj.AssemblyReference.cache
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\obj\Debug\RestaurantManagementProject.Form1.resources
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\obj\Debug\RestaurantManagementProject.Properties.Resources.resources
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\obj\Debug\RestaurantManagementProject.csproj.GenerateResource.cache
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\obj\Debug\RestaurantManagementProject.csproj.CoreCompileInputs.cache
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\bin\Debug\RestaurantManagementProject.exe.config
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\bin\Debug\RestaurantManagementProject.exe
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\bin\Debug\RestaurantManagementProject.pdb
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\bin\Debug\BusinessLogic.dll
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\bin\Debug\DataAccess.dll
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\bin\Debug\BusinessLogic.pdb
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\bin\Debug\DataAccess.pdb
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\obj\Debug\RestaurantManagementProject.exe
+E:\three year\from C#\CSDL\lab08\RestaurantManagementProject\RestaurantManagementProject\obj\Debug\RestaurantManagementProject.pdb
