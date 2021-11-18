@@ -403,6 +403,42 @@ ELSE IF @Action = 2
 BEGIN
 DELETE FROM [Category] WHERE [ID] = @ID
 END
+------------------------------------------------------------------------------------------------------------
+--Thủ tục lấy tất cả dữ liệu bảng Category
+CREATE PROCEDURE [dbo].[Category_GetAll]
+AS
+SELECT * FROM Category
+------------------------------------------
+--Thủ tục lấy tất cả dữ liệu bảng Food
+CREATE PROCEDURE [dbo].[Food_GetAll]
+AS
+SELECT * FROM Food
+------------------------------------------
+-- Thủ tục thêm, xóa, sửa bảng Category
+ALTER PROCEDURE [dbo].[Category_InsertUpdateDelete]
+@ID int output, -- Biến ID tự tăng, khi thêm xong phải lấy ra
+@Name nvarchar(200),
+@Type int,
+@Action int -- Biến cho biết thêm, xóa, hay sửa
+AS
+-- Nếu Action = 0, thực hiện thêm dữ liệu
+IF @Action = 0
+BEGIN
+INSERT INTO [Category] ([Name],[Type])
+VALUES (@Name, @Type)
+SET @ID = @@identity -- Thiết lập ID tự tăng
+END
+-- Nếu Action = 1, thực hiện cập nhật dữ liệu
+ELSE IF @Action = 1
+BEGIN
+UPDATE [Category] SET [Name] = @Name, [Type]=@Type
+WHERE [ID] = @ID
+END
+-- Nếu Action = 2, thực hiện xóa dữ liệu
+ELSE IF @Action = 2
+BEGIN
+DELETE FROM [Category] WHERE [ID] = @ID
+END
 ------------------------------------------
 -- Thủ tục thêm, xóa, sửa bảng Food
 ALTER PROCEDURE [dbo].[Food_InsertUpdateDelete]
@@ -431,7 +467,7 @@ ELSE IF @Action = 2 -- Nếu Action = 2, xóa dữ liệu
 BEGIN
 DELETE FROM [Food] WHERE [ID] = @ID
 END
------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 
 select f.Name, f.Price, bd.Quantity, f.Price * bd.Quantity as Amount from Food f, BillDetails bd, Bills b
 where bd.FoodID = f.ID and bd.InvoiceID = b.ID and bd.InvoiceID = 1
