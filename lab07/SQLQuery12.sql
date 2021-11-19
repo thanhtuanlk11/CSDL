@@ -441,7 +441,7 @@ DELETE FROM [Category] WHERE [ID] = @ID
 END
 ------------------------------------------
 -- Thủ tục thêm, xóa, sửa bảng Food
-ALTER PROCEDURE [dbo].[Food_InsertUpdateDelete]
+CREATE PROCEDURE [dbo].[Food_InsertUpdateDelete]
 @ID int output, -- Biến ID tự tăng, khi thêm xong phải lấy ra
 @Name nvarchar(1000),
 @Unit nvarchar(100),
