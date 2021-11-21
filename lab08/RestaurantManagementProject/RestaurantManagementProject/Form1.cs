@@ -44,7 +44,7 @@ namespace RestaurantManagementProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // đổ dữ liệu vào cb
+            // đổ dữ liệu vào cbb
             LoadCategory();
             LoadFoodDataToListView();
            
