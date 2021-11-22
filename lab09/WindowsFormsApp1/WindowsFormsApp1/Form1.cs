@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
             var dbContext = new RestaurantContext();
 
             // Tạo truy vấn lấy dánh sách món ăn 
-            var foods = dbContext.Foods.AsEnumerable();
+            var foods = dbContext.Foods.AsQueryable();
             //Nếu mã nhóm món ăn khác null và hợp lệ 
             if(categoryId!=null && categoryId > 0)
             {
@@ -118,7 +118,53 @@ namespace WindowsFormsApp1
                     Notes = x.Notes,
                     CategoryName = x.Category.Name
                 })
-                .ToList();      
+                .ToList();
+        }
+        //Kiểm tra treeView và xuất 
+        private void ShowFoodsForNode(TreeNode node)
+        {
+            // Xóa dánh sách thực đơn hiện tại trên listview
+            lvFood.Items.Clear();
+            // Nếu node = null , không cần xử lsy gì thêm 
+            if (node == null) return;
+            // Tao dánh sách chưa các món ăn vừa tìm được 
+            List<FoodModel> foods = null;
+
+            // nếu nút được chọn trên treeView tương ứng với loại thức ăn CategoryType (mức thức 2 trên cây)
+            if (node.Level == 1)
+            {
+                // thì láy danh sách món ăn thoe thể loại nhóm 
+                var categoryType = (CategoryType)node.Tag;
+                foods = GetFoodByCategoryType(categoryType);
+            }
+            else
+            {
+                // Ngược lại lấy danh sách món ăn theo thể loại , nếu nút được chọn là tát cả thì hiển thị hết 
+                var category = node.Tag as Category;
+                foods = GetFoodByCategory(category?.Id);
+            }
+            // Gọi hàm để hiển thị món ăn trên litsView
+            ShowFoodsOnListView(foods);
+        }
+        private void ShowFoodsOnListView(List<FoodModel> foods)
+        {
+            // duyệt qua các phần tử trong ds food
+            foreach (var foodItem in foods)
+            {
+                // tạo item tương ứng trên LitsView
+                var item = lvFood.Items.Add(foodItem.Id.ToString());
+                // và hiển thị thông tin các món ăn 
+                item.SubItems.Add(foodItem.Name);
+                item.SubItems.Add(foodItem.Unit);
+                item.SubItems.Add(foodItem.Price.ToString("##,###"));
+                item.SubItems.Add(foodItem.CategoryName);
+                item.SubItems.Add(foodItem.Notes);
+            }
+        }
+
+        private void tvwCategory_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            ShowFoodsForNode(e.Node);
         }
     }
 }

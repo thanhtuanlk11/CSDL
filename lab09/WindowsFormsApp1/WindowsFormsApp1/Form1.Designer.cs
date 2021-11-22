@@ -37,6 +37,12 @@ namespace WindowsFormsApp1
             this.btnReloadFood = new System.Windows.Forms.Button();
             this.tvwCategory = new System.Windows.Forms.TreeView();
             this.lvFood = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnReloadCategory
@@ -70,7 +76,7 @@ namespace WindowsFormsApp1
             // btnAddFood
             // 
             this.btnAddFood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddFood.Location = new System.Drawing.Point(730, 13);
+            this.btnAddFood.Location = new System.Drawing.Point(905, 13);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(35, 32);
             this.btnAddFood.TabIndex = 3;
@@ -80,7 +86,7 @@ namespace WindowsFormsApp1
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(689, 13);
+            this.btnDelete.Location = new System.Drawing.Point(864, 13);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(35, 32);
             this.btnDelete.TabIndex = 4;
@@ -90,7 +96,7 @@ namespace WindowsFormsApp1
             // btnReloadFood
             // 
             this.btnReloadFood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReloadFood.Location = new System.Drawing.Point(648, 13);
+            this.btnReloadFood.Location = new System.Drawing.Point(823, 13);
             this.btnReloadFood.Name = "btnReloadFood";
             this.btnReloadFood.Size = new System.Drawing.Size(35, 32);
             this.btnReloadFood.TabIndex = 5;
@@ -103,30 +109,65 @@ namespace WindowsFormsApp1
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tvwCategory.Location = new System.Drawing.Point(12, 51);
             this.tvwCategory.Name = "tvwCategory";
-            this.tvwCategory.Size = new System.Drawing.Size(218, 394);
+            this.tvwCategory.Size = new System.Drawing.Size(218, 661);
             this.tvwCategory.TabIndex = 6;
+            this.tvwCategory.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwCategory_AfterSelect);
             // 
             // lvFood
             // 
             this.lvFood.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvFood.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
             this.lvFood.FullRowSelect = true;
             this.lvFood.GridLines = true;
             this.lvFood.HideSelection = false;
             this.lvFood.Location = new System.Drawing.Point(236, 51);
             this.lvFood.MultiSelect = false;
             this.lvFood.Name = "lvFood";
-            this.lvFood.Size = new System.Drawing.Size(552, 394);
+            this.lvFood.Size = new System.Drawing.Size(704, 661);
             this.lvFood.TabIndex = 7;
             this.lvFood.UseCompatibleStateImageBehavior = false;
             this.lvFood.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã số";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên thức ăn/đồ uống";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "DV Tính ";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Giá bán";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Nhóm mặt hàng";
+            this.columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Ghi chú";
+            this.columnHeader6.Width = 150;
             // 
             // MainFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(975, 717);
             this.Controls.Add(this.lvFood);
             this.Controls.Add(this.tvwCategory);
             this.Controls.Add(this.btnReloadFood);
@@ -154,6 +195,12 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button btnReloadFood;
         private System.Windows.Forms.TreeView tvwCategory;
         private System.Windows.Forms.ListView lvFood;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
 
