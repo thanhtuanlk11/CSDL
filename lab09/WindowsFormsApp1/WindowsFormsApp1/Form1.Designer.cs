@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class tvwCategory
+    partial class MainFrom
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             this.btnAddFood = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnReloadFood = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tvwCategory = new System.Windows.Forms.TreeView();
             this.lvFood = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
@@ -47,6 +47,7 @@ namespace WindowsFormsApp1
             this.btnReloadCategory.TabIndex = 0;
             this.btnReloadCategory.Text = "R";
             this.btnReloadCategory.UseVisualStyleBackColor = true;
+            this.btnReloadCategory.Click += new System.EventHandler(this.btnReloadCategory_Click);
             // 
             // btnAddCategory
             // 
@@ -96,14 +97,14 @@ namespace WindowsFormsApp1
             this.btnReloadFood.Text = "R";
             this.btnReloadFood.UseVisualStyleBackColor = true;
             // 
-            // treeView1
+            // tvwCategory
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tvwCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.treeView1.Location = new System.Drawing.Point(12, 51);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(218, 394);
-            this.treeView1.TabIndex = 6;
+            this.tvwCategory.Location = new System.Drawing.Point(12, 51);
+            this.tvwCategory.Name = "tvwCategory";
+            this.tvwCategory.Size = new System.Drawing.Size(218, 394);
+            this.tvwCategory.TabIndex = 6;
             // 
             // lvFood
             // 
@@ -121,22 +122,23 @@ namespace WindowsFormsApp1
             this.lvFood.UseCompatibleStateImageBehavior = false;
             this.lvFood.View = System.Windows.Forms.View.Details;
             // 
-            // tvwCategory
+            // MainFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lvFood);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.tvwCategory);
             this.Controls.Add(this.btnReloadFood);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAddFood);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddCategory);
             this.Controls.Add(this.btnReloadCategory);
-            this.Name = "tvwCategory";
+            this.Name = "MainFrom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhà hàng ";
+            this.Load += new System.EventHandler(this.MainFrom_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,7 +152,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnReloadFood;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView tvwCategory;
         private System.Windows.Forms.ListView lvFood;
     }
 }
