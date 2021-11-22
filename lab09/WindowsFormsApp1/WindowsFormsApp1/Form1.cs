@@ -70,5 +70,55 @@ namespace WindowsFormsApp1
         {
             ShowCategories();
         }
+        //lấy danh sách theo mã
+        private List<FoodModel> GetFoodByCategory(int? categoryId)
+        {
+            // khởi tạo đối tương context
+            var dbContext = new RestaurantContext();
+
+            // Tạo truy vấn lấy dánh sách món ăn 
+            var foods = dbContext.Foods.AsEnumerable();
+            //Nếu mã nhóm món ăn khác null và hợp lệ 
+            if(categoryId!=null && categoryId > 0)
+            {
+                // thì tìm thoe mã nhóm món ăn 
+                foods = foods.Where(x => x.FoodCategoryId == categoryId);
+            }
+            // Sắp xếp đồ ăn thức uống theoe tên và trả về
+            // dánh sách chứa đầy đủ thông tin món ăn 
+            return foods
+                .OrderBy(x=>x.Name)
+                .Select(x=>new FoodModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Unit = x.Unit,
+                    Price = x.Price,
+                    Notes =x.Notes,
+                    CategoryName =x.Category.Name
+                })
+                .ToList();
+        }
+        // Lấy dánh sách theo thể loại 
+        private List<FoodModel> GetFoodByCategoryType(CategoryType cateType)
+        {
+            var dbContext = new RestaurantContext();
+            //Tìm các món ăn theo loại nhóm món ăn (CategoryType).
+            //Sap xếp đồ ăn thức uống thoe tên và trả về .
+            //danh sách chứa đầy đủ thông tin về món ăn 
+            return dbContext.Foods
+                .Where(x => x.Category.Type == cateType)
+                .OrderBy(x => x.Name)
+                .Select(x => new FoodModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Unit = x.Unit,
+                    Price = x.Price,
+                    Notes = x.Notes,
+                    CategoryName = x.Category.Name
+                })
+                .ToList();      
+        }
     }
 }
