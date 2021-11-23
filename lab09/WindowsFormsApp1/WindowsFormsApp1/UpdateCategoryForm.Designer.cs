@@ -96,7 +96,7 @@ namespace WindowsFormsApp1
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(302, 154);
+            this.button1.Location = new System.Drawing.Point(315, 135);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 36);
             this.button1.TabIndex = 6;
@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(408, 154);
+            this.btnCancel.Location = new System.Drawing.Point(417, 135);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 36);
             this.btnCancel.TabIndex = 7;
@@ -118,7 +118,7 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(531, 183);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbbCategoryType);
@@ -129,6 +129,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Name = "UpdateCategoryForm";
             this.Text = "Thêm / Cập nhật nhóm món ăn";
+            this.Load += new System.EventHandler(this.UpdateCategoryForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
