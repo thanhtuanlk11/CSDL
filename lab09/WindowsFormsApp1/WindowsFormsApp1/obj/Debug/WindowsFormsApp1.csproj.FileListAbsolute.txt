@@ -12,3 +12,4 @@ E:\three year\from C#\CSDL\lab09\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Ent
 E:\three year\from C#\CSDL\lab09\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
 E:\three year\from C#\CSDL\lab09\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
 E:\three year\from C#\CSDL\lab09\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainFrom.resources
+E:\three year\from C#\CSDL\lab09\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UpdateCategoryForm.resources
