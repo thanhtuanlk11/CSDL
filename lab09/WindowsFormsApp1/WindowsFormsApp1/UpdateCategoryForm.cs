@@ -78,5 +78,24 @@ namespace WindowsFormsApp1
             }
             return true;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu dữ liệu nhập vào là hợp lệ 
+            if (ValidateUserInput())
+            {
+                // thì lấy thông tin ng dùng nhập 
+                var newCategory = GetUpdatedCategory();
+                // tìm xem thử có nhóm ón ăn trong CSDL chưa
+                var oldCategory = GetCategoryById(_categoryId);
+                // Nếu chưa có 
+                if(oldCategory == null)
+                {
+                    // Thì thêm nhóm thức ăn mới 
+                    _dbContext.Categories.Add(newCategory);
+                }
+                else
+            }
+        }
     }
 }
