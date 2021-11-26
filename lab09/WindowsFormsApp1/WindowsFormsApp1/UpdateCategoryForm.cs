@@ -62,5 +62,21 @@ namespace WindowsFormsApp1
             }
             return category;
         }
+        private bool ValidateUserInput()
+        {
+            // Kiểm tra nhóm món ăn đã được nhập hay chưa 
+            if (string.IsNullOrWhiteSpace(txtCategoryName.Text))
+            {
+                MessageBox.Show("Tên thức ăn không được để trống", "thông báo");
+                return false;
+            }
+            //Kiểm tra loại thức ăn đã được chọn hay chưa
+            if (cbbCategoryType.SelectedIndex < 0)
+            {
+                MessageBox.Show("Bạn chưa chọn loại thức ăn", "thông báo");
+                return false;
+            }
+            return true;
+        }
     }
 }
