@@ -50,6 +50,17 @@ namespace WindowsFormsApp1
         private Category GetUpdatedCategory()
         {
             // Tạo đối tượng Catefory với thông tin nhập
+            var category = new Category()
+            {
+                Name = txtCategoryName.Text.Trim(),
+                Type = (CategoryType)cbbCategoryType.SelectedIndex
+            };
+            // Gán giá trị ID ban đầu nếu đang cập nhật 
+            if (_categoryId > 0)
+            {
+                category.Id = _categoryId;
+            }
+            return category;
         }
     }
 }
