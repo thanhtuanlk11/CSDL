@@ -95,6 +95,15 @@ namespace WindowsFormsApp1
                     _dbContext.Categories.Add(newCategory);
                 }
                 else
+                {
+                    //Ngược lại ta chỉ cần cập nhật thông tinn cần thiết 
+                    oldCategory.Name = newCategory.Name;
+                    oldCategory.Type = newCategory.Type;
+                }
+                // Lưu các thay đổi xuống csdl
+                _dbContext.SaveChanges();
+                // Đống hội thaoij 
+                DialogResult = DialogResult.OK;
             }
         }
     }
