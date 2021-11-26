@@ -178,7 +178,13 @@ namespace WindowsFormsApp1
 
         private void tvwCategory_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if(e.Node == null || e.Node.Level<2||e.Node.Tag == null)
+            if (e.Node == null || e.Node.Level < 2 || e.Node.Tag == null) return;
+            var category = e.Node.Tag as Category;
+            var dialog = new UpdateCategoryForm(category?.Id);
+            if(dialog.ShowDialog(this)== DialogResult.OK)
+            {
+                ShowCategories(); 
+            }
         }
     }
 }
