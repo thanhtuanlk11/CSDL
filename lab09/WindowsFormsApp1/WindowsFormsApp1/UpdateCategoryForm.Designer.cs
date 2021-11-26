@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             this.txtCategoryId = new System.Windows.Forms.TextBox();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.cbbCategoryType = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -93,16 +93,16 @@ namespace WindowsFormsApp1
             this.cbbCategoryType.Size = new System.Drawing.Size(338, 24);
             this.cbbCategoryType.TabIndex = 5;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(315, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(315, 135);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 36);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCancel
             // 
@@ -114,6 +114,7 @@ namespace WindowsFormsApp1
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Thoát";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // UpdateCategoryForm
             // 
@@ -121,7 +122,7 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(531, 183);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cbbCategoryType);
             this.Controls.Add(this.txtCategoryName);
             this.Controls.Add(this.txtCategoryId);
@@ -144,7 +145,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtCategoryId;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.ComboBox cbbCategoryType;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
     }
 }

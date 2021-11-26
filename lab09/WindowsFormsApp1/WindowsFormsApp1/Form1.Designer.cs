@@ -83,6 +83,7 @@ namespace WindowsFormsApp1
             this.btnAddFood.TabIndex = 3;
             this.btnAddFood.Text = "+";
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // btnDelete
             // 
@@ -104,6 +105,7 @@ namespace WindowsFormsApp1
             this.btnReloadFood.TabIndex = 5;
             this.btnReloadFood.Text = "R";
             this.btnReloadFood.UseVisualStyleBackColor = true;
+            this.btnReloadFood.Click += new System.EventHandler(this.btnReloadFood_Click);
             // 
             // tvwCategory
             // 
@@ -138,6 +140,7 @@ namespace WindowsFormsApp1
             this.lvFood.TabIndex = 7;
             this.lvFood.UseCompatibleStateImageBehavior = false;
             this.lvFood.View = System.Windows.Forms.View.Details;
+            this.lvFood.DoubleClick += new System.EventHandler(this.lvFood_DoubleClick);
             // 
             // columnHeader1
             // 

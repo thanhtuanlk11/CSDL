@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtFoodId = new System.Windows.Forms.TextBox();
             this.txtFoodName = new System.Windows.Forms.TextBox();
             this.cbbFoodCategory = new System.Windows.Forms.ComboBox();
             this.txtFoodUnit = new System.Windows.Forms.TextBox();
@@ -100,13 +100,13 @@ namespace WindowsFormsApp1
             this.label6.TabIndex = 5;
             this.label6.Text = "Ghi chú khác";
             // 
-            // txtId
+            // txtFoodId
             // 
-            this.txtId.Location = new System.Drawing.Point(164, 7);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(142, 22);
-            this.txtId.TabIndex = 6;
+            this.txtFoodId.Location = new System.Drawing.Point(164, 7);
+            this.txtFoodId.Name = "txtFoodId";
+            this.txtFoodId.ReadOnly = true;
+            this.txtFoodId.Size = new System.Drawing.Size(142, 22);
+            this.txtFoodId.TabIndex = 6;
             // 
             // txtFoodName
             // 
@@ -165,6 +165,7 @@ namespace WindowsFormsApp1
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -188,7 +189,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.txtFoodUnit);
             this.Controls.Add(this.cbbFoodCategory);
             this.Controls.Add(this.txtFoodName);
-            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtFoodId);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -212,7 +213,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtFoodId;
         private System.Windows.Forms.TextBox txtFoodName;
         private System.Windows.Forms.ComboBox cbbFoodCategory;
         private System.Windows.Forms.TextBox txtFoodUnit;

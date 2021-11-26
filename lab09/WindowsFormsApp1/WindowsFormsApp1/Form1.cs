@@ -209,5 +209,31 @@ namespace WindowsFormsApp1
                 lvFood.Items.Remove(lvFood.SelectedItems[0]);
             }    
         }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            var dialog = new UpdateFoodForm();
+            if(dialog.ShowDialog(this) == DialogResult.OK)
+            {
+                ShowFoodsForNode(tvwCategory.SelectedNode);
+            }
+        }
+
+        private void lvFood_DoubleClick(object sender, EventArgs e)
+        {
+            if (lvFood.SelectedItems.Count == 0) return;
+
+            var foodId = int.Parse(lvFood.SelectedItems[0].Text);
+            var dialog = new UpdateFoodForm(foodId);
+            if(dialog.ShowDialog(this) == DialogResult.OK)
+            {
+                ShowFoodsForNode(tvwCategory.SelectedNode);
+            }
+        }
+
+        private void btnReloadFood_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
