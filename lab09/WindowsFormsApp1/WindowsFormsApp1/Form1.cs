@@ -166,5 +166,19 @@ namespace WindowsFormsApp1
         {
             ShowFoodsForNode(e.Node);
         }
+
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            var dialog = new UpdateCategoryForm();
+            if(dialog.ShowDialog(this) == DialogResult.OK)
+            {
+                ShowCategories();
+            }
+        }
+
+        private void tvwCategory_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if(e.Node == null || e.Node.Level<2||e.Node.Tag == null)
+        }
     }
 }

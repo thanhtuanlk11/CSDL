@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
             this.btnAddCategory.TabIndex = 1;
             this.btnAddCategory.Text = "+";
             this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // label1
             // 
@@ -112,6 +113,7 @@ namespace WindowsFormsApp1
             this.tvwCategory.Size = new System.Drawing.Size(218, 661);
             this.tvwCategory.TabIndex = 6;
             this.tvwCategory.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwCategory_AfterSelect);
+            this.tvwCategory.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwCategory_NodeMouseDoubleClick);
             // 
             // lvFood
             // 
