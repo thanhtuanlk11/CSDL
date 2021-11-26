@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
 
         private void btnReloadCategory_Click(object sender, EventArgs e)
         {
-            ShowCategories();
+            ShowFoodsForNode(tvwCategory.SelectedNode);
         }
         //lấy danh sách theo mã
         private List<FoodModel> GetFoodByCategory(int? categoryId)
@@ -185,6 +185,29 @@ namespace WindowsFormsApp1
             {
                 ShowCategories(); 
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // Nếu không có món ăn được chọn không cần làm gì cả
+            if (lvFood.SelectedItems.Count == 0) return;
+
+            //Ngược lại lấy mã số của nhóm món ăn được chọn 
+            var dbContext = new RestaurantContext();
+            var selectedFoodId = int.Parse(lvFood.SelectedItems[0].Text);
+            //Truy vấn để lấy thoogn tin món ăn đó 
+            var selectedFood = dbContext.Foods.Find(selectedFoodId);
+
+            // nếu tìm thấy thông tin món ăn 
+            if(selectedFood!=null)
+            {
+                // thì xóa khỏi csdl
+                dbContext.Foods.Remove(selectedFood);
+                dbContext.SaveChanges();
+
+                // Xóa khỏi litsview
+                lvFood.Items.Remove(lvFood.SelectedItems[0]);
+            }    
         }
     }
 }
