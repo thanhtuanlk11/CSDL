@@ -47,5 +47,9 @@ namespace WindowsFormsApp1
             // Hiển thị thoogn tin nhóm thwucs ăn lên fỏm 
             ShowCategory();
         }
+        private Category GetUpdatedCategory()
+        {
+            // Tạo đối tượng Catefory với thông tin nhập
+        }
     }
 }
