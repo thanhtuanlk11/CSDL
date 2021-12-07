@@ -75,7 +75,7 @@ namespace lab3
                         sv = new SinhVien();
                         sv.MaSo = s[0];
                         sv.HoTen = s[1];
-                        sv.NgaySinh = DateTime.Parse(s[2]);
+                        
                         sv.DiaChi = s[3];
                         sv.Lop = s[4];
                         sv.Hinh = s[5];

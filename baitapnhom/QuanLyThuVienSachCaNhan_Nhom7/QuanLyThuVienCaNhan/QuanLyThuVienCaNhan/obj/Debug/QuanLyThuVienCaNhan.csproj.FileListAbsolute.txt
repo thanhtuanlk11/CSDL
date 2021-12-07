@@ -1,0 +1,26 @@
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\bin\Debug\QuanLyThuVienCaNhan.exe.config
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\bin\Debug\QuanLyThuVienCaNhan.exe
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\bin\Debug\QuanLyThuVienCaNhan.pdb
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.csproj.AssemblyReference.cache
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.Form1.resources
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.frmMuonTra.resources
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.frmSach.resources
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.Properties.Resources.resources
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.csproj.GenerateResource.cache
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.csproj.CoreCompileInputs.cache
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.exe
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.pdb
+D:\LTC#_WinForm\Project\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.frmThongKe.resources
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\bin\Debug\QuanLyThuVienCaNhan.exe.config
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\bin\Debug\QuanLyThuVienCaNhan.exe
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\bin\Debug\QuanLyThuVienCaNhan.pdb
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.csproj.AssemblyReference.cache
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.Form1.resources
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.frmMuonTra.resources
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.frmSach.resources
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.frmThongKe.resources
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.Properties.Resources.resources
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.csproj.GenerateResource.cache
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.csproj.CoreCompileInputs.cache
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.exe
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\QuanLyThuVienCaNhan\obj\Debug\QuanLyThuVienCaNhan.pdb
