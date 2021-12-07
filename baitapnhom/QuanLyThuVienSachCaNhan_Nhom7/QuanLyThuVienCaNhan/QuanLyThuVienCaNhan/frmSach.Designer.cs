@@ -243,7 +243,6 @@ namespace QuanLyThuVienCaNhan
             this.ptbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbPicture.TabIndex = 60;
             this.ptbPicture.TabStop = false;
-           
             // 
             // txtTenSach
             // 
@@ -313,6 +312,7 @@ namespace QuanLyThuVienCaNhan
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSach";
             this.Text = "frmSach";
+            this.Load += new System.EventHandler(this.frmSach_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPicture)).EndInit();

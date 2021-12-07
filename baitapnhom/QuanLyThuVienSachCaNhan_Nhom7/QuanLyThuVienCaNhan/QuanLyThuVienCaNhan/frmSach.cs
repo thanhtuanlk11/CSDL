@@ -17,6 +17,13 @@ namespace QuanLyThuVienCaNhan
             InitializeComponent();
         }
 
-       
+        private void frmSach_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void LoadThongTin()
+        {
+            
+        }
     }
 }

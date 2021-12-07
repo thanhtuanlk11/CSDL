@@ -1,0 +1,6 @@
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\DataAccess\bin\Debug\DataAccess.dll
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\DataAccess\bin\Debug\DataAccess.pdb
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\DataAccess\obj\Debug\DataAccess.dll
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\DataAccess\obj\Debug\DataAccess.pdb

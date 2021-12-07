@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,36 +18,9 @@ namespace QuanLyThuVienCaNhan
         {
             InitializeComponent();
         }
-        private void LoadListView()
-        {
-            string connectionString = @"Data Source=DESKTOP-RDFL65K\SQLEXPRESS;Initial Catalog=ThuVienCaNhan;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "select * from Sach";
-            connection.Open();
-            SqlDataReader sqlDataReader = cmd.ExecuteReader();
-            this.DisplayCatelory(sqlDataReader);
-            connection.Close();
-        }
-        private void DisplayCatelory(SqlDataReader reader)
-        {      
-            lsvDanhSach.Items.Clear();     
-            while (reader.Read())
-            {              
-                ListViewItem item = new ListViewItem(reader["MaSach"].ToString());            
-                lsvDanhSach.Items.Add(item);
-                item.SubItems.Add(reader["TenSach"].ToString());
-                item.SubItems.Add(reader["NamXB"].ToString());
-                item.SubItems.Add(reader["TacGia"].ToString());
-                item.SubItems.Add(reader["NXB"].ToString());
-                item.SubItems.Add(reader["TrangThai"].ToString());
-                item.SubItems.Add(reader["KeSach"].ToString());
-                item.SubItems.Add(reader["VTNgan"].ToString());
-                item.SubItems.Add(reader["MaTL"].ToString());
+       
 
-            }
 
-        }
 
         private void tsmiMuonSach_Click(object sender, EventArgs e)
         {
@@ -54,10 +28,6 @@ namespace QuanLyThuVienCaNhan
             frmMuon.ShowDialog();
         }
 
-        private void lsvDanhSach_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-        }
 
         private void tsmThongKe_Click(object sender, EventArgs e)
         {
@@ -76,10 +46,6 @@ namespace QuanLyThuVienCaNhan
             
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            LoadListView();
-        }
 
         private void lsvDanhSach_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
@@ -88,8 +54,12 @@ namespace QuanLyThuVienCaNhan
 
         private void lsvDanhSach_DoubleClick(object sender, EventArgs e)
         {
-            frmSach frm = new frmSach();
-            frm.ShowDialog();
+              
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

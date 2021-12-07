@@ -221,7 +221,7 @@ namespace WindowsFormsApp1
 
         private void lvFood_DoubleClick(object sender, EventArgs e)
         {
-            if (lvFood.SelectedItems.Count == 0) return;
+           if (lvFood.SelectedItems.Count == 0) return;
 
             var foodId = int.Parse(lvFood.SelectedItems[0].Text);
             var dialog = new UpdateFoodForm(foodId);

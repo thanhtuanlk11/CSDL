@@ -1,0 +1,9 @@
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\BusinessLogic\bin\Debug\BusinessLogic.dll
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\BusinessLogic\bin\Debug\BusinessLogic.pdb
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\BusinessLogic\bin\Debug\DataAccess.dll
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\BusinessLogic\bin\Debug\DataAccess.pdb
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\BusinessLogic\obj\Debug\BusinessLogic.dll
+E:\three year\from C#\CSDL\baitapnhom\QuanLyThuVienSachCaNhan_Nhom7\QuanLyThuVienCaNhan\BusinessLogic\obj\Debug\BusinessLogic.pdb
